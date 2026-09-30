@@ -159,6 +159,8 @@ table{border-collapse:collapse;width:100%}
 
 /* ---------- overview ---------- */
 .grid-2{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
+.grid-ov{display:grid;gap:18px;grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:860px){.grid-ov{grid-template-columns:1fr}}
 .panel{padding:24px}
 .panel__t{
   font-size:16.5px;display:flex;align-items:center;gap:10px;margin-bottom:18px;
@@ -286,8 +288,13 @@ table{border-collapse:collapse;width:100%}
   background:#f0f6f7;color:var(--ink-soft);font-size:14px;
 }
 .mapbar{
-  display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  display:flex;flex-wrap:wrap;gap:9px 20px;align-items:center;
   margin-bottom:12px;
+}
+.mapbar__grp{display:flex;flex-wrap:wrap;gap:7px;align-items:center}
+.mapbar__lbl{
+  font-size:11.5px;font-weight:700;letter-spacing:.12em;
+  color:var(--ink-mute);margin-right:1px;
 }
 .mapbar button{
   font-size:13px;padding:6px 13px;border-radius:999px;
@@ -300,17 +307,25 @@ table{border-collapse:collapse;width:100%}
 .poi{
   display:flex;gap:12px;align-items:flex-start;text-align:left;width:100%;
   background:var(--card);border:1px solid var(--line);border-radius:var(--r-sm);
-  padding:13px 15px;box-shadow:var(--shadow);transition:.2s;
+  padding:13px 15px;box-shadow:var(--shadow);transition:.2s;cursor:pointer;
 }
 .poi:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.poi:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
 .poi.is-on{border-color:var(--teal);box-shadow:0 0 0 2px var(--aqua-soft),var(--shadow)}
+.poi__body{flex:1 1 auto;min-width:0}
 .poi__dot{
   flex:0 0 auto;width:11px;height:11px;border-radius:50%;margin-top:7px;
   box-shadow:0 0 0 3px rgba(0,0,0,.05);
 }
-.poi__n{font-size:14.5px;font-weight:700;line-height:1.45}
-.poi__c{font-size:12px;color:var(--ink-mute);margin-top:2px;letter-spacing:.03em}
-.poi__d{font-size:12.5px;color:var(--ink-soft);margin-top:6px;line-height:1.6}
+.poi__n{display:block;font-size:14.5px;font-weight:700;line-height:1.45}
+.poi__c{display:block;font-size:12px;color:var(--ink-mute);margin-top:2px;letter-spacing:.03em}
+.poi__d{display:block;font-size:12.5px;color:var(--ink-soft);margin-top:6px;line-height:1.6}
+.poi__go{
+  display:inline-block;margin-top:9px;font-size:12.5px;font-weight:600;
+  color:var(--teal);border-bottom:1px solid rgba(18,139,150,.35);
+  padding-bottom:1px;transition:.18s;
+}
+.poi__go:hover{color:var(--sea-700);border-bottom-color:var(--sea-700)}
 .mk{
   width:26px;height:26px;border-radius:50%;border:2.5px solid #fff;
   display:grid;place-items:center;color:#fff;font-size:11.5px;font-weight:700;
@@ -519,7 +534,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
       <p class="sec__sub">以下是本次行程的固定條件與已經拍板的選擇，其餘行程細節都由此展開。</p>
     </div>
 
-    <div class="grid-2">
+    <div class="grid-ov">
       <div class="card panel rv">
         <h3 class="panel__t"><i>✈</i>航班資訊</h3>
         <div class="kv">
@@ -543,8 +558,8 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
           </div>
           <div class="kv__r">
             <div class="kv__k">建議抵達機場．回程</div>
-            <div class="kv__v">21:40
-              <small>由酒店 20:40 出發推算</small>
+            <div class="kv__v">20:40
+              <small>跨境航班，起飛前 1 小時 30 分抵達；由酒店 19:40 出發推算</small>
             </div>
           </div>
         </div>
@@ -583,6 +598,12 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
               <small>天府中餐廳（粵式／海南菜）　·　濤·海底餐廳（海鮮自助）</small>
             </div>
           </div>
+          <div class="kv__r">
+            <div class="kv__k">退房　10/25（日）</div>
+            <div class="kv__v">14:00
+              <small>酒廊禮遇至退房為止；退房後早餐、下午茶與 Happy Hour 均不再適用，行李可寄存禮賓部</small>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -594,6 +615,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
           <li><span><b>Day 2</b>：亞特蘭蒂斯水世界 ＋ 水族館（全日）。</span></li>
           <li><span><b>免稅</b>：cdf 三亞國際免稅城，以酒店專用連廊步行前往。</span></li>
           <li><span><b>Day 3 09:30</b>：酒店 SPA 療程，安排於最後一個上午。</span></li>
+          <li><span><b>Day 3 14:00</b>：退房（酒廊禮遇至退房為止，晚餐改於館內餐廳自費）。</span></li>
           <li><span><b>Day 3 全天</b>：留在海棠灣，不進市區。</span></li>
           <li><span><b>蜈支洲島</b>：僅列為 Day 2 備選方案，不排入主線。</span></li>
         </ul>
@@ -927,12 +949,12 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
       <div class="dayhead">
         <div class="dayhead__l">
           <h3>Day 3 · 10 月 25 日（日）SPA · 免稅購物 · 返程</h3>
-          <p>上午 SPA 與午餐，午後完成免稅購物，傍晚退房、前往機場。</p>
+          <p>上午 SPA 與午餐，14:00 退房後完成免稅購物，晚餐後前往機場。</p>
         </div>
         <div class="dayhead__stats">
-          <div class="dstat">節奏<b>從容</b></div>
-          <div class="dstat">網約車<b>1 段</b></div>
+          <div class="dstat">退房<b>14:00</b></div>
           <div class="dstat">購物截止<b>16:10</b></div>
+          <div class="dstat">酒店出發<b>19:40</b></div>
         </div>
       </div>
 
@@ -982,9 +1004,9 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
           <div class="ev__in">
             <div class="ev__top">
               <div class="ev__time">12:30</div>
-              <div class="ev__t">午餐：天府中餐廳　或　天津灣餐廳</div>
+              <div class="ev__t">午餐：天府中餐廳（館內）</div>
             </div>
-            <p class="ev__p">留在館內用餐，省下往返時間。天府中餐廳走粵式與海南本地菜，適合正式一點的午餐；天津灣餐廳位於 B1，全日供應、節奏快，想早點出發購物就選它。</p>
+            <p class="ev__p">留在館內用餐，省下往返時間。天府中餐廳走粵式與海南本地菜，退房前吃一頓正式的午餐。</p>
             <div class="chips">
               <span class="chip chip--cost">人均約 ¥175</span>
               <span class="chip chip--time">約 75 分</span>
@@ -995,10 +1017,25 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
         <article class="ev ev--coral rv">
           <div class="ev__in">
             <div class="ev__top">
-              <div class="ev__time">13:30</div>
+              <div class="ev__time">14:00</div>
+              <div class="ev__t">辦理退房 · 行李寄存禮賓部</div>
+            </div>
+            <p class="ev__p">10/25 退房時間為 <b>14:00</b>。退房後<b>行政酒廊隨即停止提供服務</b>（早餐、下午茶、Happy Hour 皆不再適用），行李改寄存於禮賓部，貴重物品隨身。</p>
+            <div class="chips">
+              <span class="chip chip--hi">14:00 退房</span>
+              <span class="chip chip--hi">退房後酒廊停用</span>
+              <span class="chip">行李寄存禮賓部</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="ev ev--coral rv">
+          <div class="ev__in">
+            <div class="ev__top">
+              <div class="ev__time">14:20</div>
               <div class="ev__t">cdf 三亞國際免稅城購物　<span class="badge badge--hi">重點</span></div>
             </div>
-            <p class="ev__p">走酒店專用連廊步行前往。<b>關鍵時限：須於起飛前 6 小時完成購買</b>，即 <b>16:10 前</b>結帳完畢，預留航班 22:10 的緩衝。購買時備妥護照與登機資訊。</p>
+            <p class="ev__p">走酒店專用連廊步行前往。<b>關鍵時限：須於起飛前 6 小時完成購買</b>，即 <b>16:10 前</b>結帳完畢。購買時備妥護照與登機資訊，商品於機場提貨。</p>
             <div class="chips">
               <span class="chip chip--walk">🚶 步行 5–10 分</span>
               <span class="chip chip--hi">16:10 前完成購買</span>
@@ -1011,13 +1048,14 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
         <article class="ev rv">
           <div class="ev__in">
             <div class="ev__top">
-              <div class="ev__time">16:00</div>
-              <div class="ev__t">返回酒店、收拾行李、最後泳池時間</div>
+              <div class="ev__time">16:20</div>
+              <div class="ev__t">返回酒店休息 · 行李續存禮賓部</div>
             </div>
-            <p class="ev__p">購物交由免稅城配送／機場提貨，不必自己拎。回到酒店把行李收妥，若天氣好可再游一次泳。</p>
+            <p class="ev__p">購物交由免稅城配送／機場提貨，不必自己拎。退房後泳池與酒廊已不可使用，可在酒店大堂、咖啡座或庭園休息，整理相片、核對提貨單據。</p>
             <div class="chips">
-              <span class="chip chip--time">約 2 小時</span>
+              <span class="chip chip--time">約 1 小時 40 分</span>
               <span class="chip">確認提貨單據</span>
+              <span class="chip chip--hi">泳池與酒廊已停用</span>
             </div>
           </div>
         </article>
@@ -1026,12 +1064,13 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
           <div class="ev__in">
             <div class="ev__top">
               <div class="ev__time">18:00</div>
-              <div class="ev__t">酒廊 Happy Hour 輕食 ＋ 辦理退房</div>
+              <div class="ev__t">晚餐：濤·海底餐廳（酒店海鮮自助）</div>
             </div>
-            <p class="ev__p">先用酒廊 Happy Hour（18:00–20:30）吃點輕食，避免空腹趕飛機；同時辦理退房並寄存行李，順便請櫃檯代叫網約車。</p>
+            <p class="ev__p">退房後酒廊輕食已不適用，改在館內正式用餐。濤·海底餐廳為酒店招牌海鮮自助，適合當作餞別晚餐；想吃得輕巧一點可改天津灣餐廳（B1 全日餐廳，人均約 ¥175）。<b>建議提前訂位。</b></p>
             <div class="chips">
-              <span class="chip">含於房價</span>
-              <span class="chip chip--time">18:00–20:30</span>
+              <span class="chip chip--cost">人均約 ¥400</span>
+              <span class="chip chip--time">約 90 分</span>
+              <span class="chip chip--hi">需自費・建議訂位</span>
             </div>
           </div>
         </article>
@@ -1039,10 +1078,10 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
         <article class="ev ev--coral rv">
           <div class="ev__in">
             <div class="ev__top">
-              <div class="ev__time">20:40</div>
-              <div class="ev__t">網約車：酒店 → 三亞鳳凰機場（SYX）</div>
+              <div class="ev__time">19:40</div>
+              <div class="ev__t">禮賓部取回行李 → 網約車前往 SYX 機場</div>
             </div>
-            <p class="ev__p">約 <b>33 公里</b>，45–60 分鐘。預約叫車可避免臨時等車；這個時段路面順暢，但仍請預留塞車緩衝。</p>
+            <p class="ev__p">約 <b>33 公里</b>，45–60 分鐘。請提前 20–30 分鐘於 App 預約叫車，或請禮賓部代叫；這個時段路面順暢，但仍請預留緩衝。</p>
             <div class="chips">
               <span class="chip chip--mode">🚗 網約車</span>
               <span class="chip">約 33 km</span>
@@ -1055,17 +1094,17 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
         <article class="ev rv">
           <div class="ev__in">
             <div class="ev__top">
-              <div class="ev__time">21:40</div>
+              <div class="ev__time">20:40</div>
               <div class="ev__t">抵達 SYX：辦理登機、免稅提貨</div>
             </div>
             <p class="ev__p">HX170 為飛往香港的<b>國際／跨境航班</b>，請先到航空公司櫃檯辦理登機與行李託運，再憑提貨單到免稅提貨處取貨。</p>
             <div class="chips">
-              <span class="chip chip--time">預留約 30 分</span>
+              <span class="chip chip--time">起飛前 1 小時 30 分抵達</span>
               <span class="chip">先辦登機再提貨</span>
             </div>
             <div class="warn">
-              <b>時間偏緊：</b>21:40 抵達、22:10 起飛，中間只有 30 分鐘。跨境航班櫃檯多於起飛前 45–60 分鐘關閉（約 <b>21:10–21:25</b>）。
-              若航空公司要求 60 分鐘前關櫃，建議把出發時間提前到 <b>20:00</b>，或確認是否可線上預辦登機。
+              <b>時間安排：</b>20:40 抵達、22:10 起飛，約有 <b>90 分鐘</b>。跨境航班櫃檯多於起飛前 45–60 分鐘關閉，
+              此時段足夠辦理登機與提貨，但請<b>先辦登機再提貨</b>；若排隊較長，可請地勤協助優先處理。
             </div>
           </div>
         </article>
@@ -1094,79 +1133,97 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
     <div class="sec__head rv">
       <div class="sec__kicker">03　MAP</div>
       <h2 class="sec__title">地理位置與動線</h2>
-      <p class="sec__sub">點選右側地點卡片，地圖會自動移動到該位置；點選地圖標記也會反向標示卡片。虛線為 Day 1 機場進城動線。</p>
+      <p class="sec__sub">底圖可切換高德（標準／衛星）與 OpenStreetMap。點選右側地點卡片，地圖會移動到該位置；點選地圖標記也會反向標示卡片。</p>
     </div>
 
     <div class="mapwrap">
       <div>
         <div class="mapbar rv">
-          <button class="is-on" data-layer="arrival">Day 1 進城動線</button>
-          <button data-layer="all">顯示全部動線</button>
-          <button data-layer="none">隱藏動線</button>
-          <span class="chip chip--time">座標為近似值，實際導航請用高德／滴滴</span>
+          <div class="mapbar__grp">
+            <span class="mapbar__lbl">底圖</span>
+            <button class="is-on" data-base="amap">高德標準</button>
+            <button data-base="amapsat">高德衛星</button>
+            <button data-base="osm">OSM</button>
+          </div>
+          <div class="mapbar__grp">
+            <span class="mapbar__lbl">動線</span>
+            <button class="is-on" data-layer="arrival">Day 1 進城</button>
+            <button data-layer="all">全部</button>
+            <button data-layer="none">隱藏</button>
+            <button data-fit="resort">重設視圖</button>
+          </div>
         </div>
         <div id="map" class="rv"></div>
       </div>
 
       <div class="poilist rv" id="poilist">
-        <button class="poi" data-poi="hotel">
+        <div class="poi" data-poi="hotel" role="button" tabindex="0">
           <span class="poi__dot" style="background:#0f4f5c"></span>
-          <span>
+          <span class="poi__body">
             <span class="poi__n">三亞海棠灣洲際度假酒店</span>
-            <span class="poi__c">住宿據點</span>
+            <span class="poi__c">住宿據點 · 海棠北路 128 號</span>
             <span class="poi__d">本趟行程的中心點。118㎡ 海景套房，含行政酒廊；連廊可步行至免稅城。</span>
+            <a class="poi__go" href="https://uri.amap.com/search?keyword=三亚海棠湾天房洲际度假酒店&amp;city=460200&amp;src=sanya-trip&amp;coordinate=gaode" target="_blank" rel="noopener">在高德地圖開啟 ↗</a>
           </span>
-        </button>
+        </div>
 
-        <button class="poi" data-poi="airport">
+        <div class="poi" data-poi="airport" role="button" tabindex="0">
           <span class="poi__dot" style="background:#e8624a"></span>
-          <span>
+          <span class="poi__body">
             <span class="poi__n">三亞鳳凰國際機場（SYX）</span>
             <span class="poi__c">抵達 / 返程</span>
             <span class="poi__d">CZ3978 抵達於此；Day 3 由此出發飛往香港。往返酒店約 33 km、45–60 分。</span>
+            <a class="poi__go" href="https://uri.amap.com/search?keyword=三亚凤凰国际机场&amp;city=460200&amp;src=sanya-trip&amp;coordinate=gaode" target="_blank" rel="noopener">在高德地圖開啟 ↗</a>
           </span>
-        </button>
+        </div>
 
-        <button class="poi" data-poi="cdf">
+        <div class="poi" data-poi="cdf" role="button" tabindex="0">
           <span class="poi__dot" style="background:#c9a227"></span>
-          <span>
+          <span class="poi__body">
             <span class="poi__n">cdf 三亞國際免稅城</span>
-            <span class="poi__c">購物</span>
+            <span class="poi__c">購物 · 海棠北路 118 號</span>
             <span class="poi__d">酒店專用連廊直達，步行 5–10 分鐘。須於 10/25 16:10 前完成購買。</span>
+            <a class="poi__go" href="https://uri.amap.com/search?keyword=cdf三亚国际免税城&amp;city=460200&amp;src=sanya-trip&amp;coordinate=gaode" target="_blank" rel="noopener">在高德地圖開啟 ↗</a>
           </span>
-        </button>
+        </div>
 
-        <button class="poi" data-poi="atlantis">
+        <div class="poi" data-poi="atlantis" role="button" tabindex="0">
           <span class="poi__dot" style="background:#128b96"></span>
-          <span>
+          <span class="poi__body">
             <span class="poi__n">三亞亞特蘭蒂斯</span>
-            <span class="poi__c">重點行程 · Day 2</span>
+            <span class="poi__c">重點行程 · Day 2 · 海棠北路 36 號</span>
             <span class="poi__d">水世界與水族館所在地，園區內有 Bread Street Kitchen 可晚餐。</span>
+            <a class="poi__go" href="https://uri.amap.com/search?keyword=三亚亚特兰蒂斯&amp;city=460200&amp;src=sanya-trip&amp;coordinate=gaode" target="_blank" rel="noopener">在高德地圖開啟 ↗</a>
           </span>
-        </button>
+        </div>
 
-        <button class="poi" data-poi="food">
+        <div class="poi" data-poi="food" role="button" tabindex="0">
           <span class="poi__dot" style="background:#2f8fd8"></span>
-          <span>
-            <span class="poi__n">海棠68環球美食城</span>
-            <span class="poi__c">餐飲 · Day 1</span>
-            <span class="poi__d">椰小雞·椰子雞所在的美食城，選擇多元，離酒店約 8 分鐘車程。</span>
+          <span class="poi__body">
+            <span class="poi__n">海棠68環球美食街</span>
+            <span class="poi__c">餐飲 · Day 1 · 海棠北路 68 號</span>
+            <span class="poi__d">椰小雞·椰子雞所在的美食街，毗鄰君悅酒店。部分商家提供海棠北路沿線酒店免費接送。</span>
+            <a class="poi__go" href="https://uri.amap.com/search?keyword=海棠68环球美食街&amp;city=460200&amp;src=sanya-trip&amp;coordinate=gaode" target="_blank" rel="noopener">在高德地圖開啟 ↗</a>
           </span>
-        </button>
+        </div>
 
-        <button class="poi" data-poi="wuzhizhou">
+        <div class="poi" data-poi="wuzhizhou" role="button" tabindex="0">
           <span class="poi__dot" style="background:#b06a3b"></span>
-          <span>
+          <span class="poi__body">
             <span class="poi__n">蜈支洲島</span>
             <span class="poi__c">備選行程 · Day 2</span>
             <span class="poi__d">主線外的替代方案，需至碼頭轉乘渡輪登島，建議早上出發。</span>
+            <a class="poi__go" href="https://uri.amap.com/search?keyword=蜈支洲岛&amp;city=460200&amp;src=sanya-trip&amp;coordinate=gaode" target="_blank" rel="noopener">在高德地圖開啟 ↗</a>
           </span>
-        </button>
+        </div>
       </div>
     </div>
 
     <div class="note">
-      標記位置為依公開資料整理的近似座標，僅供理解相對距離與方位；實際叫車與導航請使用滴滴出行或高德地圖。
+      標記座標取自 OpenStreetMap 公開圖資並轉換為<b>高德所用的 GCJ-02 坐標系</b>（與高德 App 顯示一致）；
+      切換至 OSM 底圖時會自動轉回 WGS-84，因此兩種底圖下標記都在正確位置。
+      其中<b>海棠68環球美食街</b>未收錄於 OSM，標記位置依其門牌（海棠北路 68 號）與官方資料所述的鄰居「君悅酒店」推定，誤差可能較大，
+      請以「在高德地圖開啟」的搜尋結果為準。其餘 POI 亦可能有數十至數百米誤差，實際導航請使用高德打車或滴滴出行。
     </div>
   </div>
 </section>
@@ -1256,7 +1313,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
               <td class="num">約 33 km</td>
               <td class="num">45–60 分</td>
               <td class="num">¥120–150</td>
-              <td class="mut">Day 3 返程，建議 20:40 出發</td>
+              <td class="mut">Day 3 返程，建議 19:40 出發</td>
             </tr>
             <tr class="sum">
               <td>實際會用到的網約車（不含備選）</td>
@@ -1295,22 +1352,22 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
     <div class="kpis rv">
       <div class="kpi kpi--main">
         <div class="kpi__k">地面消費合計</div>
-        <div class="kpi__v"><sub>¥</sub>5,322</div>
+        <div class="kpi__v"><sub>¥</sub>6,122</div>
         <div class="kpi__d">不含住宿與免稅購物</div>
       </div>
       <div class="kpi">
         <div class="kpi__k">人均（地面）</div>
-        <div class="kpi__v"><sub>¥</sub>2,661</div>
+        <div class="kpi__v"><sub>¥</sub>3,061</div>
         <div class="kpi__d">2 位成人平分</div>
       </div>
       <div class="kpi">
         <div class="kpi__k">每日平均</div>
-        <div class="kpi__v"><sub>¥</sub>1,774</div>
+        <div class="kpi__v"><sub>¥</sub>2,041</div>
         <div class="kpi__d">以 3 天計</div>
       </div>
       <div class="kpi kpi--gold">
         <div class="kpi__k">含住宿估算合計</div>
-        <div class="kpi__v"><sub>¥</sub>11,722</div>
+        <div class="kpi__v"><sub>¥</sub>12,522</div>
         <div class="kpi__d">含 2 晚套房估算 ¥6,400</div>
       </div>
     </div>
@@ -1339,8 +1396,8 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
               </tr>
               <tr>
                 <td>餐飲</td>
-                <td class="mut">館外 1 餐 ＋ 亞特蘭蒂斯 2 餐 ＋ 飲品（早餐與酒廊輕食已含於房價）</td>
-                <td class="num">¥1,830</td>
+                <td class="mut">館外 1 餐 ＋ 亞特蘭蒂斯 2 餐 ＋ 館內 2 餐 ＋ 飲品（Day 1–2 早餐與酒廊輕食已含於房價；Day 3 退房後全數自費）</td>
+                <td class="num">¥2,630</td>
               </tr>
               <tr>
                 <td>景點門票</td>
@@ -1359,8 +1416,8 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
               </tr>
               <tr class="sum">
                 <td>合計</td>
-                <td class="mut">地面消費 ¥5,322　＋　住宿 ¥6,400</td>
-                <td class="num">¥11,722</td>
+                <td class="mut">地面消費 ¥6,122　＋　住宿 ¥6,400</td>
+                <td class="num">¥12,522</td>
               </tr>
               <tr>
                 <td>免稅購物</td>
@@ -1393,8 +1450,8 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
         </div>
         <div class="bcrow" data-cat="dine">
           <div class="bcrow__n"><i style="background:#c9a227"></i>餐飲</div>
-          <div class="bcrow__track"><div class="bcrow__fill g" data-full="1830" data-ground="1830"></div></div>
-          <div class="bcrow__v" data-full="¥1,830" data-ground="¥1,830">¥1,830</div>
+          <div class="bcrow__track"><div class="bcrow__fill g" data-full="2630" data-ground="2630"></div></div>
+          <div class="bcrow__v" data-full="¥2,630" data-ground="¥2,630">¥2,630</div>
         </div>
         <div class="bcrow" data-cat="ticket">
           <div class="bcrow__n"><i style="background:#e8624a"></i>門票</div>
@@ -1414,7 +1471,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
 
         <div class="bctotal">
           <span id="bcLabel">含住宿估算合計</span>
-          <b id="bcTotal">¥11,722</b>
+          <b id="bcTotal">¥12,522</b>
         </div>
       </div>
     </div>
@@ -1459,7 +1516,8 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
       <div class="card tip rv">
         <div class="tip__i">◎</div>
         <h3>餐飲安排</h3>
-        <p>行政酒廊供應時間為 <b>下午茶 15:00–17:00、Happy Hour 18:00–20:30</b>，早餐亦含於房價，等於三餐有兩餐可在館內解決。</p>
+        <p>行政酒廊供應時間為 <b>下午茶 15:00–17:00、Happy Hour 18:00–20:30</b>，早餐亦含於房價，Day 1 與 Day 2 的晚餐時段可先在酒廊吃輕食墊底。</p>
+        <p><b>注意：10/25 退房時間為 14:00，酒廊禮遇至退房為止。</b>退房當晚的 Happy Hour 與下午茶均不再適用，晚餐須改於館內餐廳自費（濤·海底餐廳自助、天府中餐廳、天津灣餐廳）或到海棠北路一帶用餐。</p>
         <p>館內餐廳建議提前一天訂位，尤其<b>天府中餐廳與濤·海底餐廳</b>假日晚餐時段常滿。館外椰小雞·椰子雞屬人氣店，避開 12:30–13:30 尖峰較省時間。</p>
       </div>
 
@@ -1516,9 +1574,9 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
 
   /* ---------- budget chart toggle ---------- */
   var seg = document.getElementById('seg');
-  var TOTALS = { full: 11722, ground: 5322 };
+  var TOTALS = { full: 12522, ground: 6122 };
   var LABELS = { full: '含住宿估算合計', ground: '地面消費合計（不含住宿）' };
-  var MAX = { full: 6400, ground: 2000 };
+  var MAX = { full: 6400, ground: 2630 };
 
   function paint(mode) {
     var max = MAX[mode];
@@ -1592,38 +1650,75 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
   /* ---------- map ---------- */
   var map = null;
 
+  /* ---- WGS-84 → GCJ-02（火星坐標）----
+     高德／騰訊圖磚使用 GCJ-02；OSM 使用 WGS-84。兩者在三亞相差約 450 公尺，
+     因此標記必須隨底圖切換而換算，否則會明顯偏移。 */
+  var GCJ_A = 6378245.0, GCJ_EE = 0.00669342162296594323;
+
+  function outOfChina(lat, lng) {
+    return !(lng > 73.66 && lng < 135.05 && lat > 3.86 && lat < 53.55);
+  }
+  function gcjLat(x, y) {
+    var r = -100.0 + 2.0 * x + 3.0 * y + 0.2 * y * y + 0.1 * x * y + 0.2 * Math.sqrt(Math.abs(x));
+    r += (20.0 * Math.sin(6.0 * x * Math.PI) + 20.0 * Math.sin(2.0 * x * Math.PI)) * 2.0 / 3.0;
+    r += (20.0 * Math.sin(y * Math.PI) + 40.0 * Math.sin(y / 3.0 * Math.PI)) * 2.0 / 3.0;
+    r += (160.0 * Math.sin(y / 12.0 * Math.PI) + 320.0 * Math.sin(y * Math.PI / 30.0)) * 2.0 / 3.0;
+    return r;
+  }
+  function gcjLng(x, y) {
+    var r = 300.0 + x + 2.0 * y + 0.1 * x * x + 0.1 * x * y + 0.1 * Math.sqrt(Math.abs(x));
+    r += (20.0 * Math.sin(6.0 * x * Math.PI) + 20.0 * Math.sin(2.0 * x * Math.PI)) * 2.0 / 3.0;
+    r += (20.0 * Math.sin(x * Math.PI) + 40.0 * Math.sin(x / 3.0 * Math.PI)) * 2.0 / 3.0;
+    r += (150.0 * Math.sin(x / 12.0 * Math.PI) + 300.0 * Math.sin(x / 30.0 * Math.PI)) * 2.0 / 3.0;
+    return r;
+  }
+  function wgs2gcj(lat, lng) {
+    if (outOfChina(lat, lng)) { return [lat, lng]; }
+    var dLat = gcjLat(lng - 105.0, lat - 35.0);
+    var dLng = gcjLng(lng - 105.0, lat - 35.0);
+    var radLat = lat / 180.0 * Math.PI;
+    var magic = Math.sin(radLat);
+    magic = 1 - GCJ_EE * magic * magic;
+    var sqrtMagic = Math.sqrt(magic);
+    dLat = (dLat * 180.0) / ((GCJ_A * (1 - GCJ_EE)) / (magic * sqrtMagic) * Math.PI);
+    dLng = (dLng * 180.0) / (GCJ_A / sqrtMagic * Math.cos(radLat) * Math.PI);
+    return [lat + dLat, lng + dLng];
+  }
+
+  /* 座標來源：OpenStreetMap 公開圖資＋維基百科（WGS-84） */
   var POIS = [
     {
-      id: 'hotel', ll: [18.3067, 109.7480], color: '#0f4f5c', mark: '宿',
-      name: '三亞海棠灣洲際度假酒店', cat: '住宿據點',
+      id: 'hotel', wgs: [18.3754235, 109.7499747], color: '#0f4f5c', mark: '宿',
+      name: '三亞海棠灣洲際度假酒店', cat: '住宿據點 · 海棠北路 128 號',
       desc: '行程中心點，118㎡ 海景套房，連廊可步行至免稅城。'
     },
     {
-      id: 'airport', ll: [18.3029, 109.4123], color: '#e8624a', mark: '機',
+      id: 'airport', wgs: [18.3051519, 109.4125351], color: '#e8624a', mark: '機',
       name: '三亞鳳凰國際機場（SYX）', cat: '抵達 / 返程',
       desc: 'CZ3978 抵達於此，Day 3 由此飛往香港。往返酒店約 33 km。'
     },
     {
-      id: 'cdf', ll: [18.3115, 109.7460], color: '#c9a227', mark: '購',
-      name: 'cdf 三亞國際免稅城', cat: '購物',
+      id: 'cdf', wgs: [18.3734695, 109.7465523], color: '#c9a227', mark: '購',
+      name: 'cdf 三亞國際免稅城', cat: '購物 · 海棠北路 118 號',
       desc: '酒店專用連廊直達，步行 5–10 分鐘。'
     },
     {
-      id: 'atlantis', ll: [18.3225, 109.7420], color: '#128b96', mark: '水',
-      name: '三亞亞特蘭蒂斯', cat: '重點行程 · Day 2',
-      desc: '水世界與水族館，園區內可晚餐。約 6 km / 10 分。'
+      id: 'atlantis', wgs: [18.3580389, 109.7396551], color: '#128b96', mark: '水',
+      name: '三亞亞特蘭蒂斯', cat: '重點行程 · Day 2 · 海棠北路 36 號',
+      desc: '水世界與水族館，園區內可晚餐。'
     },
     {
-      id: 'food', ll: [18.3250, 109.7380], color: '#2f8fd8', mark: '食',
-      name: '海棠68環球美食城', cat: '餐飲 · Day 1',
-      desc: '椰小雞·椰子雞所在地，約 8 分鐘車程。'
+      id: 'food', wgs: [18.3458391, 109.7357906], color: '#2f8fd8', mark: '食',
+      name: '海棠68環球美食街', cat: '餐飲 · Day 1 · 海棠北路 68 號',
+      desc: '椰小雞·椰子雞所在地，毗鄰君悅酒店。'
     },
     {
-      id: 'wuzhizhou', ll: [18.3128, 109.7623], color: '#b06a3b', mark: '備',
+      id: 'wuzhizhou', wgs: [18.3113515, 109.7618490], color: '#b06a3b', mark: '備',
       name: '蜈支洲島', cat: '備選行程 · Day 2',
-      desc: '主線外的替代方案，需轉乘渡輪登島。'
+      desc: '主線外的替代方案，需至碼頭轉乘渡輪登島。'
     }
   ];
+  POIS.forEach(function (p) { p.gcj = wgs2gcj(p.wgs[0], p.wgs[1]); });
 
   var ROUTES = {
     arrival: [
@@ -1643,6 +1738,10 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
     return null;
   }
 
+  /* 目前使用的坐標系：'gcj' 對應高德底圖，'wgs' 對應 OSM 底圖 */
+  var system = 'gcj';
+  function ll(p) { return system === 'gcj' ? p.gcj : p.wgs; }
+
   var mapEl = document.getElementById('map');
   var cards = document.querySelectorAll('.poi');
 
@@ -1651,21 +1750,30 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
     var p = byId(id);
     if (!p || !map) { return; }
     if (moveMap) {
-      map.flyTo(p.ll, 14, { duration: .7 });
+      map.flyTo(ll(p), 14, { duration: .7 });
       setTimeout(function () { markers[id].openPopup(); }, 620);
     }
   }
 
   function wirePoiCards() {
     cards.forEach(function (c) {
-      c.addEventListener('click', function () { select(c.dataset.poi, true); });
+      c.addEventListener('click', function (e) {
+        if (e.target && e.target.closest && e.target.closest('.poi__go')) { return; }
+        select(c.dataset.poi, true);
+      });
+      c.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          select(c.dataset.poi, true);
+        }
+      });
     });
   }
 
   if (typeof L === 'undefined' || !mapEl) {
     if (mapEl) {
       mapEl.outerHTML = '<div class="mapfall"><div><b>地圖元件未能載入</b><br>' +
-        '本頁地圖需要連線載入 Leaflet 與 OpenStreetMap 圖磚。<br>' +
+        '本頁地圖需要連線載入 Leaflet 與地圖圖磚。<br>' +
         '請確認網路連線後重新整理；左側地點清單仍可正常參考。</div></div>';
     }
     wirePoiCards();
@@ -1673,16 +1781,32 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
   }
 
   map = L.map('map', {
-    center: [18.3120, 109.7000],
-    zoom: 10,
+    center: [18.3400, 109.7200],
+    zoom: 11,
     scrollWheelZoom: false,
     zoomControl: true
   });
 
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; OpenStreetMap contributors'
-  }).addTo(map);
+  var AMAP_ATTR = '&copy; 高德地圖 AutoNavi';
+
+  var baseLayers = {
+    amap: L.tileLayer('https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}', {
+      subdomains: '1234', maxZoom: 18, attribution: AMAP_ATTR
+    }),
+    amapsat: L.layerGroup([
+      L.tileLayer('https://webst0{s}.is.autonavi.com/appmaptile?style=6&x={x}&y={y}&z={z}', {
+        subdomains: '1234', maxZoom: 18, attribution: AMAP_ATTR
+      }),
+      L.tileLayer('https://webst0{s}.is.autonavi.com/appmaptile?style=8&x={x}&y={y}&z={z}', {
+        subdomains: '1234', maxZoom: 18
+      })
+    ]),
+    osm: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19, attribution: '&copy; OpenStreetMap contributors'
+    })
+  };
+
+  baseLayers.amap.addTo(map);
 
   var markers = {};
   var routeLayer = L.layerGroup().addTo(map);
@@ -1695,19 +1819,22 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
       iconAnchor: [13, 13],
       popupAnchor: [0, -14]
     });
-    var m = L.marker(p.ll, { icon: icon, title: p.name }).addTo(map);
+    var m = L.marker(ll(p), { icon: icon, title: p.name }).addTo(map);
     m.bindPopup('<b>' + p.name + '</b><small>' + p.cat + '</small><br>' + p.desc);
     m.on('click', function () { select(p.id, false); });
     markers[p.id] = m;
   });
 
+  var currentRoute = 'arrival';
+
   function drawRoutes(key) {
+    currentRoute = key;
     routeLayer.clearLayers();
     if (key === 'none') { return; }
     (ROUTES[key] || []).forEach(function (r) {
       var a = byId(r.from), b = byId(r.to);
       if (!a || !b) { return; }
-      var line = L.polyline([a.ll, b.ll], {
+      var line = L.polyline([ll(a), ll(b)], {
         color: '#0f4f5c', weight: 2.4, opacity: .78,
         dashArray: '7 7', lineCap: 'round'
       }).addTo(routeLayer);
@@ -1715,9 +1842,31 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
     });
   }
 
-  document.querySelectorAll('.mapbar button').forEach(function (b) {
+  /* 切換底圖：高德用 GCJ-02、OSM 用 WGS-84，標記同步換算 */
+  function setBase(key) {
+    Object.keys(baseLayers).forEach(function (k) {
+      if (k === key) { baseLayers[k].addTo(map); } else { map.removeLayer(baseLayers[k]); }
+    });
+    var sys = (key === 'osm') ? 'wgs' : 'gcj';
+    if (sys !== system) {
+      system = sys;
+      POIS.forEach(function (p) { markers[p.id].setLatLng(ll(p)); });
+      drawRoutes(currentRoute);
+    }
+  }
+
+  document.querySelectorAll('.mapbar button[data-base]').forEach(function (b) {
     b.addEventListener('click', function () {
-      document.querySelectorAll('.mapbar button').forEach(function (x) {
+      document.querySelectorAll('.mapbar button[data-base]').forEach(function (x) {
+        x.classList.toggle('is-on', x === b);
+      });
+      setBase(b.dataset.base);
+    });
+  });
+
+  document.querySelectorAll('.mapbar button[data-layer]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('.mapbar button[data-layer]').forEach(function (x) {
         x.classList.toggle('is-on', x === b);
       });
       drawRoutes(b.dataset.layer);
@@ -1726,6 +1875,18 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
 
   wirePoiCards();
   drawRoutes('arrival');
+
+  /* 預設視圖聚焦度假區（含備選的蜈支洲島）；機場在 36 km 外，點卡片即可前往 */
+  var FIT_IDS = ['hotel', 'cdf', 'atlantis', 'food', 'wuzhizhou'];
+  function fitResort() {
+    var pts = POIS.filter(function (p) { return FIT_IDS.indexOf(p.id) >= 0; }).map(ll);
+    map.fitBounds(L.latLngBounds(pts), { padding: [46, 46], maxZoom: 14 });
+  }
+  fitResort();
+
+  document.querySelectorAll('.mapbar button[data-fit]').forEach(function (b) {
+    b.addEventListener('click', function () { fitResort(); });
+  });
 
   window.addEventListener('resize', function () {
     if (map) { setTimeout(function () { map.invalidateSize(); }, 120); }
