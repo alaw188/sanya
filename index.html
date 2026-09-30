@@ -319,12 +319,12 @@ table{border-collapse:collapse;width:100%}
 .poi__n{display:block;font-size:14.5px;font-weight:700;line-height:1.45}
 .poi__c{display:block;font-size:12px;color:var(--ink-mute);margin-top:2px;letter-spacing:.03em}
 .poi__d{display:block;font-size:12.5px;color:var(--ink-soft);margin-top:6px;line-height:1.6}
-.poi__go{
+.poi__go,.ev__go{
   display:inline-block;margin-top:9px;font-size:12.5px;font-weight:600;
   color:var(--teal);border-bottom:1px solid rgba(18,139,150,.35);
   padding-bottom:1px;transition:.18s;
 }
-.poi__go:hover{color:var(--sea-700);border-bottom-color:var(--sea-700)}
+.poi__go:hover,.ev__go:hover{color:var(--sea-700);border-bottom-color:var(--sea-700)}
 .mk{
   width:26px;height:26px;border-radius:50%;border:2.5px solid #fff;
   display:grid;place-items:center;color:#fff;font-size:11.5px;font-weight:700;
@@ -661,10 +661,11 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
         <ul class="tick">
           <li><span><b>節奏</b>：鬆弛度假為主，搭配重點景點打卡，不排滿。</span></li>
           <li><span><b>餐飲</b>：酒店內餐廳與館外在地餐廳各半，兼顧方便與風味。</span></li>
-          <li><span><b>Day 2</b>：亞特蘭蒂斯<b>水族館</b>（只排館、不玩水世界），午後回酒店用酒廊、泳池與免稅城。</span></li>
-          <li><span><b>免稅</b>：cdf 三亞國際免稅城，以酒店專用連廊步行前往。</span></li>
+          <li><span><b>Day 1 20:00</b>：cdf 三亞國際免稅城，<b>一次購齊</b>（酒店專用連廊步行前往）。</span></li>
+          <li><span><b>Day 2</b>：亞特蘭蒂斯<b>水族館</b>（只排館、不玩水世界），午後回酒店用酒廊與泳池。</span></li>
+          <li><span><b>Day 2 21:00</b>：後海村沙灘酒吧，把一天延長到 24:00。</span></li>
           <li><span><b>Day 3 09:30</b>：酒店 SPA 療程，安排於最後一個上午。</span></li>
-          <li><span><b>Day 3 14:00</b>：退房（酒廊禮遇至退房為止，晚餐改於館內餐廳自費）。</span></li>
+          <li><span><b>Day 3 14:00</b>：退房後到<b>南田溫泉</b>（酒廊禮遇至退房為止，晚餐改於館內餐廳自費）。</span></li>
           <li><span><b>Day 3 全天</b>：留在海棠灣，不進市區。</span></li>
           <li><span><b>蜈支洲島</b>：僅列為 Day 2 備選方案，不排入主線。</span></li>
         </ul>
@@ -676,7 +677,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
           <li><span><b>全程預設網約車</b>：滴滴出行 / 高德打車，最快路線優先，不為省錢妥協。</span></li>
           <li><span><b>唯一例外</b>：cdf 免稅城 — 走酒店專用連廊，步行 5–10 分鐘即達。</span></li>
           <li><span><b>不建議公交</b>：班次疏落，攜行李不便，時間不可控。</span></li>
-          <li><span><b>機場往返</b>：約 33 公里，45–60 分鐘，¥120–150。</span></li>
+          <li><span><b>機場往返</b>：約 40 公里，50–60 分鐘，¥120–150。</span></li>
         </ul>
         <div class="warn">
           <b>海域提醒：</b>海棠灣海況較為洶湧，<b>不建議下海游泳</b>，想玩水請以酒店泳池為主。
@@ -710,8 +711,8 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
         </div>
         <div class="dayhead__stats">
           <div class="dstat">節奏<b>輕鬆</b></div>
-          <div class="dstat">網約車<b>2 段</b></div>
-          <div class="dstat">夜間至<b>24:00</b></div>
+          <div class="dstat">網約車<b>3 段</b></div>
+          <div class="dstat">免稅<b>今晚一次購齊</b></div>
         </div>
       </div>
 
@@ -750,11 +751,11 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
               <div class="ev__time">11:30</div>
               <div class="ev__t">網約車：SYX 機場 → 海棠灣洲際酒店</div>
             </div>
-            <p class="ev__p">走 G98 環島高速東線，全程約 <b>33 公里</b>，直達酒店大堂。這是全趟最長的一段地面交通。</p>
+            <p class="ev__p">走 G98 環島高速東線，全程約 <b>40 公里</b>，直達酒店大堂。這是全趟最長的一段地面交通。</p>
             <div class="chips">
               <span class="chip chip--mode">🚗 網約車</span>
-              <span class="chip">約 33 km</span>
-              <span class="chip chip--time">45–60 分</span>
+              <span class="chip">約 40 km</span>
+              <span class="chip chip--time">50–60 分</span>
               <span class="chip chip--cost">¥120–150</span>
             </div>
           </div>
@@ -778,14 +779,16 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
           <div class="ev__in">
             <div class="ev__top">
               <div class="ev__time">13:10</div>
-              <div class="ev__t">午餐：椰小雞 · 椰子雞（海棠68環球美食城）</div>
+              <div class="ev__t">午餐：椰小雞 · 椰子雞（海棠68環球美食街）</div>
             </div>
-            <p class="ev__p">海南經典椰子雞火鍋，湯底清甜，落機第一餐不油不膩。位於海棠68環球美食城，選擇多、離酒店近。</p>
+            <p class="ev__p">海南經典椰子雞火鍋，湯底清甜，落機第一餐不油不膩。位於海棠68環球美食街一樓，營業 <b>11:30–23:30</b>，選擇多、離酒店近。</p>
             <div class="chips">
               <span class="chip chip--mode">🚗 網約車</span>
               <span class="chip chip--time">約 8 分</span>
               <span class="chip chip--cost">人均約 ¥90</span>
+              <span class="chip chip--time">營業 11:30–23:30</span>
             </div>
+            <a class="ev__go" href="https://uri.amap.com/search?keyword=椰小鸡·椰子鸡(海棠68环球美食街店)&amp;city=460200&amp;src=sanya-trip&amp;coordinate=gaode" target="_blank" rel="noopener">在高德地圖查看店鋪 ↗</a>
           </div>
         </article>
 
@@ -793,7 +796,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
           <div class="ev__in">
             <div class="ev__top">
               <div class="ev__time">15:00</div>
-              <div class="ev__t">入駐海景套房 ＋ 行政酒廊下午茶</div>
+              <div class="ev__t">入住海景套房 ＋ 行政酒廊下午茶</div>
             </div>
             <p class="ev__p">1 Bedroom Suite Ocean View，<b>118㎡</b> 含陽台海景。安頓好行李後直接上酒廊用下午茶（<b>15:00–17:00</b>），順便補齊今日飲水與小食。</p>
             <div class="chips">
@@ -823,7 +826,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
               <div class="ev__time">18:00</div>
               <div class="ev__t">行政酒廊 Happy Hour（18:00–20:30）</div>
             </div>
-            <p class="ev__p">酒水與輕食供應至 20:30，份量足以當作輕晚餐，抵達首日不必再外出覓食，把體力留給明天。</p>
+            <p class="ev__p">酒水與輕食供應至 20:30，先吃一輪墊底，20:00 前後動身去免稅城。<b>今天的晚餐就以酒廊輕食為主</b>，把胃留給採購後的一杯。</p>
             <div class="chips">
               <span class="chip">含於房價</span>
               <span class="chip chip--time">18:00–20:30</span>
@@ -831,32 +834,18 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
           </div>
         </article>
 
-        <article class="ev rv">
+        <article class="ev ev--coral rv">
           <div class="ev__in">
             <div class="ev__top">
               <div class="ev__time">20:00</div>
-              <div class="ev__t">步行至 cdf 三亞國際免稅城踩點</div>
+              <div class="ev__t">cdf 三亞國際免稅城：免稅採購　<span class="badge badge--hi">重點</span></div>
             </div>
-            <p class="ev__p">走酒店<b>專用連廊</b>，步行 5–10 分鐘即達。今晚只做三件事：比價、鎖定清單、確認取貨方式。正式購買留到 Day 3，避免提著戰利品跑行程。</p>
+            <p class="ev__p">走酒店<b>專用連廊</b>，步行 5–10 分鐘即達。<b>這是本次唯一的免稅行程</b>，營業至 22:00，約有 2 小時慢慢試、慢慢比。購買時備妥<b>護照與航班資訊</b>，商品於回程當日在機場提貨，不必自己拎。採購完若還有精神，可順路到免稅城二期的不二民謠喝一杯再回去。</p>
             <div class="chips">
               <span class="chip chip--walk">🚶 步行 5–10 分</span>
-              <span class="chip chip--cost">¥0</span>
-              <span class="chip">比價與鎖定清單</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="ev ev--gold rv">
-          <div class="ev__in">
-            <div class="ev__top">
-              <div class="ev__time">21:30</div>
-              <div class="ev__t">不二民謠音樂餐酒吧（免稅城二期 L1-41）</div>
-            </div>
-            <p class="ev__p">落機首夜的微醺收尾。酒吧就在免稅城二期，<b>走酒店連廊即到、完全不必叫車</b>，民謠現場配上城市花園風格，是海棠灣最有度假感的一杯。想早點休息也可以直接跳過。</p>
-            <div class="chips">
-              <span class="chip chip--walk">🚶 步行 5–12 分</span>
-              <span class="chip chip--cost">人均約 ¥150</span>
-              <span class="chip chip--time">營業至約 24:00</span>
+              <span class="chip chip--time">營業至 22:00</span>
+              <span class="chip chip--cost">配額 ¥100,000／人／年</span>
+              <span class="chip">機場提貨</span>
             </div>
           </div>
         </article>
@@ -867,12 +856,12 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
     <div class="day" data-day="2" role="tabpanel">
       <div class="dayhead">
         <div class="dayhead__l">
-          <h3>Day 2 · 10 月 24 日（六）亞特蘭蒂斯水族館 · 度假與購物</h3>
-          <p>只排<b>水族館</b>、不玩水世界；午後回到酒店用酒廊、泳池與免稅城，晚上可延續到 24:00。</p>
+          <h3>Day 2 · 10 月 24 日（六）亞特蘭蒂斯水族館 · 度假與夜生活</h3>
+          <p>只排<b>水族館</b>、不玩水世界；午後回酒店用酒廊與泳池，晚上到後海村把一天延長到 24:00。</p>
         </div>
         <div class="dayhead__stats">
           <div class="dstat">節奏<b>輕鬆</b></div>
-          <div class="dstat">網約車<b>2 段</b></div>
+          <div class="dstat">網約車<b>4 段</b></div>
           <div class="dstat">夜間至<b>24:00</b></div>
         </div>
       </div>
@@ -898,10 +887,10 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
               <div class="ev__time">09:40</div>
               <div class="ev__t">網約車：酒店 → 亞特蘭蒂斯</div>
             </div>
-            <p class="ev__p">約 <b>6 公里</b>，10 分鐘直達，是這三天最短的一段跨點交通。提早 20 分鐘出發可避開入場人潮。</p>
+            <p class="ev__p">約 <b>4 公里</b>，10 分鐘直達，是這三天最短的一段跨點交通。提早 20 分鐘出發可避開入場人潮。</p>
             <div class="chips">
               <span class="chip chip--mode">🚗 網約車</span>
-              <span class="chip">約 6 km</span>
+              <span class="chip">約 4 km</span>
               <span class="chip chip--time">約 10 分</span>
               <span class="chip chip--cost">¥25–35</span>
             </div>
@@ -921,6 +910,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
               <span class="chip chip--time">建議停留約 2 小時</span>
               <span class="chip chip--hi">不玩水世界</span>
             </div>
+            <a class="ev__go" href="https://www.atlantissanya.com/marine-and-waterpark/the-lost-chambers-aquarium" target="_blank" rel="noopener">水族館官網（失落的空間 The Lost Chambers）↗</a>
           </div>
         </article>
 
@@ -930,12 +920,13 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
               <div class="ev__time">12:15</div>
               <div class="ev__t">午餐：Gordon Ramsay Bread Street Kitchen（亞特蘭蒂斯）</div>
             </div>
-            <p class="ev__p">就在亞特蘭蒂斯園區內，看完水族館直接吃，省掉一趟往返車程。週六時段較滿，<b>建議提早訂位</b>。</p>
+            <p class="ev__p">就在亞特蘭蒂斯園區內，看完水族館直接吃，省掉一趟往返車程。Gordon Ramsay 內地首店，落地窗外即是海景。週六時段較滿，<b>建議提早訂位</b>。</p>
             <div class="chips">
               <span class="chip chip--cost">人均約 ¥400</span>
               <span class="chip chip--time">約 90 分</span>
               <span class="chip">建議訂位</span>
             </div>
+            <a class="ev__go" href="https://www.atlantissanya.com/restaurants-and-bars/bread-street-kitchen-and-bar" target="_blank" rel="noopener">餐廳官網與菜單 ↗</a>
           </div>
         </article>
 
@@ -959,10 +950,10 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
               <div class="ev__time">15:00</div>
               <div class="ev__t">網約車返回酒店 · 行政酒廊下午茶（15:00–17:00）</div>
             </div>
-            <p class="ev__p">約 10 分鐘回到酒店，正好接上酒廊下午茶。之後可到泳池或海景陽台放空，這是退房前最後一段完整的度假時間。</p>
+            <p class="ev__p">約 10 分鐘回到酒店，正好接上酒廊下午茶。免稅已在 Day 1 買齊，今天下午完全屬於度假本身。</p>
             <div class="chips">
               <span class="chip chip--mode">🚗 網約車</span>
-              <span class="chip">約 6 km</span>
+              <span class="chip">約 4 km</span>
               <span class="chip chip--time">約 10 分</span>
               <span class="chip chip--cost">¥25–35</span>
               <span class="chip">下午茶含於房價</span>
@@ -973,14 +964,13 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
         <article class="ev rv">
           <div class="ev__in">
             <div class="ev__top">
-              <div class="ev__time">16:30</div>
-              <div class="ev__t">步行 cdf 三亞國際免稅城：比價與採購</div>
+              <div class="ev__time">17:00</div>
+              <div class="ev__t">泳池與海景陽台</div>
             </div>
-            <p class="ev__p">走酒店<b>專用連廊</b>，步行 5–10 分鐘。今天有充足時間慢慢試、慢慢比，<b>先把確定要買的買起來</b>，Day 3 只需補貨與確認提貨，退房日的壓力會小很多。</p>
+            <p class="ev__p">本行程唯一完整的泳池時段（Day 1 傍晚只有散步）。游一輪、沖個澡，回陽台看最後一次海棠灣的黃昏。</p>
             <div class="chips">
-              <span class="chip chip--walk">🚶 步行 5–10 分</span>
-              <span class="chip chip--cost">配額 ¥100,000／人／年</span>
-              <span class="chip">機場提貨</span>
+              <span class="chip chip--time">約 60 分</span>
+              <span class="chip chip--hi">⚠ 不下海游泳</span>
             </div>
           </div>
         </article>
@@ -988,10 +978,10 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
         <article class="ev ev--gold rv">
           <div class="ev__in">
             <div class="ev__top">
-              <div class="ev__time">18:30</div>
-              <div class="ev__t">行政酒廊 Happy Hour（18:00–20:30）輕食晚餐</div>
+              <div class="ev__time">18:00</div>
+              <div class="ev__t">行政酒廊 Happy Hour（18:00–20:30）晚餐</div>
             </div>
-            <p class="ev__p">酒水與輕食供應至 20:30，今天晚餐就用酒廊解決，省下外出時間。若想吃正式一點，可改海棠68環球美食街（車程約 8 分）。</p>
+            <p class="ev__p">酒水與輕食供應至 20:30，今天晚餐就用酒廊解決，<b>為晚上的後海村留一點胃</b>。若想吃正式一點，可改海棠68環球美食街（車程約 8 分）。</p>
             <div class="chips">
               <span class="chip">含於房價</span>
               <span class="chip chip--time">18:00–20:30</span>
@@ -999,28 +989,30 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
           </div>
         </article>
 
-        <article class="ev ev--gold rv">
+        <article class="ev ev--coral rv">
           <div class="ev__in">
             <div class="ev__top">
-              <div class="ev__time">21:30</div>
-              <div class="ev__t">夜生活：後海村沙灘酒吧　or　酒店池畔吧</div>
+              <div class="ev__time">21:00</div>
+              <div class="ev__t">夜生活：後海村沙灘酒吧　<span class="badge badge--hi">重點</span></div>
             </div>
-            <p class="ev__p">想把夜晚延長到 <b>24:00</b>，就叫車去<b>後海村</b>——沙灘上的 DT 沙灘酒吧與後海·集合 GHO BAR 腳下是沙、面前是海，21:00 後氣氛最好。不想再出門，就留在酒店池畔吧或大堂酒吧喝最後一杯，零交通成本。</p>
+            <p class="ev__p">把夜晚延長到 <b>24:00</b> 的主力安排——叫車去<b>後海村</b>，沙灘上的 DT 沙灘酒吧與後海·集合 GHO BAR 腳下是沙、面前是海，21:00 後氣氛最好。不想再出門，就留在酒店池畔吧或大堂酒吧喝最後一杯，省下這段車程。</p>
             <div class="chips">
               <span class="chip chip--mode">🚗 網約車 18–22 分</span>
               <span class="chip chip--time">營業至約 24:00</span>
               <span class="chip">回程建議預約叫車</span>
+              <span class="chip">替代：酒店池畔吧 ¥0</span>
             </div>
+            <a class="ev__go" href="https://uri.amap.com/search?keyword=后海DT沙滩酒吧&amp;city=460200&amp;src=sanya-trip&amp;coordinate=gaode" target="_blank" rel="noopener">在高德地圖查看 DT 沙灘酒吧 ↗</a>
           </div>
         </article>
       </div>
 
       <div class="alt">
         <div class="alt__t">Day 2 備選方案 <span>BACK-UP</span></div>
-        <p>水族館只佔用上午約 2 小時，下午其實有餘裕。想加碼可把<u>下午</u>換掉，晚上照原計畫回到免稅城與酒廊；想整天換掉也可以。</p>
+        <p>水族館只佔用上午約 2 小時，下午其實有餘裕。想加碼可把<u>下午</u>換掉，晚上照原計畫去後海村；想整天換掉也可以。</p>
         <ul>
-          <li><b>蜈支洲島</b>（整日）：直線 7.2 km、車程約 18 分至後海碼頭，再轉乘渡輪登島。建議 09:00 前出發避開登島人潮。</li>
-          <li><b>後海村衝浪</b>（半日）：直線 11.5 km、車程約 18–22 分。新手也玩得起來，可接傍晚的沙灘酒吧。</li>
+          <li><b>蜈支洲島</b>（整日）：島距直線 7.2 km，至後海碼頭車程約 18 分，再轉乘渡輪登島。建議 09:00 前出發避開登島人潮。</li>
+          <li><b>後海村衝浪</b>（半日）：直線 11.5 km、車程約 18–22 分。新手也玩得起來，可順接晚上的沙灘酒吧。</li>
           <li><b>南田溫泉</b>（半日）：直線約 5 km、車程約 12–15 分。雨天備案首選，記得帶泳衣。</li>
           <li>若改為整日行程，建議把水族館移到 Day 3 上午並順延 SPA，否則時間不足。</li>
         </ul>
@@ -1032,12 +1024,12 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
     <div class="day" data-day="3" role="tabpanel">
       <div class="dayhead">
         <div class="dayhead__l">
-          <h3>Day 3 · 10 月 25 日（日）SPA · 免稅購物 · 返程</h3>
-          <p>上午 SPA 與午餐，14:00 退房後完成免稅購物，晚餐後前往機場。</p>
+          <h3>Day 3 · 10 月 25 日（日）SPA · 溫泉 · 返程</h3>
+          <p>上午 SPA 與午餐，14:00 退房後到南田溫泉泡掉最後一個午後，晚餐後前往機場。</p>
         </div>
         <div class="dayhead__stats">
           <div class="dstat">退房<b>14:00</b></div>
-          <div class="dstat">購物截止<b>16:10</b></div>
+          <div class="dstat">午後<b>南田溫泉</b></div>
           <div class="dstat">酒店出發<b>19:40</b></div>
         </div>
       </div>
@@ -1090,11 +1082,12 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
               <div class="ev__time">12:30</div>
               <div class="ev__t">午餐：天府中餐廳（館內）</div>
             </div>
-            <p class="ev__p">留在館內用餐，省下往返時間。天府中餐廳走粵式與海南本地菜，退房前吃一頓正式的午餐。</p>
+            <p class="ev__p">留在館內用餐，省下往返時間。天府中餐廳走粵式與海南本地菜，約 120 席另有 6 間獨立包廂，退房前吃一頓正式的午餐。</p>
             <div class="chips">
               <span class="chip chip--cost">人均約 ¥175</span>
               <span class="chip chip--time">約 75 分</span>
             </div>
+            <a class="ev__go" href="https://www.ihg.com/intercontinental/hotels/cn/zh/sanya/syxic/hoteldetail/dining" target="_blank" rel="noopener">洲際官網餐飲頁（含各餐廳菜單與訂位）↗</a>
           </div>
         </article>
 
@@ -1116,28 +1109,29 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
         <article class="ev ev--coral rv">
           <div class="ev__in">
             <div class="ev__top">
-              <div class="ev__time">14:20</div>
-              <div class="ev__t">cdf 三亞國際免稅城購物　<span class="badge badge--hi">重點</span></div>
+              <div class="ev__time">14:30</div>
+              <div class="ev__t">南田溫泉：最後一個午後　<span class="badge badge--hi">重點</span></div>
             </div>
-            <p class="ev__p">走酒店專用連廊步行前往。<b>關鍵時限：須於起飛前 6 小時完成購買</b>，即 <b>16:10 前</b>結帳完畢。購買時備妥護照與登機資訊，商品於機場提貨。</p>
+            <p class="ev__p">行李寄存禮賓部後叫車前往（車程約 12–15 分）。池區散布在天然椰林中，一池一景，泡到 <b>17:00</b> 左右返回。泳衣 Day 1 就帶著，這裡正好用上；記得<span>泡完沖澡再換機場裝束</span>。</p>
             <div class="chips">
-              <span class="chip chip--walk">🚶 步行 5–10 分</span>
-              <span class="chip chip--hi">16:10 前完成購買</span>
-              <span class="chip chip--cost">配額 ¥100,000／人／年</span>
-              <span class="chip">機場提貨</span>
+              <span class="chip chip--mode">🚗 網約車 12–15 分</span>
+              <span class="chip chip--cost">門票約 ¥198（線上約 ¥128）</span>
+              <span class="chip chip--time">約 2 小時</span>
+              <span class="chip">位置約略</span>
             </div>
+            <a class="ev__go" href="https://uri.amap.com/search?keyword=珠江南田温泉&amp;city=460200&amp;src=sanya-trip&amp;coordinate=gaode" target="_blank" rel="noopener">在高德地圖查看南田溫泉 ↗</a>
           </div>
         </article>
 
         <article class="ev rv">
           <div class="ev__in">
             <div class="ev__top">
-              <div class="ev__time">16:20</div>
-              <div class="ev__t">返回酒店休息 · 行李續存禮賓部</div>
+              <div class="ev__time">17:15</div>
+              <div class="ev__t">返回酒店 · 沖澡換裝 · 核對提貨單據</div>
             </div>
-            <p class="ev__p">購物交由免稅城配送／機場提貨，不必自己拎。退房後泳池與酒廊已不可使用，可在酒店大堂、咖啡座或庭園休息，整理相片、核對提貨單據。</p>
+            <p class="ev__p">回酒店先到禮賓部確認行李，再利用房客淋浴間或更衣設施沖澡換裝（退房後泳池與酒廊已不可使用）。順手核對 Day 1 的免稅提貨單據是否齊全。</p>
             <div class="chips">
-              <span class="chip chip--time">約 1 小時 40 分</span>
+              <span class="chip chip--mode">🚗 網約車 12–15 分</span>
               <span class="chip">確認提貨單據</span>
               <span class="chip chip--hi">泳池與酒廊已停用</span>
             </div>
@@ -1150,12 +1144,13 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
               <div class="ev__time">18:00</div>
               <div class="ev__t">晚餐：濤·海底餐廳（酒店海鮮自助）</div>
             </div>
-            <p class="ev__p">退房後酒廊輕食已不適用，改在館內正式用餐。濤·海底餐廳為酒店招牌海鮮自助，適合當作餞別晚餐；想吃得輕巧一點可改天津灣餐廳（B1 全日餐廳，人均約 ¥175）。<b>建議提前訂位。</b></p>
+            <p class="ev__p">退房後酒廊輕食已不適用，改在館內正式用餐。濤·海底餐廳是國內少見的<b>海洋餐廳</b>——用餐時魚群從頭頂游過，還有水中美人魚表演，適合當作餞別晚餐；想吃得輕巧一點可改天津灣餐廳（B1 全日餐廳，人均約 ¥175）。<b>建議提前訂位。</b></p>
             <div class="chips">
               <span class="chip chip--cost">人均約 ¥400</span>
               <span class="chip chip--time">約 90 分</span>
               <span class="chip chip--hi">需自費・建議訂位</span>
             </div>
+            <a class="ev__go" href="https://www.ihg.com/intercontinental/hotels/cn/zh/sanya/syxic/hoteldetail/dining" target="_blank" rel="noopener">洲際官網餐飲頁（含各餐廳菜單與訂位）↗</a>
           </div>
         </article>
 
@@ -1165,11 +1160,11 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
               <div class="ev__time">19:40</div>
               <div class="ev__t">禮賓部取回行李 → 網約車前往 SYX 機場</div>
             </div>
-            <p class="ev__p">約 <b>33 公里</b>，45–60 分鐘。請提前 20–30 分鐘於 App 預約叫車，或請禮賓部代叫；這個時段路面順暢，但仍請預留緩衝。</p>
+            <p class="ev__p">約 <b>40 公里</b>，50–60 分鐘。請提前 20–30 分鐘於 App 預約叫車，或請禮賓部代叫；這個時段路面順暢，但仍請預留緩衝。</p>
             <div class="chips">
               <span class="chip chip--mode">🚗 網約車</span>
-              <span class="chip">約 33 km</span>
-              <span class="chip chip--time">45–60 分</span>
+              <span class="chip">約 40 km</span>
+              <span class="chip chip--time">50–60 分</span>
               <span class="chip chip--cost">¥120–150</span>
             </div>
           </div>
@@ -1207,6 +1202,17 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
           </div>
         </article>
       </div>
+
+      <div class="alt">
+        <div class="alt__t">Day 3 午後備選 <span>OPTIONS</span></div>
+        <p>退房後到晚餐前約有 <b>3 小時空檔</b>，行李寄存禮賓部、免稅已在 Day 1 購齊，這段時間怎麼用完全看體力。預設排南田溫泉，可換成以下其一：</p>
+        <ul>
+          <li><b>後海村海灘漫步</b>（免費，車程約 18–22 分）：坐在沙灘上看海、喝咖啡，比 Day 2 晚上酒吧更安靜的一種體驗。</li>
+          <li><b>水稻國家公園</b>（4A，車程約 15–18 分）：2,800 畝稻田與恐龍科普步道，走起來輕鬆、不用下水。</li>
+          <li><b>留在酒店</b>：大堂咖啡座或庭園休息，整理相片、核對 Day 1 的免稅提貨單據，最省力也最準時。</li>
+        </ul>
+        <p style="margin-top:10px">三者都必須在 <b>17:30 前</b>回到酒店，才有時間沖澡、換裝並準時上車。</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1228,9 +1234,9 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
       <article class="card spot rv">
         <div class="spot__top">
           <h4>蜈支洲島 <span class="lvl">5A</span></h4>
-          <span class="spot__dist">直線 7.2 km　·　約 18 分</span>
+          <span class="spot__dist">島距直線 7.2 km　·　至碼頭約 18 分</span>
         </div>
-        <p class="spot__lead">海南最負盛名的海島景區，面積僅 1.48 平方公里，海水能見度可達 6–27 公尺，被稱作「中國的馬爾地夫」。環島潛水、情人橋與觀日岩是主要看點。</p>
+        <p class="spot__lead">海南最負盛名的海島景區，面積僅 1.48 平方公里，海水能見度可達 6–27 公尺，被稱作「中國的馬爾代夫」。環島潛水、情人橋與觀日岩是主要看點。</p>
         <div class="spot__dl">
           <div><span class="k">歷史</span><span class="v">古稱「古崎洲」「牛奇洲」，標準地名為牛奇洲。人文記載可追溯至清代，光緒年間道人吳華存曾在島上建有「海上涵三觀」庵堂。</span></div>
           <div><span class="k">實用</span><span class="v">營業 08:30–19:30，上島至 16:00、下島至 19:30（另有 21:00 夜間班次）。門票含往返船票約 ¥133–144。建議早上出發避開人潮，船班受海況影響會臨時調整。</span></div>
@@ -1257,7 +1263,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
         <p class="spot__lead">位於海棠灣海岸南部入口，佔地 2,800 畝、其中稻田約 2,100 畝，以稻田生態為主體，結合農耕、稻作文化與科普教育，並設有恐龍科普步道與夜遊場次。</p>
         <div class="spot__dl">
           <div><span class="k">亮點</span><span class="v">袁隆平水稻科研基地、稻田景觀、恐龍科普步道。想避開日曬或帶長輩同行時很合適。</span></div>
-          <div><span class="k">實用</span><span class="v">08:30–18:00（售票至 17:30），另有夜場。門票線上約 ¥20 起。</span></div>
+          <div><span class="k">實用</span><span class="v">08:30–18:00（售票至 17:30），另有夜場。門票線上約 ¥20 起（該數字來自 2022 年資料，可能已調整，請以現場為準）。</span></div>
         </div>
       </article>
 
@@ -1284,7 +1290,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
         <p class="spot__lead">建在亞龍灣國家旅遊度假區山脊上的森林公園，可俯瞰整個亞龍灣。招牌是「過江龍索橋」（情人橋）、懸崖邊的峭壁天池，以及近期開放的全海景玻璃棧橋。</p>
         <div class="spot__dl">
           <div><span class="k">歷史</span><span class="v">因電影《非誠勿擾 II》主要取景而聲名大噪，片中的試婚房與鳥巢度假村至今仍是熱門打卡點。</span></div>
-          <div><span class="k">實用</span><span class="v">07:30–18:00（17:30 停止入園）。10/1–4/30 為旺季：門票 ¥108 ＋ 往返遊覽車 ¥50 ＝ ¥158／人；淡季 ¥140。園區大且坡度陡，強烈建議加購遊覽車票。</span></div>
+          <div><span class="k">實用</span><span class="v">約 07:30–18:00（17:30 停止入園；各來源略有出入，以現場為準）。10/1–4/30 為旺季：門票 ¥108 ＋ 往返遊覽車 ¥50 ＝ ¥158／人；淡季 ¥140。園區大且坡度陡，強烈建議加購遊覽車票。</span></div>
         </div>
       </article>
 
@@ -1307,7 +1313,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
         </div>
         <p class="spot__lead">因兩側森林層巒疊嶂、中間是一條延綿數千米的檳榔谷地而得名。由非遺村、甘什黎村、谷銀苗家、田野黎家、《檳榔·古韻》實景演出、蘭花小木屋與黎苗風味美食街七大區構成。</p>
         <div class="spot__dl">
-          <div><span class="k">歷史</span><span class="v">景區創建於 1993 年、1995 年開業，是海南黎族與苗族傳統「三月三」及「七夕嬉水節」的主要活動場所之一。</span></div>
+          <div><span class="k">歷史</span><span class="v">景區於 1995 年 10 月開業（創建年份各方記載不一，1993 或 1998 皆有出處），是海南黎族與苗族傳統「三月三」及「七夕嬉水節」的主要活動場所之一。</span></div>
           <div><span class="k">實用</span><span class="v">園內展示十項國家級非物質文化遺產，其中「黎族傳統紡染織繡技藝」被聯合國教科文組織列入非物質文化遺產急需保護名錄。門票旺季（10/1–4/30）¥96、淡季 ¥80。想理解海南本土文化，這一站最值得。</span></div>
         </div>
       </article>
@@ -1374,8 +1380,9 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
         </div>
         <p class="spot__lead">海棠灣最新的民謠 live 餐酒吧，落址於三亞國際免稅城二期 L1-41。城市花園風格，綠植藤編配上椰風樹影，是「野奢海島度假感」路線的微醺選擇。</p>
         <div class="spot__dl">
-          <div><span class="k">推薦</span><span class="v">距離酒店最近的夜生活選項，走酒店連廊即到，完全不必叫車。適合 Day 1 落機後想輕鬆喝一杯的夜晚。</span></div>
-          <div><span class="k">實用</span><span class="v">餐酒人均約 ¥150。民謠現場演出多在晚間，營業至 24:00 前後。</span></div>
+          <div><span class="k">推薦</span><span class="v">距離酒店最近的夜生活選項，就在 Day 1 免稅採購的同一座免稅城內，採購完順路喝一杯即可，不必叫車。</span></div>
+          <div><span class="k">實用</span><span class="v">餐酒人均約 ¥150。民謠現場演出多在晚間，營業至 24:00 前後。<b>尚無官方網站</b>，菜單與評價見大眾點評／美團。</span></div>
+          <div><span class="k">連結</span><span class="v"><a class="ev__go" href="https://uri.amap.com/search?keyword=不二·民谣音乐餐酒吧(三亚国际免税城店)&amp;city=460200&amp;src=sanya-trip&amp;coordinate=gaode" target="_blank" rel="noopener">在高德地圖查看店鋪 ↗</a></span></div>
         </div>
       </article>
 
@@ -1386,8 +1393,9 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
         </div>
         <p class="spot__lead">開在衝浪村沙灘上的 beach bar，腳下是沙、面前是海，聽著浪聲喝一杯，是海棠灣最有度假感的一夜。21:00 之後氣氛最好。</p>
         <div class="spot__dl">
-          <div><span class="k">推薦</span><span class="v">Day 2 下午若加遊衝浪，晚上可直接留下來；或單純從酒店叫車過來，把夜晚延長到 24:00。</span></div>
-          <div><span class="k">實用</span><span class="v">回程叫車較慢，建議離場前 20–30 分鐘先於 App 預約。</span></div>
+          <div><span class="k">推薦</span><span class="v">已排入 Day 2 晚上，是全行程唯一「把一天延長到 24:00」的安排。若想白天加遊衝浪，晚上可直接留在村內。</span></div>
+          <div><span class="k">實用</span><span class="v">回程叫車較慢，建議離場前 20–30 分鐘先於 App 預約。<b>均無官方網站</b>，店鋪資訊與酒單見大眾點評／美團。</span></div>
+          <div><span class="k">連結</span><span class="v"><a class="ev__go" href="https://uri.amap.com/search?keyword=后海DT沙滩酒吧&amp;city=460200&amp;src=sanya-trip&amp;coordinate=gaode" target="_blank" rel="noopener">DT 沙灘酒吧 ↗</a>　<a class="ev__go" href="https://uri.amap.com/search?keyword=后海·集合GHO BAR&amp;city=460200&amp;src=sanya-trip&amp;coordinate=gaode" target="_blank" rel="noopener">後海·集合 GHO BAR ↗</a></span></div>
         </div>
       </article>
 
@@ -1466,7 +1474,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
           <span class="poi__body">
             <span class="poi__n">三亞鳳凰國際機場（SYX）</span>
             <span class="poi__c">抵達 / 返程</span>
-            <span class="poi__d">CZ3978 抵達於此；Day 3 由此出發飛往香港。往返酒店約 33 km、45–60 分。</span>
+            <span class="poi__d">CZ3978 抵達於此；Day 3 由此出發飛往香港。往返酒店約 40 km、50–60 分。</span>
             <a class="poi__go" href="https://uri.amap.com/search?keyword=三亚凤凰国际机场&amp;city=460200&amp;src=sanya-trip&amp;coordinate=gaode" target="_blank" rel="noopener">在高德地圖開啟 ↗</a>
           </span>
         </div>
@@ -1476,7 +1484,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
           <span class="poi__body">
             <span class="poi__n">cdf 三亞國際免稅城</span>
             <span class="poi__c">購物 · 海棠北路 118 號</span>
-            <span class="poi__d">酒店專用連廊直達，步行 5–10 分鐘。須於 10/25 16:10 前完成購買。</span>
+            <span class="poi__d">酒店專用連廊直達，步行 5–10 分鐘。本次免稅採購已排定於 Day 1 晚間一次完成。</span>
             <a class="poi__go" href="https://uri.amap.com/search?keyword=cdf三亚国际免税城&amp;city=460200&amp;src=sanya-trip&amp;coordinate=gaode" target="_blank" rel="noopener">在高德地圖開啟 ↗</a>
           </span>
         </div>
@@ -1548,31 +1556,39 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
             <tr>
               <td>SYX 機場 → 海棠灣洲際酒店</td>
               <td><span class="chip chip--mode">🚗 網約車</span></td>
-              <td class="num">約 33 km</td>
-              <td class="num">45–60 分</td>
+              <td class="num">約 40 km</td>
+              <td class="num">50–60 分</td>
               <td class="num">¥120–150</td>
               <td class="mut">Day 1 進城，走 G98 東線高速</td>
             </tr>
             <tr>
-              <td>酒店 → 海棠68環球美食城</td>
+              <td>酒店 → 海棠68環球美食街</td>
               <td><span class="chip chip--mode">🚗 網約車</span></td>
-              <td class="num">約 3 km</td>
+              <td class="num">約 4 km</td>
               <td class="num">約 8 分</td>
               <td class="num">¥15–20</td>
-              <td class="mut">Day 1 午餐來回</td>
+              <td class="mut">Day 1 午餐</td>
             </tr>
             <tr>
-              <td>酒店 → cdf 三亞國際免稅城</td>
+              <td>海棠68環球美食街 → 酒店</td>
+              <td><span class="chip chip--mode">🚗 網約車</span></td>
+              <td class="num">約 4 km</td>
+              <td class="num">約 8 分</td>
+              <td class="num">¥15–20</td>
+              <td class="mut">Day 1 午餐回程</td>
+            </tr>
+            <tr>
+              <td>酒店 ↔ cdf 三亞國際免稅城</td>
               <td><span class="chip chip--walk">🚶 步行</span></td>
               <td class="num">連廊</td>
               <td class="num">5–10 分</td>
               <td class="num">¥0</td>
-              <td class="mut">酒店專用連廊，免叫車</td>
+              <td class="mut">Day 1 免稅採購，酒店專用連廊</td>
             </tr>
             <tr>
               <td>酒店 → 三亞亞特蘭蒂斯</td>
               <td><span class="chip chip--mode">🚗 網約車</span></td>
-              <td class="num">約 6 km</td>
+              <td class="num">約 4 km</td>
               <td class="num">約 10 分</td>
               <td class="num">¥25–35</td>
               <td class="mut">Day 2 去程</td>
@@ -1580,18 +1596,42 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
             <tr>
               <td>亞特蘭蒂斯 → 酒店</td>
               <td><span class="chip chip--mode">🚗 網約車</span></td>
-              <td class="num">約 6 km</td>
+              <td class="num">約 4 km</td>
               <td class="num">約 10 分</td>
               <td class="num">¥25–35</td>
-              <td class="mut">Day 2 晚餐後回程</td>
+              <td class="mut">Day 2 午後回程</td>
             </tr>
             <tr>
-              <td>酒店 → 南田溫泉<span class="tagopt">備選</span></td>
+              <td>酒店 → 後海村</td>
               <td><span class="chip chip--mode">🚗 網約車</span></td>
-              <td class="num">約 10 km</td>
-              <td class="num">約 15 分</td>
+              <td class="num">約 15 km</td>
+              <td class="num">18–22 分</td>
+              <td class="num">¥45–60</td>
+              <td class="mut">Day 2 夜間沙灘酒吧</td>
+            </tr>
+            <tr>
+              <td>後海村 → 酒店</td>
+              <td><span class="chip chip--mode">🚗 網約車</span></td>
+              <td class="num">約 15 km</td>
+              <td class="num">18–22 分</td>
+              <td class="num">¥45–60</td>
+              <td class="mut">Day 2 夜間回程，建議預約</td>
+            </tr>
+            <tr>
+              <td>酒店 → 南田溫泉</td>
+              <td><span class="chip chip--mode">🚗 網約車</span></td>
+              <td class="num">約 8 km</td>
+              <td class="num">12–15 分</td>
               <td class="num">¥35–50</td>
-              <td class="mut">雨天備案；營業 09:00–23:00</td>
+              <td class="mut">Day 3 午後；營業約 09:00–23:00</td>
+            </tr>
+            <tr>
+              <td>南田溫泉 → 酒店</td>
+              <td><span class="chip chip--mode">🚗 網約車</span></td>
+              <td class="num">約 8 km</td>
+              <td class="num">12–15 分</td>
+              <td class="num">¥35–50</td>
+              <td class="mut">Day 3 回程</td>
             </tr>
             <tr>
               <td>酒店 → 蜈支洲島碼頭<span class="tagopt">備選</span></td>
@@ -1604,17 +1644,17 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
             <tr>
               <td>海棠灣洲際酒店 → SYX 機場</td>
               <td><span class="chip chip--mode">🚗 網約車</span></td>
-              <td class="num">約 33 km</td>
-              <td class="num">45–60 分</td>
+              <td class="num">約 40 km</td>
+              <td class="num">50–60 分</td>
               <td class="num">¥120–150</td>
               <td class="mut">Day 3 返程，建議 19:40 出發</td>
             </tr>
             <tr class="sum">
-              <td>實際會用到的網約車（不含備選）</td>
-              <td colspan="2">6 段</td>
-              <td class="num">約 2 小時 20 分</td>
-              <td class="num">約 ¥420</td>
-              <td class="mut">估算值</td>
+              <td>實際會用到的網約車（不含步行與備選）</td>
+              <td colspan="2">10 段</td>
+              <td class="num">約 3 小時 50 分</td>
+              <td class="num">約 ¥630</td>
+              <td class="mut">取各段區間<b>上限</b>估算</td>
             </tr>
           </tbody>
         </table>
@@ -1628,7 +1668,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
       </div>
       <div class="card panel rv">
         <h3 class="panel__t gold"><i>◎</i>預約建議</h3>
-        <p style="font-size:14.5px;color:var(--ink-soft)">機場往返與 Day 2 回程建議提前 20–30 分鐘於 App 預約，避免夜間等車。海棠灣一帶網約車供應充足，日間通常 3–5 分鐘內有車。<b>請使用 App 內支付</b>，不必與司機現金議價。</p>
+        <p style="font-size:14.5px;color:var(--ink-soft)">機場往返與 Day 2 後海村夜間往返建議提前 20–30 分鐘於 App 預約，避免夜間等車。海棠灣一帶網約車供應充足，日間通常 3–5 分鐘內有車。<b>請使用 App 內支付</b>，不必與司機現金議價。若 Day 2 改留酒店池畔吧、Day 3 不去溫泉，可各省下一趟往返。</p>
       </div>
     </div>
   </div>
@@ -1646,22 +1686,22 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
     <div class="kpis rv">
       <div class="kpi kpi--main">
         <div class="kpi__k">地面消費合計</div>
-        <div class="kpi__v"><sub>¥</sub>5,646</div>
+        <div class="kpi__v"><sub>¥</sub>5,856</div>
         <div class="kpi__d">不含住宿與免稅購物</div>
       </div>
       <div class="kpi">
         <div class="kpi__k">人均（地面）</div>
-        <div class="kpi__v"><sub>¥</sub>2,823</div>
+        <div class="kpi__v"><sub>¥</sub>2,928</div>
         <div class="kpi__d">2 位成人平分</div>
       </div>
       <div class="kpi">
         <div class="kpi__k">每日平均</div>
-        <div class="kpi__v"><sub>¥</sub>1,882</div>
+        <div class="kpi__v"><sub>¥</sub>1,952</div>
         <div class="kpi__d">以 3 天計</div>
       </div>
       <div class="kpi kpi--gold">
         <div class="kpi__k">含住宿估算合計</div>
-        <div class="kpi__v"><sub>¥</sub>12,046</div>
+        <div class="kpi__v"><sub>¥</sub>12,256</div>
         <div class="kpi__d">含 2 晚套房估算 ¥6,400</div>
       </div>
     </div>
@@ -1700,8 +1740,8 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
               </tr>
               <tr>
                 <td>交通</td>
-                <td class="mut">網約車 6 段（機場來回 ＋ 亞特蘭蒂斯來回 ＋ 海棠68 來回）</td>
-                <td class="num">¥420</td>
+                <td class="mut">網約車 10 段（機場來回 ＋ 海棠68 來回 ＋ 亞特蘭蒂斯來回 ＋ 後海村夜間來回 ＋ 南田溫泉來回），取各段上限</td>
+                <td class="num">¥630</td>
               </tr>
               <tr>
                 <td>雜項</td>
@@ -1710,8 +1750,8 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
               </tr>
               <tr class="sum">
                 <td>合計</td>
-                <td class="mut">地面消費 ¥5,646　＋　住宿 ¥6,400</td>
-                <td class="num">¥12,046</td>
+                <td class="mut">地面消費 ¥5,856　＋　住宿 ¥6,400</td>
+                <td class="num">¥12,256</td>
               </tr>
               <tr>
                 <td>免稅購物</td>
@@ -1754,8 +1794,8 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
         </div>
         <div class="bcrow" data-cat="trans">
           <div class="bcrow__n"><i style="background:#2f8fd8"></i>交通</div>
-          <div class="bcrow__track"><div class="bcrow__fill b" data-full="420" data-ground="420"></div></div>
-          <div class="bcrow__v" data-full="¥420" data-ground="¥420">¥420</div>
+          <div class="bcrow__track"><div class="bcrow__fill b" data-full="630" data-ground="630"></div></div>
+          <div class="bcrow__v" data-full="¥630" data-ground="¥630">¥630</div>
         </div>
         <div class="bcrow" data-cat="misc">
           <div class="bcrow__n"><i style="background:#9ab3b9"></i>雜項</div>
@@ -1765,7 +1805,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
 
         <div class="bctotal">
           <span id="bcLabel">含住宿估算合計</span>
-          <b id="bcTotal">¥12,046</b>
+          <b id="bcTotal">¥12,256</b>
         </div>
       </div>
     </div>
@@ -1796,8 +1836,8 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
       <div class="card tip rv">
         <div class="tip__i">◈</div>
         <h3>免稅購物要點</h3>
-        <p>離島免稅配額為每人每年 <b>¥100,000</b>。最重要的一條：<b>須於航班起飛前 6 小時完成購買</b>，以 22:10 起飛計算，也就是 <b>10/25 16:10 前</b>結帳。</p>
-        <p>購買時需出示護照與航班資訊，商品於機場指定提貨點領取。請保留提貨單，並預留提貨排隊時間。</p>
+        <p>離島免稅配額為每人每年 <b>¥100,000</b>。最重要的一條：<b>須於航班起飛前 6 小時完成購買</b>，以 22:10 起飛計算，也就是 <b>10/25 16:10 前</b>結帳。<b>本行程已把採購安排在 Day 1 晚間一次購齊</b>，離該時限整整一天，回程只需到機場提貨。</p>
+        <p>購買時需出示護照與航班資訊，商品於機場指定提貨點領取。請保留提貨單，並預留提貨排隊時間；Day 1 採購完請將提貨單據收好，Day 3 離開酒店前再核對一次。</p>
       </div>
 
       <div class="card tip rv">
@@ -1812,7 +1852,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
         <h3>餐飲安排</h3>
         <p>行政酒廊供應時間為 <b>下午茶 15:00–17:00、Happy Hour 18:00–20:30</b>，早餐亦含於房價，Day 1 與 Day 2 的晚餐時段可先在酒廊吃輕食墊底。</p>
         <p><b>注意：10/25 退房時間為 14:00，酒廊禮遇至退房為止。</b>退房當晚的 Happy Hour 與下午茶均不再適用，晚餐須改於館內餐廳自費（濤·海底餐廳自助、天府中餐廳、天津灣餐廳）或到海棠北路一帶用餐。</p>
-        <p>館內餐廳建議提前一天訂位，尤其<b>天府中餐廳與濤·海底餐廳</b>假日晚餐時段常滿。館外椰小雞·椰子雞屬人氣店，避開 12:30–13:30 尖峰較省時間。</p>
+        <p>館內餐廳建議提前一天訂位，尤其<b>天府中餐廳與濤·海底餐廳</b>假日晚餐時段常滿；兩者的菜單與訂位可從洲際官網的餐飲頁查詢。館外椰小雞·椰子雞屬人氣店（營業 11:30–23:30），避開 12:30–13:30 尖峰較省時間；其與免稅城二期的不二民謠<b>皆無官方網站</b>，菜單與評價請見大眾點評／美團。</p>
       </div>
 
       <div class="card tip rv">
@@ -1868,7 +1908,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
 
   /* ---------- budget chart toggle ---------- */
   var seg = document.getElementById('seg');
-  var TOTALS = { full: 12046, ground: 5646 };
+  var TOTALS = { full: 12256, ground: 5856 };
   var LABELS = { full: '含住宿估算合計', ground: '地面消費合計（不含住宿）' };
   var MAX = { full: 6400, ground: 2630 };
 
@@ -1989,7 +2029,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
     {
       id: 'airport', wgs: [18.3051519, 109.4125351], color: '#e8624a', mark: '機',
       name: '三亞鳳凰國際機場（SYX）', cat: '抵達 / 返程',
-      desc: 'CZ3978 抵達於此，Day 3 由此飛往香港。往返酒店約 33 km。'
+      desc: 'CZ3978 抵達於此，Day 3 由此飛往香港。往返酒店約 40 km。'
     },
     {
       id: 'cdf', wgs: [18.3734695, 109.7465523], color: '#c9a227', mark: '購',
@@ -2018,9 +2058,9 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
      tier 僅用於標記配色：near 近郊／mid 經典／far 順遊。 */
   var TIER_COLOR = { near: '#0f8a6a', mid: '#7b6cb0', far: '#a8553f' };
   var SCENIC = [
-    { id: 'houhai', wgs: [18.2746668, 109.7256060], mark: '浪', tier: 'near', name: '後海村', cat: '近郊 · 衝浪漁村（免費）', desc: '直線 11.5 km　·　車程約 18–22 分' },
+    { id: 'houhai', wgs: [18.2746668, 109.7256060], mark: '浪', tier: 'near', name: '後海村', cat: 'Day 2 夜 · 衝浪漁村（免費）', desc: '直線 11.5 km　·　車程約 18–22 分' },
     { id: 'rice', wgs: [18.3220721, 109.6842921], mark: '稻', tier: 'near', name: '三亞水稻國家公園', cat: '近郊 · 4A', desc: '直線 9.1 km　·　車程約 15–18 分' },
-    { id: 'nantian', wgs: [18.4200000, 109.7500000], mark: '泉', tier: 'near', name: '南田溫泉', cat: '近郊 · 位置約略', desc: '直線約 5 km　·　車程約 12–15 分' },
+    { id: 'nantian', wgs: [18.4200000, 109.7500000], mark: '泉', tier: 'near', name: '南田溫泉', cat: 'Day 3 午後 · 位置約略', desc: '直線約 5 km　·　車程約 12–15 分' },
     { id: 'yalong', wgs: [18.2530556, 109.6396240], mark: '林', tier: 'mid', name: '亞龍灣熱帶天堂森林公園', cat: '經典 · 4A', desc: '直線 17.9 km　·　車程約 30–35 分' },
     { id: 'yanoda', wgs: [18.4619138, 109.6424221], mark: '雨', tier: 'mid', name: '呀諾達雨林文化旅遊區', cat: '經典 · 5A', desc: '直線 14.9 km　·　車程約 30–35 分' },
     { id: 'binglang', wgs: [18.4011974, 109.6594906], mark: '寨', tier: 'mid', name: '檳榔谷黎苗文化旅遊區', cat: '經典 · 5A', desc: '直線 10.0 km　·　車程約 25–30 分' },
@@ -2036,13 +2076,13 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
 
   var ROUTES = {
     arrival: [
-      { from: 'airport', to: 'hotel', label: 'SYX → 酒店　33 km / 45–60 分' }
+      { from: 'airport', to: 'hotel', label: 'SYX → 酒店　約 40 km / 50–60 分' }
     ],
     all: [
-      { from: 'airport', to: 'hotel', label: 'SYX → 酒店　33 km / 45–60 分' },
-      { from: 'hotel', to: 'atlantis', label: '酒店 ↔ 亞特蘭蒂斯　6 km / 10 分' },
+      { from: 'airport', to: 'hotel', label: 'SYX → 酒店　約 40 km / 50–60 分' },
+      { from: 'hotel', to: 'atlantis', label: '酒店 ↔ 亞特蘭蒂斯　約 4 km / 10 分' },
       { from: 'hotel', to: 'cdf', label: '酒店 → 免稅城　步行 5–10 分' },
-      { from: 'hotel', to: 'food', label: '酒店 ↔ 海棠68　3 km / 8 分' },
+      { from: 'hotel', to: 'food', label: '酒店 ↔ 海棠68　約 4 km / 8 分' },
       { from: 'hotel', to: 'wuzhizhou', label: '酒店 → 蜈支洲島（備選）' }
     ]
   };
