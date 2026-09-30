@@ -20,7 +20,6 @@
   --coral:#e8624a;
   --coral-soft:#fdece9;
   --blue:#2f8fd8;
-  --blue-soft:#e9f2fb;
   --ink:#0d1f24;
   --ink-soft:#4d6f76;
   --ink-mute:#7b979d;
@@ -49,9 +48,9 @@ table{border-collapse:collapse;width:100%}
 
 /* ---------- utility ---------- */
 .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
-.sec{padding:72px 0;border-top:1px solid var(--line)}
+.sec{padding:54px 0;border-top:1px solid var(--line)}
 .sec:first-of-type{border-top:0}
-.sec__head{margin-bottom:28px}
+.sec__head{margin-bottom:22px}
 .sec__kicker{
   display:inline-block;font-size:12px;font-weight:700;letter-spacing:.16em;
   color:var(--teal);background:var(--aqua-soft);border-radius:999px;
@@ -105,7 +104,7 @@ table{border-collapse:collapse;width:100%}
   background-image:
     repeating-linear-gradient(115deg,rgba(255,255,255,.045) 0 1px,transparent 1px 42px);
 }
-.hero__in{position:relative;z-index:2;padding:66px 0 60px}
+.hero__in{position:relative;z-index:2;padding:52px 0 48px}
 .hero__tag{
   display:inline-flex;align-items:center;gap:9px;
   font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;
@@ -129,7 +128,7 @@ table{border-collapse:collapse;width:100%}
 .hc{
   background:rgba(255,255,255,.075);
   border:1px solid rgba(255,255,255,.16);
-  border-radius:var(--r);padding:17px 18px;
+  border-radius:var(--r);padding:14px 16px;
   backdrop-filter:blur(5px);transition:.22s;
 }
 .hc:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
@@ -158,12 +157,12 @@ table{border-collapse:collapse;width:100%}
 .chip--hi{background:var(--coral-soft);color:#a8402c;border-color:#f5c9c1}
 
 /* ---------- overview ---------- */
-.grid-2{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
-.grid-ov{display:grid;gap:18px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.grid-2{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(330px,1fr))}
+.grid-ov{display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,1fr))}
 @media (max-width:860px){.grid-ov{grid-template-columns:1fr}}
-.panel{padding:24px}
+.panel{padding:20px}
 .panel__t{
-  font-size:16.5px;display:flex;align-items:center;gap:10px;margin-bottom:18px;
+  font-size:16px;display:flex;align-items:center;gap:9px;margin-bottom:14px;
 }
 .panel__t i{
   width:30px;height:30px;border-radius:9px;display:grid;place-items:center;
@@ -175,7 +174,7 @@ table{border-collapse:collapse;width:100%}
   display:grid;gap:1px;background:var(--line);border:1px solid var(--line);
   border-radius:var(--r-sm);overflow:hidden;font-size:14.5px;
 }
-.kv__r{background:var(--card);padding:12px 15px}
+.kv__r{background:var(--card);padding:10px 13px}
 .kv__k{font-size:11.5px;color:var(--ink-mute);letter-spacing:.06em;font-weight:700}
 .kv__v{font-weight:600;margin-top:4px;line-height:1.6}
 .kv__v small{display:block;font-weight:400;color:var(--ink-mute);font-size:12.5px;margin-top:4px;line-height:1.55}
@@ -196,12 +195,12 @@ table{border-collapse:collapse;width:100%}
 
 /* ---------- itinerary ---------- */
 .daytabs{
-  display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px;
+  display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;
   background:var(--card);border:1px solid var(--line);border-radius:999px;
-  padding:6px;box-shadow:var(--shadow);width:fit-content;max-width:100%;
+  padding:5px;box-shadow:var(--shadow);width:fit-content;max-width:100%;
 }
 .daytabs button{
-  padding:9px 20px;border-radius:999px;font-size:14.5px;font-weight:600;
+  padding:8px 18px;border-radius:999px;font-size:14.5px;font-weight:600;
   color:var(--ink-soft);transition:.2s;white-space:nowrap;
 }
 .daytabs button:hover{background:#f0f6f7;color:var(--sea-700)}
@@ -214,23 +213,23 @@ table{border-collapse:collapse;width:100%}
 @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .dayhead{
   display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;
-  padding:18px 22px;border-radius:var(--r);margin-bottom:26px;
+  padding:15px 19px;border-radius:var(--r);margin-bottom:20px;
   background:linear-gradient(120deg,var(--sea-800),var(--sea-600));color:#fff;
 }
-.dayhead__l h3{font-size:19px;letter-spacing:.03em}
+.dayhead__l h3{font-size:18px;letter-spacing:.03em}
 .dayhead__l p{font-size:13.5px;color:rgba(255,255,255,.74);margin-top:4px}
 .dayhead__stats{display:flex;gap:22px;flex-wrap:wrap}
 .dstat{font-size:12px;color:rgba(255,255,255,.66);letter-spacing:.06em}
 .dstat b{display:block;font-size:16px;color:var(--aqua);letter-spacing:.02em}
 
-.tl{position:relative;padding-left:34px}
+.tl{position:relative;padding-left:30px}
 .tl::before{
-  content:"";position:absolute;left:11px;top:10px;bottom:14px;width:2px;
+  content:"";position:absolute;left:9px;top:10px;bottom:14px;width:2px;
   background:linear-gradient(180deg,var(--aqua),var(--line) 88%);border-radius:2px;
 }
-.ev{position:relative;margin-bottom:14px}
+.ev{position:relative;margin-bottom:10px}
 .ev::before{
-  content:"";position:absolute;left:-29px;top:22px;width:11px;height:11px;
+  content:"";position:absolute;left:-26px;top:18px;width:10px;height:10px;
   border-radius:50%;background:#fff;border:2.5px solid var(--teal);
   box-shadow:0 0 0 4px var(--bg);z-index:2;
 }
@@ -238,21 +237,21 @@ table{border-collapse:collapse;width:100%}
 .ev--coral::before{border-color:var(--coral)}
 .ev__in{
   background:var(--card);border:1px solid var(--line);border-left:3px solid var(--aqua);
-  border-radius:var(--r);padding:17px 20px;box-shadow:var(--shadow);
+  border-radius:var(--r);padding:13px 16px;box-shadow:var(--shadow);
   transition:.22s;
 }
 .ev--gold .ev__in{border-left-color:var(--gold)}
 .ev--coral .ev__in{border-left-color:var(--coral)}
 .ev__in:hover{transform:translateX(3px);box-shadow:var(--shadow-lg)}
-.ev__top{display:flex;flex-wrap:wrap;gap:10px;align-items:baseline}
+.ev__top{display:flex;flex-wrap:wrap;gap:9px;align-items:baseline}
 .ev__time{
-  font-size:15px;font-weight:700;color:var(--sea-700);
+  font-size:14.5px;font-weight:700;color:var(--sea-700);
   font-variant-numeric:tabular-nums;letter-spacing:.02em;
 }
 .ev--gold .ev__time{color:#9a7a08}
 .ev--coral .ev__time{color:#c04a34}
-.ev__t{font-size:16.5px;font-weight:700;flex:1 1 auto;min-width:200px}
-.ev__p{font-size:14.5px;color:var(--ink-soft);margin-top:8px;line-height:1.74}
+.ev__t{font-size:15.5px;font-weight:700;flex:1 1 auto;min-width:200px}
+.ev__p{font-size:14px;color:var(--ink-soft);margin-top:6px;line-height:1.7}
 .ev__p b{color:var(--ink);font-weight:600}
 .badge{
   font-size:11.5px;font-weight:700;letter-spacing:.08em;padding:2px 9px;
@@ -260,7 +259,7 @@ table{border-collapse:collapse;width:100%}
 }
 .badge--hi{background:var(--coral);color:#fff}
 .alt{
-  margin-top:26px;padding:20px 22px;border-radius:var(--r);
+  margin-top:20px;padding:16px 18px;border-radius:var(--r);
   background:var(--gold-soft);border:1px dashed #e0c76f;
 }
 .alt__t{font-size:15.5px;font-weight:700;color:#8a6c07;display:flex;gap:9px;align-items:center}
@@ -275,15 +274,15 @@ table{border-collapse:collapse;width:100%}
 
 /* ---------- map ---------- */
 .mapwrap{
-  display:grid;gap:18px;grid-template-columns:minmax(0,1.62fr) minmax(0,1fr);
+  display:grid;gap:16px;grid-template-columns:minmax(0,1.62fr) minmax(0,1fr);
 }
 @media (max-width:900px){.mapwrap{grid-template-columns:1fr}}
 #map{
-  height:520px;border-radius:var(--r);overflow:hidden;
+  height:470px;border-radius:var(--r);overflow:hidden;
   border:1px solid var(--line);box-shadow:var(--shadow);background:#dfeef0;z-index:1;
 }
 .mapfall{
-  height:520px;border-radius:var(--r);border:1px dashed var(--line);
+  height:470px;border-radius:var(--r);border:1px dashed var(--line);
   display:grid;place-items:center;text-align:center;padding:30px;
   background:#f0f6f7;color:var(--ink-soft);font-size:14px;
 }
@@ -305,9 +304,9 @@ table{border-collapse:collapse;width:100%}
 .mapbar button.is-on{background:var(--sea-700);border-color:var(--sea-700);color:#fff}
 .poilist{display:grid;gap:10px;align-content:start}
 .poi{
-  display:flex;gap:12px;align-items:flex-start;text-align:left;width:100%;
+  display:flex;gap:11px;align-items:flex-start;text-align:left;width:100%;
   background:var(--card);border:1px solid var(--line);border-radius:var(--r-sm);
-  padding:13px 15px;box-shadow:var(--shadow);transition:.2s;cursor:pointer;
+  padding:11px 13px;box-shadow:var(--shadow);transition:.2s;cursor:pointer;
 }
 .poi:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
 .poi:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
@@ -330,6 +329,10 @@ table{border-collapse:collapse;width:100%}
   width:26px;height:26px;border-radius:50%;border:2.5px solid #fff;
   display:grid;place-items:center;color:#fff;font-size:11.5px;font-weight:700;
   box-shadow:0 3px 9px rgba(6,43,51,.42);letter-spacing:0;
+}
+.mk--sm{
+  width:21px;height:21px;border-width:2px;font-size:10.5px;opacity:.94;
+  box-shadow:0 2px 6px rgba(6,43,51,.34);
 }
 .leaflet-popup-content{font-family:inherit;margin:12px 15px;font-size:13.5px;line-height:1.62}
 .leaflet-popup-content b{font-size:14.5px;display:block;margin-bottom:3px}
@@ -358,10 +361,10 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
 }
 
 /* ---------- budget ---------- */
-.kpis{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(178px,1fr));margin-bottom:26px}
-.kpi{padding:19px 20px;border-radius:var(--r);background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow)}
-.kpi__k{font-size:12px;letter-spacing:.11em;color:var(--ink-mute);font-weight:700}
-.kpi__v{font-size:clamp(22px,3vw,27px);font-weight:700;margin-top:8px;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.kpis{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(172px,1fr));margin-bottom:20px}
+.kpi{padding:15px 17px;border-radius:var(--r);background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow)}
+.kpi__k{font-size:11.5px;letter-spacing:.11em;color:var(--ink-mute);font-weight:700}
+.kpi__v{font-size:clamp(21px,2.8vw,26px);font-weight:700;margin-top:6px;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
 .kpi__v sub{font-size:14px;font-weight:600;vertical-align:baseline;color:var(--ink-mute);margin-right:2px}
 .kpi__d{font-size:12.5px;color:var(--ink-mute);margin-top:5px}
 .kpi--main{background:linear-gradient(135deg,var(--sea-800),var(--sea-600));border-color:transparent;color:#fff}
@@ -373,9 +376,9 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
 .kpi--gold .kpi__v sub{color:rgba(255,255,255,.75)}
 .kpi--gold .kpi__d{color:rgba(255,255,255,.7)}
 
-.bc{padding:24px}
-.bc__head{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:20px}
-.bc__head h3{font-size:16.5px}
+.bc{padding:20px}
+.bc__head{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:16px}
+.bc__head h3{font-size:16px}
 .seg{display:flex;background:#eef5f6;border-radius:999px;padding:4px;gap:3px}
 .seg button{
   font-size:13px;padding:6px 15px;border-radius:999px;color:var(--ink-soft);
@@ -410,9 +413,54 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
 }
 .bctotal b{font-size:20px;color:var(--sea-700);font-variant-numeric:tabular-nums}
 
+/* ---------- scenic spots ---------- */
+.group{
+  display:flex;align-items:center;gap:11px;
+  font-size:15px;letter-spacing:.04em;margin:24px 0 13px;
+}
+.group:first-of-type{margin-top:0}
+.group span{
+  font-size:11.5px;font-weight:700;letter-spacing:.1em;color:var(--teal);
+  background:var(--aqua-soft);border-radius:999px;padding:3px 10px;
+}
+.group--gold span{color:#8a6c07;background:var(--gold-soft)}
+.group--gold{color:#8a6c07}
+.group::after{content:"";flex:1 1 auto;height:1px;background:var(--line)}
+
+.spots{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(330px,1fr))}
+.spot{padding:16px 17px;position:relative;overflow:hidden}
+.spot::before{
+  content:"";position:absolute;top:0;left:0;width:100%;height:2.5px;
+  background:linear-gradient(90deg,var(--teal),var(--aqua));
+}
+.spot--mid::before{background:linear-gradient(90deg,#4a3f7a,#7b6cb0)}
+.spot--far::before{background:linear-gradient(90deg,#7a3d2c,#a8553f)}
+.spot--bar::before{background:linear-gradient(90deg,#a8860f,var(--gold))}
+.spot__top{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline;justify-content:space-between}
+.spot__top h4{font-size:15px;display:flex;align-items:center;gap:7px;flex:1 1 auto}
+.lvl{
+  font-size:10.5px;font-weight:700;letter-spacing:.05em;white-space:nowrap;
+  background:var(--sea-700);color:#fff;border-radius:4px;padding:1.5px 6px;
+}
+.lvl--4a{background:#5b7d8a}
+.lvl--free{background:var(--teal)}
+.spot__dist{
+  font-size:11.5px;color:var(--ink-mute);white-space:nowrap;
+  font-variant-numeric:tabular-nums;letter-spacing:.01em;
+}
+.spot__lead{font-size:13.5px;color:var(--ink-soft);margin-top:8px;line-height:1.66}
+.spot__dl{margin-top:10px;display:grid;gap:6px}
+.spot__dl > div{display:flex;gap:9px;align-items:flex-start;font-size:13px;line-height:1.62}
+.spot__dl .k{
+  flex:0 0 auto;width:42px;font-size:11.5px;font-weight:700;color:var(--teal);
+  letter-spacing:.05em;padding-top:1px;
+}
+.spot--bar .spot__dl .k{color:var(--gold)}
+.spot__dl .v{flex:1 1 auto;color:var(--ink-soft);min-width:0}
+
 /* ---------- tips ---------- */
-.tips{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(292px,1fr))}
-.tip{padding:22px;position:relative;overflow:hidden}
+.tips{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(288px,1fr))}
+.tip{padding:18px;position:relative;overflow:hidden}
 .tip::before{
   content:"";position:absolute;top:0;left:0;width:100%;height:3px;
   background:linear-gradient(90deg,var(--teal),var(--aqua));
@@ -420,8 +468,8 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
 .tip:nth-child(3n+2)::before{background:linear-gradient(90deg,#a8860f,var(--gold))}
 .tip:nth-child(3n+3)::before{background:linear-gradient(90deg,#b8432c,var(--coral))}
 .tip__i{
-  width:36px;height:36px;border-radius:11px;display:grid;place-items:center;
-  background:var(--aqua-soft);color:var(--teal);font-size:17px;margin-bottom:13px;
+  width:32px;height:32px;border-radius:10px;display:grid;place-items:center;
+  background:var(--aqua-soft);color:var(--teal);font-size:16px;margin-bottom:11px;
 }
 .tip:nth-child(3n+2) .tip__i{background:var(--gold-soft);color:var(--gold)}
 .tip:nth-child(3n+3) .tip__i{background:var(--coral-soft);color:var(--coral)}
@@ -479,6 +527,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
     <div class="nav__brand">三亞・海棠灣<span>2026.10.23–10.25</span></div>
     <a href="#overview">概覽</a>
     <a href="#itinerary">行程</a>
+    <a href="#spots">景點</a>
     <a href="#map">地圖</a>
     <a href="#transport">交通</a>
     <a href="#budget">預算</a>
@@ -662,7 +711,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
         <div class="dayhead__stats">
           <div class="dstat">節奏<b>輕鬆</b></div>
           <div class="dstat">網約車<b>2 段</b></div>
-          <div class="dstat">館內外餐飲<b>1 + 酒廊</b></div>
+          <div class="dstat">夜間至<b>24:00</b></div>
         </div>
       </div>
 
@@ -796,6 +845,21 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
             </div>
           </div>
         </article>
+
+        <article class="ev ev--gold rv">
+          <div class="ev__in">
+            <div class="ev__top">
+              <div class="ev__time">21:30</div>
+              <div class="ev__t">不二民謠音樂餐酒吧（免稅城二期 L1-41）</div>
+            </div>
+            <p class="ev__p">落機首夜的微醺收尾。酒吧就在免稅城二期，<b>走酒店連廊即到、完全不必叫車</b>，民謠現場配上城市花園風格，是海棠灣最有度假感的一杯。想早點休息也可以直接跳過。</p>
+            <div class="chips">
+              <span class="chip chip--walk">🚶 步行 5–12 分</span>
+              <span class="chip chip--cost">人均約 ¥150</span>
+              <span class="chip chip--time">營業至約 24:00</span>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
 
@@ -809,7 +873,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
         <div class="dayhead__stats">
           <div class="dstat">節奏<b>充實</b></div>
           <div class="dstat">網約車<b>2 段</b></div>
-          <div class="dstat">重點行程<b>2 項</b></div>
+          <div class="dstat">夜間至<b>24:00</b></div>
         </div>
       </div>
 
@@ -931,16 +995,32 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
             </div>
           </div>
         </article>
+
+        <article class="ev ev--gold rv">
+          <div class="ev__in">
+            <div class="ev__top">
+              <div class="ev__time">21:30</div>
+              <div class="ev__t">夜生活：後海村沙灘酒吧　or　酒店池畔吧</div>
+            </div>
+            <p class="ev__p">想把夜晚延長到 <b>24:00</b>，就再叫一次車去<b>後海村</b>——沙灘上的 DT 沙灘酒吧與後海·集合 GHO BAR 腳下是沙、面前是海，21:00 後氣氛最好。不想再出門，就留在酒店池畔吧或大堂酒吧喝最後一杯，零交通成本。</p>
+            <div class="chips">
+              <span class="chip chip--mode">🚗 網約車 18–22 分</span>
+              <span class="chip chip--time">營業至約 24:00</span>
+              <span class="chip">回程建議預約叫車</span>
+            </div>
+          </div>
+        </article>
       </div>
 
       <div class="alt">
         <div class="alt__t">Day 2 備選方案 <span>BACK-UP</span></div>
-        <p>若當日天氣不佳（雷雨、水世界部分設施停開），或你們想改為出海，可用以下方案替換亞特蘭蒂斯。二選一，不建議兩者同日並行，時間會互相擠壓。</p>
+        <p>若當日天氣不佳（雷雨、水世界部分設施停開），或你們想改為出海，可整日替換為下列其一。二選一，不建議與亞特蘭蒂斯同日並行，時間會互相擠壓。</p>
         <ul>
-          <li><b>蜈支洲島（Wuzhizhou Island）</b>：由酒店網約車前往後海碼頭約 12 公里、18 分鐘、¥40–55，再轉乘渡輪登島。建議早上 09:00 前出發，避開中午登島人潮。</li>
-          <li><b>南田溫泉</b>：距酒店約 15 分鐘車程，營業 09:00–23:00，門票 ¥198（線上約 ¥128）。雨天備案最合適，室內外池皆可使用，記得帶泳衣。</li>
-          <li>選擇蜈支洲島的話，建議保留亞特蘭蒂斯水族館到 Day 3 上午，並把 SPA 順延或取消，否則時間不足。</li>
+          <li><b>蜈支洲島</b>：直線 7.2 km、車程約 18 分至後海碼頭，再轉乘渡輪登島。建議 09:00 前出發避開登島人潮。</li>
+          <li><b>南田溫泉</b>：直線約 5 km、車程約 12–15 分。雨天備案首選，記得帶泳衣。</li>
+          <li>若改去蜈支洲島，建議把亞特蘭蒂斯水族館移到 Day 3 上午，並順延或取消 SPA，否則時間不足。</li>
         </ul>
+        <p style="margin-top:10px">其餘景點的完整背景、亮點、歷史與票價，見 <b>03 重點景點與備選方案</b>。</p>
       </div>
     </div>
 
@@ -1127,13 +1207,219 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
   </div>
 </section>
 
-<!-- ============ 03 MAP ============ -->
+<!-- ============ 03 SPOTS ============ -->
+<section class="sec" id="spots">
+  <div class="wrap">
+    <div class="sec__head rv">
+      <div class="sec__kicker">03　SPOTS</div>
+      <h2 class="sec__title">重點景點與備選方案</h2>
+      <p class="sec__sub">
+        主線之外值得考慮的景點。依距離分三組，每張卡附背景、亮點、歷史與實用資訊，方便臨場抽換行程。
+        距離為自酒店起算的<b>直線距離</b>，車程為一般路況的估算值，實際請以叫車 App 顯示為準。
+      </p>
+    </div>
+
+    <h3 class="group">近郊 <span>30 分鐘內</span></h3>
+    <div class="spots">
+      <article class="card spot rv">
+        <div class="spot__top">
+          <h4>蜈支洲島 <span class="lvl">5A</span></h4>
+          <span class="spot__dist">直線 7.2 km　·　約 18 分</span>
+        </div>
+        <p class="spot__lead">海南最負盛名的海島景區，面積僅 1.48 平方公里，海水能見度可達 6–27 公尺，被稱作「中國的馬爾地夫」。環島潛水、情人橋與觀日岩是主要看點。</p>
+        <div class="spot__dl">
+          <div><span class="k">歷史</span><span class="v">古稱「古崎洲」「牛奇洲」，標準地名為牛奇洲。人文記載可追溯至清代，光緒年間道人吳華存曾在島上建有「海上涵三觀」庵堂。</span></div>
+          <div><span class="k">實用</span><span class="v">營業 08:30–19:30，上島至 16:00、下島至 19:30（另有 21:00 夜間班次）。門票含往返船票約 ¥133–144。建議早上出發避開人潮，船班受海況影響會臨時調整。</span></div>
+        </div>
+      </article>
+
+      <article class="card spot rv">
+        <div class="spot__top">
+          <h4>後海村（藤海社區・皇后灣） <span class="lvl lvl--free">免費</span></h4>
+          <span class="spot__dist">直線 11.5 km　·　約 18–22 分</span>
+        </div>
+        <p class="spot__lead">由傳統漁村轉型而成的衝浪聚落，緊鄰蜈支洲島碼頭。村前的皇后灣沙灘平緩、平均浪高僅約 0.5 公尺，是公認的新手衝浪天堂，也是海棠灣最有度假感的黃昏去處。</p>
+        <div class="spot__dl">
+          <div><span class="k">亮點</span><span class="v">衝浪、趕海、沙灘酒吧群；傍晚到入夜氣氛最好，可一路待到 24:00。</span></div>
+          <div><span class="k">實用</span><span class="v">全天免費開放。海邊有多家衝浪店可租板與教學。夜間回程叫車較慢，建議提前預約。</span></div>
+        </div>
+      </article>
+
+      <article class="card spot rv">
+        <div class="spot__top">
+          <h4>三亞水稻國家公園 <span class="lvl lvl--4a">4A</span></h4>
+          <span class="spot__dist">直線 9.1 km　·　約 15–18 分</span>
+        </div>
+        <p class="spot__lead">位於海棠灣海岸南部入口，佔地 2,800 畝、其中稻田約 2,100 畝，以稻田生態為主體，結合農耕、稻作文化與科普教育，並設有恐龍科普步道與夜遊場次。</p>
+        <div class="spot__dl">
+          <div><span class="k">亮點</span><span class="v">袁隆平水稻科研基地、稻田景觀、恐龍科普步道。想避開日曬或帶長輩同行時很合適。</span></div>
+          <div><span class="k">實用</span><span class="v">08:30–18:00（售票至 17:30），另有夜場。門票線上約 ¥20 起。</span></div>
+        </div>
+      </article>
+
+      <article class="card spot rv">
+        <div class="spot__top">
+          <h4>南田溫泉（珠江南田溫泉）</h4>
+          <span class="spot__dist">直線約 5 km　·　約 12–15 分</span>
+        </div>
+        <p class="spot__lead">海南知名的低溫溫熱礦泉，池區散布於天然椰林之中，一池一景，並設有大型溫泉泳池，有「神州第一泉」之稱。</p>
+        <div class="spot__dl">
+          <div><span class="k">背景</span><span class="v">位於海棠灣鎮南田農場，距三亞市區約 30 分鐘車程，是海棠灣一帶最方便的溫泉度假區。</span></div>
+          <div><span class="k">實用</span><span class="v">門票約 ¥198，線上預訂約 ¥128。各泉區營業時間略有不同（約 09:00–23:00，部分為 10:00–22:00），出發前請確認。務必帶泳衣。</span></div>
+        </div>
+      </article>
+    </div>
+
+    <h3 class="group">經典 <span>需半日至一日</span></h3>
+    <div class="spots">
+      <article class="card spot spot--mid rv">
+        <div class="spot__top">
+          <h4>亞龍灣熱帶天堂森林公園 <span class="lvl lvl--4a">4A</span></h4>
+          <span class="spot__dist">直線 17.9 km　·　約 30–35 分</span>
+        </div>
+        <p class="spot__lead">建在亞龍灣國家旅遊度假區山脊上的森林公園，可俯瞰整個亞龍灣。招牌是「過江龍索橋」（情人橋）、懸崖邊的峭壁天池，以及近期開放的全海景玻璃棧橋。</p>
+        <div class="spot__dl">
+          <div><span class="k">歷史</span><span class="v">因電影《非誠勿擾 II》主要取景而聲名大噪，片中的試婚房與鳥巢度假村至今仍是熱門打卡點。</span></div>
+          <div><span class="k">實用</span><span class="v">07:30–18:00（17:30 停止入園）。10/1–4/30 為旺季：門票 ¥108 ＋ 往返遊覽車 ¥50 ＝ ¥158／人；淡季 ¥140。園區大且坡度陡，強烈建議加購遊覽車票。</span></div>
+        </div>
+      </article>
+
+      <article class="card spot spot--mid rv">
+        <div class="spot__top">
+          <h4>呀諾達雨林文化旅遊區 <span class="lvl">5A</span></h4>
+          <span class="spot__dist">直線 14.9 km　·　約 30–35 分</span>
+        </div>
+        <p class="spot__lead">位於北緯 18 度的真正熱帶雨林，距三亞市中心約 35 公里。以雨林景觀、踏瀑戲水、玻璃平台與觀海秋千為主，是海南最具代表性的雨林景區之一。</p>
+        <div class="spot__dl">
+          <div><span class="k">亮點</span><span class="v">雨林棧道、瀑布戲水、玻璃平台、觀海秋千。夏季涼爽，午後雷雨時體感最舒服。</span></div>
+          <div><span class="k">實用</span><span class="v">門票含體驗套票約 ¥258。開放時間約 08:00–18:00。園區以步行與涉水為主，建議穿防滑鞋、備替換衣物，全程約需半日。</span></div>
+        </div>
+      </article>
+
+      <article class="card spot spot--mid rv">
+        <div class="spot__top">
+          <h4>檳榔谷黎苗文化旅遊區 <span class="lvl">5A</span></h4>
+          <span class="spot__dist">直線 10.0 km　·　約 25–30 分</span>
+        </div>
+        <p class="spot__lead">因兩側森林層巒疊嶂、中間是一條延綿數千米的檳榔谷地而得名。由非遺村、甘什黎村、谷銀苗家、田野黎家、《檳榔·古韻》實景演出、蘭花小木屋與黎苗風味美食街七大區構成。</p>
+        <div class="spot__dl">
+          <div><span class="k">歷史</span><span class="v">景區創建於 1993 年、1995 年開業，是海南黎族與苗族傳統「三月三」及「七夕嬉水節」的主要活動場所之一。</span></div>
+          <div><span class="k">實用</span><span class="v">園內展示十項國家級非物質文化遺產，其中「黎族傳統紡染織繡技藝」被聯合國教科文組織列入非物質文化遺產急需保護名錄。門票旺季（10/1–4/30）¥96、淡季 ¥80。想理解海南本土文化，這一站最值得。</span></div>
+        </div>
+      </article>
+
+      <article class="card spot spot--mid rv">
+        <div class="spot__top">
+          <h4>南山文化旅遊區 <span class="lvl">5A</span></h4>
+          <span class="spot__dist">直線 58.0 km　·　約 80–90 分</span>
+        </div>
+        <p class="spot__lead">三亞最具代表性的佛教文化景區，核心是聳立於南海之上的 108 公尺海上觀音，另有南山寺與三十三觀音堂。入口處的「不二法門」是景區的標誌性大門景觀。</p>
+        <div class="spot__dl">
+          <div><span class="k">亮點</span><span class="v">海上觀音高 108 公尺，比美國自由女神像高 12 公尺，為一體化三尊白衣觀音造型，下方圓通寶殿面積達 15,000 平方公尺。可預約「抱佛腳」登臨。</span></div>
+          <div><span class="k">實用</span><span class="v">08:00–17:00（17:00 停止入園）。10 月屬淡季，門票約 ¥129。園區極大、各景點距離很遠，<b>務必加購遊覽車 ¥30／人</b>，否則步行會佔掉大半時間。</span></div>
+        </div>
+      </article>
+
+      <article class="card spot spot--far rv">
+        <div class="spot__top">
+          <h4>天涯海角 <span class="lvl lvl--4a">4A</span></h4>
+          <span class="spot__dist">直線 43.7 km　·　約 65–75 分</span>
+        </div>
+        <p class="spot__lead">中國最南端的知名海岸地標，由天涯石、海角石、南天一柱與日月石等巨型海蝕花崗岩組成，另有名人雕塑園與情侶樹。南天一柱象徵財富，日月石象徵愛情。</p>
+        <div class="spot__dl">
+          <div><span class="k">亮點</span><span class="v">南天一柱高約 7 公尺，是舊版 2 元人民幣紙鈔的背景圖案；日落時礁石配著橘色海面，出片效果最好。</span></div>
+          <div><span class="k">實用</span><span class="v">08:00–19:00（3/1–10/31）、08:00–18:30（11/1–2/28）。建議下午 3–4 點入園，避開正午暴曬並等日落。</span></div>
+        </div>
+      </article>
+
+      <article class="card spot spot--far rv">
+        <div class="spot__top">
+          <h4>大小洞天 <span class="lvl">5A</span></h4>
+          <span class="spot__dist">直線 63.6 km　·　約 90–100 分</span>
+        </div>
+        <p class="spot__lead">被譽為「瓊崖八百年第一山水名勝」的道家洞天福地，以千年摩崖石刻、天然海蝕「小洞天」、不老松與椰林碧海取勝，是三亞最有歷史厚度的一處山海景觀。</p>
+        <div class="spot__dl">
+          <div><span class="k">歷史</span><span class="v">始創於南宋淳熙丁未年（1187 年），至今八百餘年，相傳由宋朝吉陽軍知軍發現、後由崖州郡守毛奎闢建。「小洞天」「海山奇觀」「仙梯」「石船記」等摩崖石刻於 1990 年列為三亞市文物保護單位。</span></div>
+          <div><span class="k">實用</span><span class="v">約 07:00–19:00。與天涯海角相距約 13 公里，可同日順遊，但連同車程需整整一天。</span></div>
+        </div>
+      </article>
+
+      <article class="card spot spot--far rv">
+        <div class="spot__top">
+          <h4>鹿回頭風景區 <span class="lvl lvl--free">免門票</span></h4>
+          <span class="spot__dist">直線 31.5 km　·　約 45–55 分</span>
+        </div>
+        <p class="spot__lead">位於三亞市西南端的半島上，五座山峰、海拔 181 公尺，三面環海，可俯瞰三亞市區與三亞灣，是公認看夜景最好的位置。山頂的鹿回頭雕塑已成為三亞的城雕。</p>
+        <div class="spot__dl">
+          <div><span class="k">歷史</span><span class="v">源自海南黎族流傳久遠的愛情傳說——獵人追鹿至海邊，鹿回頭化為少女。景區於 2022 年 7 月起免門票，是海南省首家實行免門票的國有景區，2024 年獲評國家級夜間文化和旅遊消費集聚區。</span></div>
+          <div><span class="k">實用</span><span class="v">免門票（園內觀光車另收費）。建議傍晚上山，一次看齊日落與夜景；來回車程加上停留約需 4 小時。</span></div>
+        </div>
+      </article>
+    </div>
+
+    <h3 class="group group--gold">夜生活 <span>可延續至 24:00</span></h3>
+    <div class="spots">
+      <article class="card spot spot--bar rv">
+        <div class="spot__top">
+          <h4>不二民謠音樂餐酒吧</h4>
+          <span class="spot__dist">步行 5–12 分　·　至約 24:00</span>
+        </div>
+        <p class="spot__lead">海棠灣最新的民謠 live 餐酒吧，落址於三亞國際免稅城二期 L1-41。城市花園風格，綠植藤編配上椰風樹影，是「野奢海島度假感」路線的微醺選擇。</p>
+        <div class="spot__dl">
+          <div><span class="k">推薦</span><span class="v">距離酒店最近的夜生活選項，走酒店連廊即到，完全不必叫車。適合 Day 1 落機後想輕鬆喝一杯的夜晚。</span></div>
+          <div><span class="k">實用</span><span class="v">餐酒人均約 ¥150。民謠現場演出多在晚間，營業至 24:00 前後。</span></div>
+        </div>
+      </article>
+
+      <article class="card spot spot--bar rv">
+        <div class="spot__top">
+          <h4>後海村沙灘酒吧（DT 沙灘酒吧・後海·集合 GHO BAR）</h4>
+          <span class="spot__dist">車程約 18–22 分　·　至約 24:00</span>
+        </div>
+        <p class="spot__lead">開在衝浪村沙灘上的 beach bar，腳下是沙、面前是海，聽著浪聲喝一杯，是海棠灣最有度假感的一夜。21:00 之後氣氛最好。</p>
+        <div class="spot__dl">
+          <div><span class="k">推薦</span><span class="v">Day 2 玩完水世界若還有體力，把夜晚延長到 24:00 的最佳去處；可與白天衝浪行程合併。</span></div>
+          <div><span class="k">實用</span><span class="v">回程叫車較慢，建議離場前 20–30 分鐘先於 App 預約。</span></div>
+        </div>
+      </article>
+
+      <article class="card spot spot--bar rv">
+        <div class="spot__top">
+          <h4>酒店池畔吧／大堂酒吧</h4>
+          <span class="spot__dist">館內　·　視現場時間</span>
+        </div>
+        <p class="spot__lead">不想再出門時的最省事選擇。回房前在池畔或大堂喝最後一杯，聽著海風收尾。</p>
+        <div class="spot__dl">
+          <div><span class="k">注意</span><span class="v">行政酒廊禮遇至 10/25 14:00 退房為止；退房後酒廊不再提供服務，但付費的池畔吧與大堂酒吧仍可使用。</span></div>
+        </div>
+      </article>
+
+      <article class="card spot spot--bar rv">
+        <div class="spot__top">
+          <h4>Soul Lounge Bar 隱醉</h4>
+          <span class="spot__dist">三亞市區　·　車程約 45–55 分</span>
+        </div>
+        <p class="spot__lead">三亞最知名的網紅氛圍酒吧之一，店名取 "Enjoy" 諧音。星光燈光、不吵不鬧的音樂，走的是都會路線而非海島路線。</p>
+        <div class="spot__dl">
+          <div><span class="k">實用</span><span class="v">位於市區海韻路，來回車程近 2 小時。建議安排在其他市區行程之後順道前往，不建議專程來回。</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="note">
+      景區票價與開放時間依公開資料整理，非即時報價，且景區常臨時調整（尤其颱風與海況因素），出發前請以官方公告為準。
+      三亞多數景區在 10/1–4/30 屬旺季、5/1–9/30 屬淡季，本行程 10/23–25 落在旺季區間。
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 MAP ============ -->
 <section class="sec" id="map">
   <div class="wrap">
     <div class="sec__head rv">
-      <div class="sec__kicker">03　MAP</div>
+      <div class="sec__kicker">04　MAP</div>
       <h2 class="sec__title">地理位置與動線</h2>
-      <p class="sec__sub">底圖可切換高德（標準／衛星）與 OpenStreetMap。點選右側地點卡片，地圖會移動到該位置；點選地圖標記也會反向標示卡片。</p>
+      <p class="sec__sub">全程使用高德地圖圖資（與高德 App 同一套底圖與坐標系）。點選右側地點卡片，地圖會移動到該位置；點選地圖標記也會反向標示卡片。</p>
     </div>
 
     <div class="mapwrap">
@@ -1143,13 +1429,13 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
             <span class="mapbar__lbl">底圖</span>
             <button class="is-on" data-base="amap">高德標準</button>
             <button data-base="amapsat">高德衛星</button>
-            <button data-base="osm">OSM</button>
           </div>
           <div class="mapbar__grp">
-            <span class="mapbar__lbl">動線</span>
+            <span class="mapbar__lbl">圖層</span>
             <button class="is-on" data-layer="arrival">Day 1 進城</button>
-            <button data-layer="all">全部</button>
-            <button data-layer="none">隱藏</button>
+            <button data-layer="all">全部動線</button>
+            <button data-layer="none">隱藏動線</button>
+            <button data-spots="1">顯示備選景點</button>
             <button data-fit="resort">重設視圖</button>
           </div>
         </div>
@@ -1220,10 +1506,10 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
     </div>
 
     <div class="note">
-      標記座標取自 OpenStreetMap 公開圖資並轉換為<b>高德所用的 GCJ-02 坐標系</b>（與高德 App 顯示一致）；
-      切換至 OSM 底圖時會自動轉回 WGS-84，因此兩種底圖下標記都在正確位置。
-      其中<b>海棠68環球美食街</b>未收錄於 OSM，標記位置依其門牌（海棠北路 68 號）與官方資料所述的鄰居「君悅酒店」推定，誤差可能較大，
-      請以「在高德地圖開啟」的搜尋結果為準。其餘 POI 亦可能有數十至數百米誤差，實際導航請使用高德打車或滴滴出行。
+      底圖採用<b>高德地圖圖磚</b>，標記座標已由 WGS-84 換算為高德所用的 <b>GCJ-02 坐標系</b>，與高德 App 顯示一致。
+      座標來源為 OpenStreetMap 公開圖資與維基百科；其中<b>海棠68環球美食街</b>未收錄於圖資，位置依其門牌（海棠北路 68 號）與官方資料所述的鄰居「君悅酒店」推定，誤差可能較大。
+      其餘地點亦可能有數十至數百米誤差；實際導航請點各卡片的「在高德地圖開啟」，或直接使用高德打車／滴滴出行。
+      「顯示備選景點」會疊加 03 段落介紹的景點位置，方便評估距離。
     </div>
   </div>
 </section>
@@ -1232,7 +1518,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
 <section class="sec" id="transport">
   <div class="wrap">
     <div class="sec__head rv">
-      <div class="sec__kicker">04　TRANSPORT</div>
+      <div class="sec__kicker">05　TRANSPORT</div>
       <h2 class="sec__title">點對點交通時間與費用</h2>
       <p class="sec__sub">除免稅城步行之外，全部採用網約車。費用為 2 人一台車的整車價，非單人價。</p>
     </div>
@@ -1344,7 +1630,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
 <section class="sec" id="budget">
   <div class="wrap">
     <div class="sec__head rv">
-      <div class="sec__kicker">05　BUDGET</div>
+      <div class="sec__kicker">06　BUDGET</div>
       <h2 class="sec__title">費用估算（2 人）</h2>
       <p class="sec__sub">不含機票。幣別為人民幣（¥）。所有金額為依公開資料整理的研究估算，非即時報價，實際以現場與訂房確認為準。</p>
     </div>
@@ -1486,7 +1772,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
 <section class="sec" id="tips">
   <div class="wrap">
     <div class="sec__head rv">
-      <div class="sec__kicker">06　TIPS</div>
+      <div class="sec__kicker">07　TIPS</div>
       <h2 class="sec__title">出行提示</h2>
       <p class="sec__sub">六件出發前值得先知道的事。</p>
     </div>
@@ -1533,7 +1819,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
         <h3>行前清單</h3>
         <p><b>證件與票券</b>：護照、香港身份證、電子機票、酒店確認信、免稅購物所需資料。</p>
         <p><b>裝備</b>：泳衣（水世界與泳池）、防曬用品、輕便雨具、好走的鞋、常備藥物、充電器與轉換插頭、防水手機袋。</p>
-        <p><b>建議先行預約</b>：Day 3 SPA 療程、亞特蘭蒂斯餐廳、免稅購物清單比價。</p>
+        <p><b>建議先行預約</b>：Day 3 SPA 療程、亞特蘭蒂斯餐廳、免稅購物清單比價。若打算加遊 03 段落的景點，旺季多需線上預約門票，請先確認交通與票券。</p>
       </div>
     </div>
   </div>
@@ -1651,8 +1937,8 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
   var map = null;
 
   /* ---- WGS-84 → GCJ-02（火星坐標）----
-     高德／騰訊圖磚使用 GCJ-02；OSM 使用 WGS-84。兩者在三亞相差約 450 公尺，
-     因此標記必須隨底圖切換而換算，否則會明顯偏移。 */
+     底圖全程使用高德圖磚，高德採用 GCJ-02；而圖資來源為 WGS-84。
+     兩者在三亞相差約 450 公尺，因此座標必須先換算，否則標記會明顯偏移。 */
   var GCJ_A = 6378245.0, GCJ_EE = 0.00669342162296594323;
 
   function outOfChina(lat, lng) {
@@ -1720,6 +2006,26 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
   ];
   POIS.forEach(function (p) { p.gcj = wgs2gcj(p.wgs[0], p.wgs[1]); });
 
+  /* 03 段落介紹的備選景點（WGS-84）。預設隱藏，由「顯示備選景點」開啟。
+     tier 僅用於標記配色：near 近郊／mid 經典／far 順遊。 */
+  var TIER_COLOR = { near: '#0f8a6a', mid: '#7b6cb0', far: '#a8553f' };
+  var SCENIC = [
+    { id: 'houhai', wgs: [18.2746668, 109.7256060], mark: '浪', tier: 'near', name: '後海村', cat: '近郊 · 衝浪漁村（免費）', desc: '直線 11.5 km　·　車程約 18–22 分' },
+    { id: 'rice', wgs: [18.3220721, 109.6842921], mark: '稻', tier: 'near', name: '三亞水稻國家公園', cat: '近郊 · 4A', desc: '直線 9.1 km　·　車程約 15–18 分' },
+    { id: 'nantian', wgs: [18.4200000, 109.7500000], mark: '泉', tier: 'near', name: '南田溫泉', cat: '近郊 · 位置約略', desc: '直線約 5 km　·　車程約 12–15 分' },
+    { id: 'yalong', wgs: [18.2530556, 109.6396240], mark: '林', tier: 'mid', name: '亞龍灣熱帶天堂森林公園', cat: '經典 · 4A', desc: '直線 17.9 km　·　車程約 30–35 分' },
+    { id: 'yanoda', wgs: [18.4619138, 109.6424221], mark: '雨', tier: 'mid', name: '呀諾達雨林文化旅遊區', cat: '經典 · 5A', desc: '直線 14.9 km　·　車程約 30–35 分' },
+    { id: 'binglang', wgs: [18.4011974, 109.6594906], mark: '寨', tier: 'mid', name: '檳榔谷黎苗文化旅遊區', cat: '經典 · 5A', desc: '直線 10.0 km　·　車程約 25–30 分' },
+    { id: 'nanshan', wgs: [18.3000907, 109.2066329], mark: '佛', tier: 'far', name: '南山文化旅遊區', cat: '順遊 · 5A', desc: '直線 58.0 km　·　車程約 80–90 分' },
+    { id: 'tianya', wgs: [18.2926242, 109.3450447], mark: '涯', tier: 'far', name: '天涯海角', cat: '順遊 · 4A', desc: '直線 43.7 km　·　車程約 65–75 分' },
+    { id: 'daxiaodong', wgs: [18.3075251, 109.1518611], mark: '洞', tier: 'far', name: '大小洞天', cat: '順遊 · 5A', desc: '直線 63.6 km　·　車程約 90–100 分' },
+    { id: 'luhuitou', wgs: [18.2271541, 109.4962752], mark: '鹿', tier: 'far', name: '鹿回頭風景區', cat: '順遊 · 免門票', desc: '直線 31.5 km　·　車程約 45–55 分' }
+  ];
+  SCENIC.forEach(function (s) {
+    s.gcj = wgs2gcj(s.wgs[0], s.wgs[1]);
+    s.color = TIER_COLOR[s.tier];
+  });
+
   var ROUTES = {
     arrival: [
       { from: 'airport', to: 'hotel', label: 'SYX → 酒店　33 km / 45–60 分' }
@@ -1738,19 +2044,16 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
     return null;
   }
 
-  /* 目前使用的坐標系：'gcj' 對應高德底圖，'wgs' 對應 OSM 底圖 */
-  var system = 'gcj';
-  function ll(p) { return system === 'gcj' ? p.gcj : p.wgs; }
-
   var mapEl = document.getElementById('map');
   var cards = document.querySelectorAll('.poi');
 
+  /* 地圖上顯示的標記一律取 GCJ-02（高德坐標系） */
   function select(id, moveMap) {
     cards.forEach(function (c) { c.classList.toggle('is-on', c.dataset.poi === id); });
     var p = byId(id);
     if (!p || !map) { return; }
     if (moveMap) {
-      map.flyTo(ll(p), 14, { duration: .7 });
+      map.flyTo(p.gcj, 14, { duration: .7 });
       setTimeout(function () { markers[id].openPopup(); }, 620);
     }
   }
@@ -1789,6 +2092,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
 
   var AMAP_ATTR = '&copy; 高德地圖 AutoNavi';
 
+  /* 底圖全部使用高德圖磚（免金鑰；高德官方 JS SDK 需申請 Key） */
   var baseLayers = {
     amap: L.tileLayer('https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}', {
       subdomains: '1234', maxZoom: 18, attribution: AMAP_ATTR
@@ -1800,29 +2104,43 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
       L.tileLayer('https://webst0{s}.is.autonavi.com/appmaptile?style=8&x={x}&y={y}&z={z}', {
         subdomains: '1234', maxZoom: 18
       })
-    ]),
-    osm: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19, attribution: '&copy; OpenStreetMap contributors'
-    })
+    ])
   };
 
   baseLayers.amap.addTo(map);
 
   var markers = {};
   var routeLayer = L.layerGroup().addTo(map);
+  var spotLayer = L.layerGroup();
+
+  function icon(html, size) {
+    return L.divIcon({
+      className: '',
+      html: html,
+      iconSize: [size, size],
+      iconAnchor: [size / 2, size / 2],
+      popupAnchor: [0, -size / 2]
+    });
+  }
 
   POIS.forEach(function (p) {
-    var icon = L.divIcon({
-      className: '',
-      html: '<div class="mk" style="background:' + p.color + '">' + p.mark + '</div>',
-      iconSize: [26, 26],
-      iconAnchor: [13, 13],
-      popupAnchor: [0, -14]
-    });
-    var m = L.marker(ll(p), { icon: icon, title: p.name }).addTo(map);
+    var m = L.marker(p.gcj, {
+      icon: icon('<div class="mk" style="background:' + p.color + '">' + p.mark + '</div>', 26),
+      title: p.name
+    }).addTo(map);
     m.bindPopup('<b>' + p.name + '</b><small>' + p.cat + '</small><br>' + p.desc);
     m.on('click', function () { select(p.id, false); });
     markers[p.id] = m;
+  });
+
+  SCENIC.forEach(function (s) {
+    var m = L.marker(s.gcj, {
+      icon: icon('<div class="mk mk--sm" style="background:' + s.color + '">' + s.mark + '</div>', 21),
+      title: s.name
+    });
+    m.bindPopup('<b>' + s.name + '</b><small>' + s.cat + '</small><br>' + s.desc);
+    m.bindTooltip(s.name, { direction: 'top', offset: [0, -10] });
+    spotLayer.addLayer(m);
   });
 
   var currentRoute = 'arrival';
@@ -1834,7 +2152,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
     (ROUTES[key] || []).forEach(function (r) {
       var a = byId(r.from), b = byId(r.to);
       if (!a || !b) { return; }
-      var line = L.polyline([ll(a), ll(b)], {
+      var line = L.polyline([a.gcj, b.gcj], {
         color: '#0f4f5c', weight: 2.4, opacity: .78,
         dashArray: '7 7', lineCap: 'round'
       }).addTo(routeLayer);
@@ -1842,17 +2160,10 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
     });
   }
 
-  /* 切換底圖：高德用 GCJ-02、OSM 用 WGS-84，標記同步換算 */
   function setBase(key) {
     Object.keys(baseLayers).forEach(function (k) {
       if (k === key) { baseLayers[k].addTo(map); } else { map.removeLayer(baseLayers[k]); }
     });
-    var sys = (key === 'osm') ? 'wgs' : 'gcj';
-    if (sys !== system) {
-      system = sys;
-      POIS.forEach(function (p) { markers[p.id].setLatLng(ll(p)); });
-      drawRoutes(currentRoute);
-    }
   }
 
   document.querySelectorAll('.mapbar button[data-base]').forEach(function (b) {
@@ -1873,20 +2184,34 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
     });
   });
 
-  wirePoiCards();
-  drawRoutes('arrival');
-
-  /* 預設視圖聚焦度假區（含備選的蜈支洲島）；機場在 36 km 外，點卡片即可前往 */
+  /* 預設視圖聚焦度假區（含備選的蜈支洲島）；機場與其他景點點卡片即可前往。
+     開啟備選景點圖層時，視圖自動放大到涵蓋全部標記。 */
+  var SPOTS_ON = false;
   var FIT_IDS = ['hotel', 'cdf', 'atlantis', 'food', 'wuzhizhou'];
+
   function fitResort() {
-    var pts = POIS.filter(function (p) { return FIT_IDS.indexOf(p.id) >= 0; }).map(ll);
+    var pts = SPOTS_ON
+      ? POIS.map(function (p) { return p.gcj; }).concat(SCENIC.map(function (s) { return s.gcj; }))
+      : POIS.filter(function (p) { return FIT_IDS.indexOf(p.id) >= 0; }).map(function (p) { return p.gcj; });
     map.fitBounds(L.latLngBounds(pts), { padding: [46, 46], maxZoom: 14 });
   }
-  fitResort();
+
+  document.querySelectorAll('.mapbar button[data-spots]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      SPOTS_ON = !SPOTS_ON;
+      b.classList.toggle('is-on', SPOTS_ON);
+      if (SPOTS_ON) { spotLayer.addTo(map); } else { map.removeLayer(spotLayer); }
+      fitResort();
+    });
+  });
 
   document.querySelectorAll('.mapbar button[data-fit]').forEach(function (b) {
     b.addEventListener('click', function () { fitResort(); });
   });
+
+  wirePoiCards();
+  drawRoutes('arrival');
+  fitResort();
 
   window.addEventListener('resize', function () {
     if (map) { setTimeout(function () { map.invalidateSize(); }, 120); }
