@@ -147,6 +147,8 @@ A single-file, self-contained interactive itinerary site for a 3-day couple's le
 - 3 個分頁切換、地圖圖層與底圖切換、地點卡片與標記雙向連動、預算切換
 - 高德圖磚實際載入（host 與已載入張數）
 - 預算數字在 KPI、表格、橫條圖、JS 四處一致
+- **跨日引用一致性**：各日標題的統計項只描述當天，不得出現指向其他天的條目；
+  調整行程順序後，所有「免稅已在 Day N 買齊」「Day N 傍晚只有散步」之類的跨日敘述必須逐一複查
 - 390px 寬下無水平溢出
 
 ---
