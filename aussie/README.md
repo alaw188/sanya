@@ -46,9 +46,20 @@ aussie/
 ## 圖片運作
 
 - 全部 61 張圖片已**下載到本地 `img/` 資料夾**，唔依賴任何外部網站，離線都睇到。
-- 檔名 = 地點名 slug：英數以外字元轉 `_`（例：`Toby_s_Estate_Coffee_Roasters.jpg`、`mimi_s.jpg`）；純中文名就用 `d20_0.jpg`（day id + 序數）。
-- 渲染時自動搵 `img/<slug>.jpg`；檔案唔存在嘅話 `onerror` 會 fallback 顯示分類圖標，版面唔會爛。
-- `index.html` 入面嘅 `IMGS` 表只係**原始 URL 紀錄**（Wikimedia Commons／Wikipedia 來源），已唔參與渲染。
+- 檔名 = 地點名 slug：英數以外字元轉 `_`（例：`Toby_s_Estate_Coffee_Roasters.jpg`）；純中文名就用 `d20_0.jpg`（day id + 序數）。
+- 渲染時自動搵 `img/<slug>.jpg`，載入失敗會依次試 `.jpeg → .png → .webp`，全部失敗先 fallback 顯示分類圖標。
+- `IMGS` 表只係**原始 URL 紀錄**，已唔參與渲染。
+
+### 圖片來源分類（誠實聲明）
+
+| 類別 | 內容 |
+|------|------|
+| ✅ 地標實景（Wikipedia） | 歌劇院、大橋、The Rocks、Bondi、藍山、QVM、State Library、十二門徒石、企鵝、Yarra Valley 等 23 張 |
+| ✅ 實店／實場相（Flickr CC via Openverse） | Bondi Surf Seafoods、Paramount、Toby's Estate、The Grounds（兩張）、Baguette Studios、Market Lane、Proud Mary、Bakemono、Patricia、Dukes、Industry Beans、Pidapipó、Vacation、Hardware Société、Lune、Single O、Higher Ground、DeBortoli 酒莊 等 19 張 |
+| ✅ 官方圖片（官網 og:image／logo） | 6HEAD、Beta Coffee、ST. ALi、Hareruya、Terror Twilight、Grain Store、Hector's Deli 共 7 張 |
+| ⚠️ 代表性相片（搵唔到自由授權嘅實店相） | Pho Thin（河粉）、Cafe Margaret、mimi's、Bar Totti's、The Gidley、BISTECCA、Pizza Bros（薄餅）、Lulu & me（芝士蛋糕）共 8 張 — 建議**旅程影完相後替換**：將自己張相改名做對應 slug 放入 `img/` 覆蓋就得 |
+| ✅ 交通 | SYD→MEL：Qantas 787 降落墨爾本機場（Wikipedia） |
+
 - **加新地點**：喺 `DAYS` 加卡 → 張圖放入 `img/` 用同一 slug 命名 → 喺 `COSTS` 加費用就得。
 
 ## 待辦 / 後續跟進（Follow-ups）

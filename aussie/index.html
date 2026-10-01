@@ -595,6 +595,15 @@ const IMGS = {
 };
 
 /* ---------- 渲染 ---------- */
+/* 本地圖片載入失敗時，依次嘗試 jpg → jpeg → png → webp，全部失敗先顯示分類圖標 */
+window.__imgFallback = function(img){
+  const exts = ["jpg","jpeg","png","webp"];
+  let i = (parseInt(img.dataset.ei, 10) || 0) + 1;
+  if (i >= exts.length) { img.remove(); return; }
+  img.dataset.ei = String(i);
+  img.src = "img/" + img.dataset.slug + "." + exts[i];
+};
+
 function renderDay(id){
   const host = document.getElementById(id);
   if(!host) return;
@@ -603,7 +612,6 @@ function renderDay(id){
     /* 本地圖片：img/<slug>.jpg（slug 產生規則同 _dl.ps1 一致）；載入失敗自動 fallback 顯示圖標 */
     let slug = p.n.replace(/[^A-Za-z0-9]+/g, "_");
     if (!/[A-Za-z0-9]/.test(p.n)) slug = id + "_" + i;
-    p.img = p.img || ("img/" + slug + ".jpg");
     p.cost = COSTS[p.n] || p.cost;
     const isFree = p.cost === FREE || (p.cost && p.cost.startsWith(FREE));
     const mapUrl = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(p.n + (p.wiki && p.wiki.includes(",") ? "" : (p.zh ? " " + p.zh.split("/")[0] : "")) + " Australia");
@@ -613,7 +621,7 @@ function renderDay(id){
         <span class="cat">${cat.label}</span>
         ${p.book ? '<span class="book">📌 需訂位／預約</span>' : ''}
         <span class="ph">${cat.icon}</span>
-        <img src="${p.img}" alt="${p.n}" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" onerror="this.remove()">
+        <img src="img/${slug}.jpg" data-slug="${slug}" data-ei="0" alt="${p.n}" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" onerror="window.__imgFallback(this)">
       </div>
       <div class="info">
         <h4>${p.n}${p.zh ? `<span>${p.zh}</span>` : ""}</h4>
