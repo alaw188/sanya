@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a3d54">
 <title>2026 澳洲家庭之旅 — Sydney &amp; Melbourne</title>
 <style>
   :root{
@@ -11,7 +12,7 @@
     --card:#ffffff; --gold:#c9a227;
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
   body{font-family:"PingFang TC","Microsoft JhengHei","Noto Sans TC",Segoe UI,sans-serif;background:var(--sand);color:var(--ink);line-height:1.7}
   img{max-width:100%;display:block}
 
@@ -23,7 +24,7 @@
   .hero .sub{font-size:clamp(1rem,2.4vw,1.3rem);opacity:.92}
   .hero .dates{display:inline-block;margin-top:22px;padding:10px 28px;border:1.5px solid rgba(255,255,255,.55);border-radius:999px;font-size:1.05rem;letter-spacing:.08em}
 
-  nav{position:sticky;top:0;z-index:50;background:rgba(253,246,236,.96);backdrop-filter:blur(6px);border-bottom:1px solid #eadfcf;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+  nav{position:sticky;top:0;z-index:50;background:rgba(253,246,236,.96);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-bottom:1px solid #eadfcf;box-shadow:0 2px 10px rgba(0,0,0,.05)}
   nav ul{display:flex;justify-content:center;gap:6px;list-style:none;padding:10px 12px;flex-wrap:wrap}
   nav a{text-decoration:none;color:var(--ocean-dark);font-weight:600;font-size:.95rem;padding:6px 14px;border-radius:999px}
   nav a:hover{background:var(--sand2)}
@@ -61,7 +62,7 @@
   .hotel .head .en{opacity:.85;font-size:.9rem}
   .hotel .body{padding:16px 22px 20px;font-size:.95rem}
   .hotel .body li{margin-left:18px;margin-bottom:6px;color:#444}
-  .conf{font-family:Consolas,monospace;background:var(--sand2);padding:2px 8px;border-radius:6px;font-size:.85rem}
+  .conf{font-family:Consolas,monospace;background:var(--sand2);padding:2px 8px;border-radius:6px;font-size:.85rem;word-break:break-all}
 
   /* ---------- Day timeline ---------- */
   .day{background:var(--card);border-radius:18px;box-shadow:0 3px 16px rgba(43,43,43,.08);margin-bottom:30px;overflow:hidden}
@@ -98,7 +99,20 @@
   .tip p{font-size:.93rem;color:#555}
 
   footer{text-align:center;padding:40px 20px 50px;color:var(--muted);font-size:.9rem}
-  @media(max-width:640px){.places{grid-template-columns:1fr}.day-body{padding:18px 16px 22px}}
+  @media(max-width:640px){
+    .places{grid-template-columns:1fr}
+    .day-body{padding:18px 14px 22px}
+    section{padding:38px 0 22px}
+    .wrap{padding:0 14px}
+    .hero{padding:50px 16px 74px}
+    nav ul{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;-webkit-overflow-scrolling:touch;padding:8px 10px;scrollbar-width:none}
+    nav ul::-webkit-scrollbar{display:none}
+    nav a{padding:9px 16px;white-space:nowrap;font-size:.9rem;display:inline-block}
+    .flight{padding:14px 16px}
+    .tip{padding:15px 16px}
+    .day-head{padding:15px 16px}
+    .place .pic{height:170px}
+  }
 </style>
 </head>
 <body>
