@@ -311,7 +311,8 @@ table{border-collapse:collapse;width:100%}
 }
 .mapbar button:hover{border-color:var(--teal);color:var(--teal)}
 .mapbar button.is-on{background:var(--sea-700);border-color:var(--sea-700);color:#fff}
-.poilist{display:grid;gap:10px;align-content:start}
+.poilist{display:grid;gap:10px;align-content:start;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr))}
+@media (min-width:901px){.poilist{grid-template-columns:repeat(3,1fr)}}
 .poi{
   display:flex;gap:11px;align-items:flex-start;text-align:left;width:100%;
   background:var(--card);border:1px solid var(--line);border-radius:var(--r-sm);
