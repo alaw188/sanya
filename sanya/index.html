@@ -65,6 +65,15 @@ table{border-collapse:collapse;width:100%}
   display:flex;gap:8px;align-items:flex-start;
 }
 .note::before{content:"※";color:var(--teal);font-weight:700;line-height:1.5}
+.note .noteitems{flex:1 1 auto;min-width:0;display:grid;gap:7px;margin:0;padding:0;list-style:none}
+.note .noteitems li{
+  position:relative;padding-left:15px;font-size:13px;line-height:1.65;color:var(--ink-mute);
+}
+.note .noteitems li::before{
+  content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;
+  background:var(--teal);opacity:.55;
+}
+.note .noteitems li b{color:var(--ink-soft);font-weight:700}
 
 /* ---------- nav ---------- */
 .nav{
@@ -1912,10 +1921,13 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
     </div>
 
     <div class="note">
-      底圖採用<b>高德地圖圖磚</b>，標記座標已由 WGS-84 換算為高德所用的 <b>GCJ-02 坐標系</b>，與高德 App 顯示一致。
-      座標來源為 OpenStreetMap 公開圖資與維基百科；其中<b>海棠68環球美食街</b>未收錄於圖資，位置依其門牌（海棠北路 68 號）與官方資料所述的鄰居「君悅酒店」推定，誤差可能較大。
-      其餘地點亦可能有數十至數百米誤差；實際導航請點各卡片的「在高德地圖開啟」，或直接使用高德打車／滴滴出行。
-      「Day 1／2／3 動線」分層顯示當日交通，「全部動線」涵蓋三天主線；亞龍灣熱帶天堂、後海村與天涯海角為主線景點，已列入地點清單與常駐標記，「顯示備選景點」則疊加 03 段落介紹的其餘景點位置，方便評估距離。
+      <ul class="noteitems">
+        <li><b>座標系統</b>：底圖採用高德地圖圖磚，標記座標已由 WGS-84 換算為高德所用的 GCJ-02 坐標系，與高德 App 顯示一致。</li>
+        <li><b>座標來源</b>：OpenStreetMap 公開圖資與維基百科；海棠68環球美食街未收錄於圖資，位置依門牌（海棠北路 68 號）與鄰居「君悅酒店」推定，誤差可能較大。</li>
+        <li><b>精度說明</b>：其餘地點亦可能有數十至數百米誤差，供行程規劃參考。</li>
+        <li><b>實際導航</b>：請點各卡片的「在高德地圖開啟」，或直接使用高德打車／滴滴出行。</li>
+        <li><b>動線圖層</b>：Day 1／2／3 分層顯示當日交通，「全部動線」涵蓋三天主線；「顯示備選景點」可疊加 03 段落介紹的其餘景點位置。</li>
+      </ul>
     </div>
   </div>
 </section>
