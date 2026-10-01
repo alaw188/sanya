@@ -348,6 +348,8 @@ table.t{min-width:720px;font-size:14px}
   table.t{min-width:560px}
   table.t td:first-child{white-space:normal;min-width:0}
   table.t thead th{white-space:normal}
+  /* 防止備註欄被擠壓成數字欄的犧牲品，導致列高暴增 */
+  table.t td.mut{min-width:230px}
 }
 table.t thead th{
   background:var(--sea-800);color:#fff;text-align:left;font-weight:600;
@@ -564,19 +566,30 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
   /* 表格在手機改為卡片式：欄名轉為小標籤，免橫向捲動 */
   table.t,table.t tbody{display:block;min-width:0!important}
   table.t thead{display:none}
-  table.t tr{display:block;padding:13px 15px;border-top:1px solid var(--line)}
+  table.t tr{display:block;padding:12px 14px;border-top:1px solid var(--line)}
   table.t tr:first-child{border-top:0}
-  table.t td{display:block;border-top:0;padding:3px 0;white-space:normal}
+  table.t td{border-top:0;padding:0;white-space:normal}
   table.t td::before{
     content:attr(data-label);
-    display:block;font-size:11px;font-weight:700;letter-spacing:.08em;
-    color:var(--ink-mute);margin-bottom:1px;
+    font-size:11px;font-weight:700;letter-spacing:.06em;
+    color:var(--ink-mute);
   }
-  table.t td:first-child{font-size:14.5px;font-weight:700;color:var(--sea-800);padding-bottom:7px}
+  /* 標題：路線／項目 */
+  table.t td:first-child{display:block;font-size:14.5px;font-weight:700;color:var(--sea-800);padding-bottom:7px}
   table.t td:first-child::before{display:none}
-  table.t td.mut{font-size:13px;line-height:1.6}
+  /* 短欄位：標籤置左、值置右，一行完成 */
+  table.t td:not(:first-child):not(.mut){
+    display:flex;align-items:baseline;gap:12px;padding:3px 0;
+  }
+  table.t td:not(:first-child):not(.mut)::before{
+    flex:0 0 auto;width:76px;letter-spacing:.02em;
+  }
+  /* 備註類長文：整寬顯示 */
+  table.t td.mut{display:block;padding:6px 0 2px;font-size:13px;line-height:1.6}
+  table.t td.mut::before{display:block;margin-bottom:2px}
   table.t .num{white-space:normal}
   table.t tr.sum td{border-top:0}
+  table.t tr.sum td:first-child{padding-bottom:2px}
 }
 </style>
 </head>
