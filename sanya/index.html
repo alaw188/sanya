@@ -284,9 +284,8 @@ table{border-collapse:collapse;width:100%}
 
 /* ---------- map ---------- */
 .mapwrap{
-  display:grid;gap:16px;grid-template-columns:minmax(0,1.62fr) minmax(0,1fr);
+  display:grid;gap:16px;grid-template-columns:1fr;
 }
-@media (max-width:900px){.mapwrap{grid-template-columns:1fr}}
 #map{
   height:470px;border-radius:var(--r);overflow:hidden;
   border:1px solid var(--line);box-shadow:var(--shadow);background:#dfeef0;z-index:1;
@@ -312,7 +311,7 @@ table{border-collapse:collapse;width:100%}
 }
 .mapbar button:hover{border-color:var(--teal);color:var(--teal)}
 .mapbar button.is-on{background:var(--sea-700);border-color:var(--sea-700);color:#fff}
-.poilist{display:grid;gap:10px;align-content:start}
+.poilist{display:grid;gap:10px;align-content:start;grid-template-columns:repeat(auto-fill,minmax(min(340px,100%),1fr))}
 .poi{
   display:flex;gap:11px;align-items:flex-start;text-align:left;width:100%;
   background:var(--card);border:1px solid var(--line);border-radius:var(--r-sm);
@@ -1802,7 +1801,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
     <div class="sec__head rv">
       <div class="sec__kicker">04　MAP</div>
       <h2 class="sec__title">地理位置與動線</h2>
-      <p class="sec__sub">全程使用高德地圖圖資（與高德 App 同一套底圖與坐標系）。點選右側地點卡片，地圖會移動到該位置；點選地圖標記也會反向標示卡片。</p>
+      <p class="sec__sub">全程使用高德地圖圖資（與高德 App 同一套底圖與坐標系）。點選下方地點卡片，地圖會移動到該位置；點選地圖標記也會反向標示卡片。</p>
     </div>
 
     <div class="mapwrap">
