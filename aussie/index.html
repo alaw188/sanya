@@ -551,7 +551,7 @@ const COSTS = {
   "Myer Melbourne":FREE
 };
 
-/* ---------- 冇 Wikipedia 條目嘅餐廳／咖啡店：使用 Wikimedia Commons 實景相 ---------- */
+/* ---------- 圖片來源對照表（僅作紀錄）：圖片已下載到本地 img/ 資料夾，網站用本地檔 ---------- */
 const IMGS = {
   "Pho Thin Chatswood":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/3_mushroom_curry_noodle_soup_with_ph%E1%BB%9F_-_Pho_2025-11-12.jpg/960px-3_mushroom_curry_noodle_soup_with_ph%E1%BB%9F_-_Pho_2025-11-12.jpg",
   "Cafe Margaret Double Bay":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Caravan%2C_Clerkenwell%2C_London_%285624758902%29.jpg/960px-Caravan%2C_Clerkenwell%2C_London_%285624758902%29.jpg",
@@ -600,7 +600,10 @@ function renderDay(id){
   if(!host) return;
   host.innerHTML = DAYS[id].map((p,i)=>{
     const cat = CATS[p.type] || CATS.info;
-    p.img = IMGS[p.n] || p.img;
+    /* 本地圖片：img/<slug>.jpg（slug 產生規則同 _dl.ps1 一致）；載入失敗自動 fallback 顯示圖標 */
+    let slug = p.n.replace(/[^A-Za-z0-9]+/g, "_");
+    if (!/[A-Za-z0-9]/.test(p.n)) slug = id + "_" + i;
+    p.img = p.img || ("img/" + slug + ".jpg");
     p.cost = COSTS[p.n] || p.cost;
     const isFree = p.cost === FREE || (p.cost && p.cost.startsWith(FREE));
     const mapUrl = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(p.n + (p.wiki && p.wiki.includes(",") ? "" : (p.zh ? " " + p.zh.split("/")[0] : "")) + " Australia");
@@ -609,7 +612,8 @@ function renderDay(id){
       <div class="pic" id="pic-${id}-${i}">
         <span class="cat">${cat.label}</span>
         ${p.book ? '<span class="book">📌 需訂位／預約</span>' : ''}
-        ${p.img ? `<img src="${p.img}" alt="${p.n}" loading="lazy">` : `<span class="ph">${cat.icon}</span>`}
+        <span class="ph">${cat.icon}</span>
+        <img src="${p.img}" alt="${p.n}" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" onerror="this.remove()">
       </div>
       <div class="info">
         <h4>${p.n}${p.zh ? `<span>${p.zh}</span>` : ""}</h4>
@@ -622,36 +626,6 @@ function renderDay(id){
 }
 
 Object.keys(DAYS).forEach(renderDay);
-
-/* ---------- 由 Wikipedia 自動抓取景點圖片 ---------- */
-(async function fetchWikiImages(){
-  for (const [id, places] of Object.entries(DAYS)){
-    for (let i = 0; i < places.length; i++){
-      const p = places[i];
-      if (!p.wiki || p.img) continue;
-      const holder = document.getElementById(`pic-${id}-${i}`);
-      if (!holder) continue;
-      try{
-        const url = "https://en.wikipedia.org/api/rest_v1/page/summary/" + encodeURIComponent(p.wiki.replace(/ /g,"_")) + "?redirect=true";
-        const res = await fetch(url);
-        if (!res.ok) continue;
-        const data = await res.json();
-        const src = (data.thumbnail && data.thumbnail.source) || (data.originalimage && data.originalimage.source);
-        if (src && holder){
-          const img = document.createElement("img");
-          img.src = src;
-          img.alt = p.n;
-          img.loading = "lazy";
-          img.style.opacity = "0";
-          img.onload = () => { img.style.transition = "opacity .5s"; img.style.opacity = "1"; };
-          const ph = holder.querySelector(".ph");
-          if (ph) ph.remove();
-          holder.appendChild(img);
-        }
-      }catch(e){ /* 離線時保留圖標 fallback */ }
-    }
-  }
-})();
 </script>
 </body>
 </html>

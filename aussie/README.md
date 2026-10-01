@@ -21,7 +21,8 @@
 
 ```
 aussie/
-└── index.html    # 成個網站（HTML + CSS + JS 全部單一檔案）
+├── index.html    # 成個網站（HTML + CSS + JS 全部單一檔案）
+└── img/          # 61 張地點圖片（slug 命名，本地檔）
 ```
 
 ## index.html 內部結構（日後更新睇呢度）
@@ -44,11 +45,11 @@ aussie/
 
 ## 圖片運作
 
-- **有 Wikipedia 條目**嘅景點（歌劇院、大橋、QVM、State Library、十二門徒石等）：由瀏覽器 runtime call `en.wikipedia.org/api/rest_v1/page/summary/...` 抓縮圖（所有條目名已驗證有圖）。
-- **冇條目**嘅餐廳／咖啡店：用 `IMGS` 表內預先搵好嘅 Wikimedia Commons 靜態 URL（食物／店內實景，API 搜尋得嚟）。
-- 離線或 API 失敗會自動 fallback 顯示分類圖標，版面唔會爛。
-- 現況：全部 61 張卡都有圖（23 張靠 wiki 抓圖、38 張靠 `IMGS`）。
-- ⚠️ `IMGS`／`COSTS` 嘅 key **必須同 `DAYS` 入面嘅 `n` 完全一致**，改名時要三個表同步改，否則會變返圖標／冇費用（可用逐行對比 `\{n:"([^"]+)"` 嘅方式核查）。
+- 全部 61 張圖片已**下載到本地 `img/` 資料夾**，唔依賴任何外部網站，離線都睇到。
+- 檔名 = 地點名 slug：英數以外字元轉 `_`（例：`Toby_s_Estate_Coffee_Roasters.jpg`、`mimi_s.jpg`）；純中文名就用 `d20_0.jpg`（day id + 序數）。
+- 渲染時自動搵 `img/<slug>.jpg`；檔案唔存在嘅話 `onerror` 會 fallback 顯示分類圖標，版面唔會爛。
+- `index.html` 入面嘅 `IMGS` 表只係**原始 URL 紀錄**（Wikimedia Commons／Wikipedia 來源），已唔參與渲染。
+- **加新地點**：喺 `DAYS` 加卡 → 張圖放入 `img/` 用同一 slug 命名 → 喺 `COSTS` 加費用就得。
 
 ## 待辦 / 後續跟進（Follow-ups）
 
