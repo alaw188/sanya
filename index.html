@@ -711,22 +711,74 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
         </div>
         <div class="dayhead__stats">
           <div class="dstat">節奏<b>輕鬆</b></div>
-          <div class="dstat">網約車<b>3 段</b></div>
+          <div class="dstat">交通<b>6 段</b></div>
           <div class="dstat">夜間至<b>24:00</b></div>
         </div>
       </div>
 
       <div class="tl">
+        <article class="ev rv">
+          <div class="ev__in">
+            <div class="ev__top">
+              <div class="ev__time">05:55</div>
+              <div class="ev__t">Andy Home → Jessie Home（香港的士）</div>
+            </div>
+            <p class="ev__p">兩人與行李上車，車程約 15–20 分。香港的士按錶收費，另計隧道費與行李附加費；<b>這兩程的士合計約 HK$460（約 ¥400）</b>。</p>
+            <div class="chips">
+              <span class="chip chip--walk">🚕 的士（香港）</span>
+              <span class="chip chip--time">15–20 分</span>
+              <span class="chip chip--cost">兩程合計約 HK$460</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="ev rv">
+          <div class="ev__in">
+            <div class="ev__top">
+              <div class="ev__time">06:15</div>
+              <div class="ev__t">Jessie Home → 深圳灣口岸（香港的士）</div>
+            </div>
+            <p class="ev__p">車程約 50–60 分，抵達香港側口岸。深圳灣口岸通關時間為 <b>06:30–24:00</b>，抵達時已開放；過關後在深圳側按 App 指示前往網約車上車點。</p>
+            <div class="chips">
+              <span class="chip chip--walk">🚕 的士（香港）</span>
+              <span class="chip chip--time">50–60 分</span>
+              <span class="chip">口岸 06:30 開放</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="ev ev--coral rv">
+          <div class="ev__in">
+            <div class="ev__top">
+              <div class="ev__time">07:15</div>
+              <div class="ev__t">深圳灣口岸過關 → 網約車前往深圳寶安機場（SZX）</div>
+            </div>
+            <p class="ev__p">先辦<b>香港出境與中國入境</b>，清晨時段一般約 15–40 分鐘；過關後叫車前往深圳寶安機場 T3，車程約 35–45 分，預計 <b>08:00–08:30</b> 抵達櫃檯。</p>
+            <div class="chips">
+              <span class="chip chip--mode">🚗 網約車</span>
+              <span class="chip">約 28 km</span>
+              <span class="chip chip--time">35–45 分</span>
+              <span class="chip chip--cost">¥80–100</span>
+            </div>
+            <div class="warn">
+              <b>過關時間是這段最大的變數。</b>以 08:00 抵達為目標，等於只剩約 40 分鐘的櫃檯緩衝（櫃檯約 <b>08:40</b> 關閉）。
+              模擬三種情境：過關 15 分 → 08:05 抵達；過關 30 分 → 08:30 抵達（僅剩 10 分）；過關 40 分 → 09:00 抵達（<b>趕不上</b>）。
+              <b>建議把 Jessie Home 出發時間提早到 06:00</b>，把緩衝買回來。
+            </div>
+          </div>
+        </article>
+
         <article class="ev ev--coral rv">
           <div class="ev__in">
             <div class="ev__top">
               <div class="ev__time">09:25</div>
               <div class="ev__t">深圳寶安 SZX 起飛　<span class="badge">CZ3978</span></div>
             </div>
-            <p class="ev__p">深圳寶安國際機場 T3 出發，飛行時間約 1 小時 40 分。國內線建議提前 2 小時抵達，<b>07:25 前</b>到櫃檯。</p>
+            <p class="ev__p">深圳寶安國際機場 T3 出發，飛行時間約 1 小時 40 分。<b>預計 08:00–08:30 抵達櫃檯</b>；國內線櫃檯一般於起飛前 45 分鐘（約 <b>08:40</b>）關閉，請一落地就先辦行李託運，再過安檢。</p>
             <div class="chips">
               <span class="chip chip--air">✈ 航班</span>
               <span class="chip chip--time">飛行 1 小時 40 分</span>
+              <span class="chip chip--hi">櫃檯約 08:40 關閉</span>
             </div>
           </div>
         </article>
@@ -1394,7 +1446,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
         <div class="spot__dl">
           <div><span class="k">推薦</span><span class="v">已排入 Day 2 晚上，是全行程唯一「把一天延長到 24:00」的安排。若想白天加遊衝浪，晚上可直接留在村內。</span></div>
           <div><span class="k">實用</span><span class="v">回程叫車較慢，建議離場前 20–30 分鐘先於 App 預約。<b>均無官方網站</b>，店鋪資訊與酒單見大眾點評／美團。</span></div>
-          <div><span class="k">連結</span><span class="v"><a class="ev__go" href="https://uri.amap.com/search?keyword=%E5%90%8E%E6%B5%B7DT%E6%B2%99%E6%BB%A9%E9%85%92%E5%90%A7&amp;city=460200&amp;src=sanya-trip&amp;coordinate=gaode" target="_blank" rel="noopener">DT 沙灘酒吧 ↗</a>　<a class="ev__go" href="https://uri.amap.com/search?keyword=%E5%90%8E%E6%B5%B7%C2%B7%E9%9B%86%E5%90%88GHO%20BAR&amp;city=460200&amp;src=sanya-trip&amp;coordinate=gaode" target="_blank" rel="noopener">後海·集合 GHO BAR ↗</a></span></div>
+          <div><span class="k">連結</span><span class="v"><a class="ev__go" href="https://uri.amap.com/search?keyword=%E5%90%8E%E6%B5%B7DT%E6%B2%99%E6%BB%A9%E9%85%92%E5%90%A7&amp;city=460200&amp;src=sanya-trip&amp;coordinate=gaode" target="_blank" rel="noopener">DT 沙灘酒吧 ↗</a>　<a class="ev__go" href="https://uri.amap.com/search?keyword=后海·集合GHO BAR&amp;city=460200&amp;src=sanya-trip&amp;coordinate=gaode" target="_blank" rel="noopener">後海·集合 GHO BAR ↗</a></span></div>
         </div>
       </article>
 
@@ -1553,6 +1605,30 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
           </thead>
           <tbody>
             <tr>
+              <td>Andy Home → Jessie Home（香港）</td>
+              <td><span class="chip chip--walk">🚕 的士</span></td>
+              <td class="num">—</td>
+              <td class="num">15–20 分</td>
+              <td class="num">HK$60–100</td>
+              <td class="mut">Day 1 出發；兩程的士合計約 HK$460（約 ¥400）</td>
+            </tr>
+            <tr>
+              <td>Jessie Home → 深圳灣口岸（香港）</td>
+              <td><span class="chip chip--walk">🚕 的士</span></td>
+              <td class="num">—</td>
+              <td class="num">50–60 分</td>
+              <td class="num">HK$360–400</td>
+              <td class="mut">Day 1 出發；含隧道費與行李附加費</td>
+            </tr>
+            <tr>
+              <td>深圳灣口岸 → 深圳寶安機場（SZX）</td>
+              <td><span class="chip chip--mode">🚗 網約車</span></td>
+              <td class="num">約 28 km</td>
+              <td class="num">35–45 分</td>
+              <td class="num">¥80–100</td>
+              <td class="mut">Day 1 過關後；另須預留過關 15–40 分</td>
+            </tr>
+            <tr>
               <td>SYX 機場 → 海棠灣洲際酒店</td>
               <td><span class="chip chip--mode">🚗 網約車</span></td>
               <td class="num">約 40 km</td>
@@ -1641,11 +1717,11 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
               <td class="mut">Day 3 返程，建議 19:40 出發</td>
             </tr>
             <tr class="sum">
-              <td>實際會用到的網約車（不含步行與備選）</td>
-              <td colspan="2">8 段</td>
-              <td class="num">約 3 小時 20 分</td>
-              <td class="num">約 ¥530</td>
-              <td class="mut">取各段區間<b>上限</b>估算</td>
+              <td>實際會用到的網約車（不含步行、備選與香港的士）</td>
+              <td colspan="2">9 段</td>
+              <td class="num">約 4 小時 05 分</td>
+              <td class="num">約 ¥630</td>
+              <td class="mut">另計香港的士兩程約 HK$460（約 ¥400）</td>
             </tr>
           </tbody>
         </table>
@@ -1677,22 +1753,22 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
     <div class="kpis rv">
       <div class="kpi kpi--main">
         <div class="kpi__k">地面消費合計</div>
-        <div class="kpi__v"><sub>¥</sub>5,756</div>
+        <div class="kpi__v"><sub>¥</sub>6,156</div>
         <div class="kpi__d">不含住宿與免稅購物</div>
       </div>
       <div class="kpi">
         <div class="kpi__k">人均（地面）</div>
-        <div class="kpi__v"><sub>¥</sub>2,878</div>
+        <div class="kpi__v"><sub>¥</sub>3,078</div>
         <div class="kpi__d">2 位成人平分</div>
       </div>
       <div class="kpi">
         <div class="kpi__k">每日平均</div>
-        <div class="kpi__v"><sub>¥</sub>1,919</div>
+        <div class="kpi__v"><sub>¥</sub>2,052</div>
         <div class="kpi__d">以 3 天計</div>
       </div>
       <div class="kpi kpi--gold">
         <div class="kpi__k">含住宿估算合計</div>
-        <div class="kpi__v"><sub>¥</sub>12,156</div>
+        <div class="kpi__v"><sub>¥</sub>12,556</div>
         <div class="kpi__d">含 2 晚套房估算 ¥6,400</div>
       </div>
     </div>
@@ -1731,8 +1807,13 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
               </tr>
               <tr>
                 <td>交通</td>
-                <td class="mut">網約車 8 段（機場來回 ＋ 海棠68 來回 ＋ 亞特蘭蒂斯來回 ＋ 後海村夜間來回），取各段上限</td>
-                <td class="num">¥530</td>
+                <td class="mut">網約車 9 段（深圳灣→SZX ＋ 三亞機場來回 ＋ 海棠68 來回 ＋ 亞特蘭蒂斯來回 ＋ 後海村夜間來回），取各段上限</td>
+                <td class="num">¥630</td>
+              </tr>
+              <tr>
+                <td>香港交通</td>
+                <td class="mut">的士兩程（Andy Home → Jessie Home → 深圳灣口岸），HK$460 ≈ ¥400</td>
+                <td class="num">¥400</td>
               </tr>
               <tr>
                 <td>雜項</td>
@@ -1741,8 +1822,8 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
               </tr>
               <tr class="sum">
                 <td>合計</td>
-                <td class="mut">地面消費 ¥5,756　＋　住宿 ¥6,400</td>
-                <td class="num">¥12,156</td>
+                <td class="mut">地面消費 ¥6,156　＋　住宿 ¥6,400</td>
+                <td class="num">¥12,556</td>
               </tr>
               <tr>
                 <td>免稅購物</td>
@@ -1785,8 +1866,8 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
         </div>
         <div class="bcrow" data-cat="trans">
           <div class="bcrow__n"><i style="background:#2f8fd8"></i>交通</div>
-          <div class="bcrow__track"><div class="bcrow__fill b" data-full="530" data-ground="530"></div></div>
-          <div class="bcrow__v" data-full="¥530" data-ground="¥530">¥530</div>
+          <div class="bcrow__track"><div class="bcrow__fill b" data-full="930" data-ground="930"></div></div>
+          <div class="bcrow__v" data-full="¥930" data-ground="¥930">¥930</div>
         </div>
         <div class="bcrow" data-cat="misc">
           <div class="bcrow__n"><i style="background:#9ab3b9"></i>雜項</div>
@@ -1796,7 +1877,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
 
         <div class="bctotal">
           <span id="bcLabel">含住宿估算合計</span>
-          <b id="bcTotal">¥12,156</b>
+          <b id="bcTotal">¥12,556</b>
         </div>
       </div>
     </div>
@@ -1899,7 +1980,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
 
   /* ---------- budget chart toggle ---------- */
   var seg = document.getElementById('seg');
-  var TOTALS = { full: 12156, ground: 5756 };
+  var TOTALS = { full: 12556, ground: 6156 };
   var LABELS = { full: '含住宿估算合計', ground: '地面消費合計（不含住宿）' };
   var MAX = { full: 6400, ground: 2630 };
 
