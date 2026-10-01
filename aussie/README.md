@@ -47,6 +47,8 @@ aussie/
 - **有 Wikipedia 條目**嘅景點（歌劇院、大橋、QVM、State Library、十二門徒石等）：由瀏覽器 runtime call `en.wikipedia.org/api/rest_v1/page/summary/...` 抓縮圖（所有條目名已驗證有圖）。
 - **冇條目**嘅餐廳／咖啡店：用 `IMGS` 表內預先搵好嘅 Wikimedia Commons 靜態 URL（食物／店內實景，API 搜尋得嚟）。
 - 離線或 API 失敗會自動 fallback 顯示分類圖標，版面唔會爛。
+- 現況：全部 61 張卡都有圖（23 張靠 wiki 抓圖、38 張靠 `IMGS`）。
+- ⚠️ `IMGS`／`COSTS` 嘅 key **必須同 `DAYS` 入面嘅 `n` 完全一致**，改名時要三個表同步改，否則會變返圖標／冇費用（可用逐行對比 `\{n:"([^"]+)"` 嘅方式核查）。
 
 ## 待辦 / 後續跟進（Follow-ups）
 
