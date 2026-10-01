@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 澳洲家庭之旅 — Sydney &amp; Melbourne</title>
+<style>
+  :root{
+    --ocean:#0e5a7a; --ocean-dark:#0a3d54; --sand:#fdf6ec; --sand2:#f7ead7;
+    --leaf:#3e7a5e; --coral:#e07a5f; --ink:#2b2b2b; --muted:#6b6459;
+    --card:#ffffff; --gold:#c9a227;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"PingFang TC","Microsoft JhengHei","Noto Sans TC",Segoe UI,sans-serif;background:var(--sand);color:var(--ink);line-height:1.7}
+  img{max-width:100%;display:block}
+
+  /* ---------- Hero ---------- */
+  .hero{background:linear-gradient(140deg,var(--ocean-dark) 0%,var(--ocean) 55%,#2e8fae 100%);color:#fff;text-align:center;padding:70px 20px 90px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;bottom:-1px;left:0;right:0;height:60px;background:var(--sand);clip-path:polygon(0 100%,100% 100%,100% 55%,75% 80%,50% 45%,25% 80%,0 60%)}
+  .hero .kicker{letter-spacing:.35em;font-size:.85rem;opacity:.85;text-transform:uppercase}
+  .hero h1{font-size:clamp(2rem,5.5vw,3.4rem);margin:.5rem 0 .3rem;font-weight:800}
+  .hero .sub{font-size:clamp(1rem,2.4vw,1.3rem);opacity:.92}
+  .hero .dates{display:inline-block;margin-top:22px;padding:10px 28px;border:1.5px solid rgba(255,255,255,.55);border-radius:999px;font-size:1.05rem;letter-spacing:.08em}
+
+  nav{position:sticky;top:0;z-index:50;background:rgba(253,246,236,.96);backdrop-filter:blur(6px);border-bottom:1px solid #eadfcf;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+  nav ul{display:flex;justify-content:center;gap:6px;list-style:none;padding:10px 12px;flex-wrap:wrap}
+  nav a{text-decoration:none;color:var(--ocean-dark);font-weight:600;font-size:.95rem;padding:6px 14px;border-radius:999px}
+  nav a:hover{background:var(--sand2)}
+
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  section{padding:56px 0 30px}
+  h2{font-size:clamp(1.5rem,3.4vw,2.1rem);color:var(--ocean-dark);margin-bottom:8px;display:flex;align-items:center;gap:12px}
+  h2 .dot{width:12px;height:12px;border-radius:50%;background:var(--coral);flex:none}
+  .lead{color:var(--muted);margin-bottom:26px}
+
+  /* ---------- Summary cards ---------- */
+  .grid{display:grid;gap:18px}
+  .grid.c4{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+  .grid.c3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+  .stat{background:var(--card);border-radius:16px;padding:20px 22px;box-shadow:0 3px 14px rgba(43,43,43,.07);border-top:4px solid var(--ocean)}
+  .stat .ic{font-size:1.7rem}
+  .stat h3{font-size:1rem;color:var(--ocean-dark);margin:6px 0 2px}
+  .stat p{font-size:.95rem;color:var(--muted)}
+
+  /* ---------- Flights ---------- */
+  .flight{background:var(--card);border-radius:16px;padding:18px 22px;box-shadow:0 3px 14px rgba(43,43,43,.07);display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+  .flight .route{font-weight:800;font-size:1.15rem;color:var(--ocean-dark)}
+  .flight .route .arrow{color:var(--coral);margin:0 8px}
+  .flight .meta{color:var(--muted);font-size:.92rem}
+  .tag{display:inline-block;background:var(--sand2);color:#8a6d1f;border:1px solid #e7d9b0;border-radius:999px;font-size:.8rem;padding:2px 12px;margin-left:8px;white-space:nowrap}
+  .tag.blue{background:#e4f1f6;color:var(--ocean-dark);border-color:#bcd9e4}
+  .tag.green{background:#e7f2ec;color:var(--leaf);border-color:#c2ddd0}
+
+  /* ---------- Hotels ---------- */
+  .hotel{background:var(--card);border-radius:16px;overflow:hidden;box-shadow:0 3px 14px rgba(43,43,43,.07);display:flex;flex-direction:column}
+  .hotel .head{padding:18px 22px;color:#fff}
+  .hotel.sydney .head{background:linear-gradient(120deg,var(--ocean),#2e8fae)}
+  .hotel.melb .head{background:linear-gradient(120deg,var(--leaf),#5fa183)}
+  .hotel .head h3{font-size:1.25rem}
+  .hotel .head .en{opacity:.85;font-size:.9rem}
+  .hotel .body{padding:16px 22px 20px;font-size:.95rem}
+  .hotel .body li{margin-left:18px;margin-bottom:6px;color:#444}
+  .conf{font-family:Consolas,monospace;background:var(--sand2);padding:2px 8px;border-radius:6px;font-size:.85rem}
+
+  /* ---------- Day timeline ---------- */
+  .day{background:var(--card);border-radius:18px;box-shadow:0 3px 16px rgba(43,43,43,.08);margin-bottom:30px;overflow:hidden}
+  .day-head{padding:18px 26px;color:#fff;display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 16px}
+  .day-head .dnum{font-weight:800;font-size:1.2rem}
+  .day-head .dtheme{font-size:1rem;opacity:.9}
+  .sydney>.day-head{background:linear-gradient(120deg,var(--ocean-dark),var(--ocean))}
+  .melb>.day-head{background:linear-gradient(120deg,#2c5d47,var(--leaf))}
+  .fly>.day-head{background:linear-gradient(120deg,#7a4a2b,#b07b45)}
+  .day-body{padding:22px 26px 26px}
+  .day-notes{background:var(--sand2);border-left:4px solid var(--gold);border-radius:8px;padding:12px 16px;margin:14px 0 4px;font-size:.93rem;color:#6b5a22}
+  .day-notes b{color:#8a6d1f}
+
+  .places{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+  .place{background:#fff;border:1px solid #eee5d6;border-radius:14px;overflow:hidden;transition:transform .18s,box-shadow .18s;display:flex;flex-direction:column}
+  .place:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(43,43,43,.12)}
+  .place .pic{height:160px;background:linear-gradient(130deg,#dfe9e2,#c8d9dd);position:relative;display:flex;align-items:center;justify-content:center;font-size:3rem;color:#8ba79a;overflow:hidden}
+  .place .pic img{width:100%;height:100%;object-fit:cover}
+  .place .pic .cat{position:absolute;top:10px;left:10px;background:rgba(255,255,255,.92);border-radius:999px;font-size:.75rem;padding:3px 12px;font-weight:700;color:var(--ocean-dark)}
+  .place .pic .book{position:absolute;top:10px;right:10px;background:var(--coral);color:#fff;border-radius:999px;font-size:.75rem;padding:3px 12px;font-weight:700}
+  .place .info{padding:14px 16px 16px;flex:1;display:flex;flex-direction:column}
+  .place h4{font-size:1.08rem;color:var(--ocean-dark)}
+  .place h4 span{font-size:.85rem;color:var(--muted);font-weight:500;margin-left:6px}
+  .place p{font-size:.9rem;color:#555;margin-top:6px;flex:1}
+  .place .hours{font-size:.8rem;color:var(--muted);margin-top:8px}
+  .place .cost{font-size:.83rem;color:#9a6b1f;background:var(--sand2);display:inline-block;padding:2px 12px;border-radius:999px;margin-top:10px;font-weight:700;align-self:flex-start}
+  .place .cost.free{color:var(--leaf);background:#e7f2ec}
+  .place .hours a{color:var(--ocean);text-decoration:none;font-weight:600}
+  .place .hours a:hover{text-decoration:underline}
+
+  /* ---------- Tips ---------- */
+  .tip{background:var(--card);border-radius:14px;padding:18px 20px;box-shadow:0 3px 12px rgba(43,43,43,.06);border-left:4px solid var(--coral)}
+  .tip h4{color:var(--ocean-dark);margin-bottom:6px}
+  .tip p{font-size:.93rem;color:#555}
+
+  footer{text-align:center;padding:40px 20px 50px;color:var(--muted);font-size:.9rem}
+  @media(max-width:640px){.places{grid-template-columns:1fr}.day-body{padding:18px 16px 22px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kicker">2026 Family Trip · Australia</div>
+  <h1>澳洲家庭之旅 — Sydney &amp; Melbourne</h1>
+  <div class="sub">雪梨 + 墨爾本 · 兩大城市 · 14 天溫馨行程</div>
+  <div class="dates">🗓 2026 年 12 月 11 日 — 12 月 24 日（聖誕前夕回港）</div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#overview">行程總覽</a></li>
+    <li><a href="#flights">航班</a></li>
+    <li><a href="#hotels">住宿</a></li>
+    <li><a href="#sydney">雪梨行程</a></li>
+    <li><a href="#melbourne">墨爾本行程</a></li>
+    <li><a href="#tips">實用貼士</a></li>
+  </ul>
+</nav>
+
+<div class="wrap">
+
+<!-- ================= OVERVIEW ================= -->
+<section id="overview">
+  <h2><span class="dot"></span>行程總覽</h2>
+  <p class="lead">一次過睇晒成個 trip 嘅重點：去邊、住邊、坐邊班機。</p>
+  <div class="grid c4">
+    <div class="stat"><div class="ic">🏖️</div><h3>雪梨 Sydney</h3><p>12 月 11 – 17 日（6 晚）<br>歌劇院、海港大橋、Bondi 海灘、藍山、獵人谷</p></div>
+    <div class="stat"><div class="ic">☕</div><h3>墨爾本 Melbourne</h3><p>12 月 17 – 24 日（6 晚）<br>咖啡之都、彩虹小屋、十二門徒石、企鵝島</p></div>
+    <div class="stat"><div class="ic">👨‍👩‍👧‍👦</div><h3>同行人數</h3><p>全家同行 · 12 月 17 日 Andy 由香港抵達雪梨（CX105，中午 12:30）會合</p></div>
+    <div class="stat"><div class="ic">💰</div><h3>住宿預算</h3><p>合共約 HK$29,423<br>（雪梨酒店 A$1,796 ＋ 墨爾本 Airbnb HK$19,636）</p></div>
+  </div>
+</section>
+
+<!-- ================= FLIGHTS ================= -->
+<section id="flights">
+  <h2><span class="dot"></span>航班資訊</h2>
+  <p class="lead">來程搭國泰商務客艙，記得早啲入貴賓室；回程經新加坡轉機。</p>
+  <div class="grid" style="gap:14px">
+    <div class="flight">
+      <div style="font-size:1.8rem">🛫</div>
+      <div>
+        <div class="route">香港 HKG <span class="arrow">→</span> 雪梨 SYD <span class="tag blue">國泰 CX111 · 商務客艙</span></div>
+        <div class="meta">12 月 11 日（五）19:05 起飛 — 12 月 12 日（六）07:15 抵達 · 夜機，記得早啲去機場貴賓室</div>
+      </div>
+    </div>
+    <div class="flight">
+      <div style="font-size:1.8rem">✈️</div>
+      <div>
+        <div class="route">雪梨 SYD <span class="arrow">→</span> 墨爾本 MEL <span class="tag">內陸機</span></div>
+        <div class="meta">12 月 17 日（四）· 11:00 – 12:30 到達 · 票價約 HK$700–1,500／位 · 手提行李 8–10kg ＋ 寄艙 23/25kg</div>
+      </div>
+    </div>
+    <div class="flight">
+      <div style="font-size:1.8rem">👨</div>
+      <div>
+        <div class="route">香港 HKG <span class="arrow">→</span> 雪梨 SYD <span class="tag green">Andy · 國泰 CX105</span></div>
+        <div class="meta">12 月 17 日（四）中午 12:30 抵達，同大家會合</div>
+      </div>
+    </div>
+    <div class="flight">
+      <div style="font-size:1.8rem">🛬</div>
+      <div>
+        <div class="route">墨爾本 MEL <span class="arrow">→</span> 新加坡 SIN <span class="tag blue">新航 SQ218</span></div>
+        <div class="meta">12 月 24 日（四）00:35 起飛 — 05:15 抵達</div>
+      </div>
+    </div>
+    <div class="flight">
+      <div style="font-size:1.8rem">🏠</div>
+      <div>
+        <div class="route">新加坡 SIN <span class="arrow">→</span> 香港 HKG <span class="tag blue">新航 SQ874</span></div>
+        <div class="meta">12 月 24 日（四）07:30 起飛 — 11:20 抵達，聖誕前夕返到屋企 🎄</div>
+      </div>
+    </div>
+  </div>
+  <div class="day-notes" style="margin-top:16px"><b>🧳 行李提示：</b>新航（Singapore Airlines）寄艙行李以 <b>35kg 計算</b>（只計總重量）；內陸機 SYD→MEL 就要留意手提 8–10kg ＋ 寄艙 23/25kg 嘅限制。</div>
+</section>
+
+<!-- ================= HOTELS ================= -->
+<section id="hotels">
+  <h2><span class="dot"></span>住宿安排</h2>
+  <p class="lead">雪梨住 Chatswood 車士活（寧靜方便、餐廳多），墨爾本住 Carlton 卡爾頓（近 CBD 同市場）。</p>
+  <div class="grid c3">
+    <div class="hotel sydney">
+      <div class="head">
+        <h3>Meriton Suites Chatswood</h3>
+        <div class="en">雪梨 · 79 Albert Ave, Chatswood NSW 2067</div>
+      </div>
+      <div class="body">
+        <ul>
+          <li>入住：<b>12 月 12 日（六）</b> → 退房：<b>12 月 17 日（四）</b>，共 5 晚</li>
+          <li>價格：<b>A$1,796</b>（以 BOC 信用卡支付）</li>
+          <li>預約確認號碼：<span class="conf">Trip.com 1359047031130997</span></li>
+          <li>就近 Chatswood 火車／地鐵站，往返市中心方便，樓下有商場同餐廳</li>
+        </ul>
+      </div>
+    </div>
+    <div class="hotel melb">
+      <div class="head">
+        <h3>Swanston Central（Airbnb）</h3>
+        <div class="en">墨爾本 · 160 Victoria St, Carlton VIC 3053</div>
+      </div>
+      <div class="body">
+        <ul>
+          <li>入住：<b>12 月 17 日（四）</b> → 退房：<b>12 月 23 日（三）</b>，共 6 晚</li>
+          <li>價格：<b>HK$19,636</b>（以 AE 卡支付）</li>
+          <li>預約確認號碼：<span class="conf">HM35QXK4BK</span></li>
+          <li>⚠️ 11 月 17 日下午 3:00 前可免費取消；12 月 10 日下午 3:00 前取消可獲部分退款</li>
+        </ul>
+      </div>
+    </div>
+    <div class="hotel sydney">
+      <div class="head">
+        <h3>🚗 落機交通（雪梨機場 → Chatswood）</h3>
+        <div class="en">三個方案任揀</div>
+      </div>
+      <div class="body">
+        <ul>
+          <li><b>1）Uber</b> — Ben 話方便可行</li>
+          <li><b>2）機場接送</b> — 約 HK$500（Trip.com 最平），車程 26 分鐘</li>
+          <li><b>3）火車</b> — 機場 T8 出發去 Central Station，轉 Sydney Metro M1 線去 Chatswood（約 45 分鐘）</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SYDNEY ================= -->
+<section id="sydney">
+  <h2><span class="dot"></span>雪梨 Sydney · 12 月 11 – 17 日</h2>
+  <p class="lead">地標、海灘、歷史街區，仲有藍山同酒莊一日遊。所有景點名稱保留英文，方便問路同導航。</p>
+
+  <!-- Day 11 -->
+  <div class="day fly">
+    <div class="day-head"><span class="dnum">12 月 11 日（五）</span><span class="dtheme">✈️ 香港 → 雪梨 夜機</span></div>
+    <div class="day-body">
+      <p>CX111 商務客艙，晚上 7:05 起飛。商務客艙記得<b>早啲去貴賓室</b>慢慢歎，飛機上瞓好覺，第二朝落機精神抖擻！</p>
+    </div>
+  </div>
+
+  <!-- Day 12 -->
+  <div class="day sydney">
+    <div class="day-head"><span class="dnum">12 月 12 日（六）</span><span class="dtheme">🌊 抵達雪梨 · Circular Quay 海港經典一天</span></div>
+    <div class="day-body">
+      <div class="places" id="d12"></div>
+      <div class="day-notes"><b>💡 貼士：</b>Check-in 之後先去食越南河補充體力。Ben 仲教咗一個秘密路線：可以由 <b>Milsons Point 沿住海港大橋行去 The Rocks</b>（全程 2.4km，約 30 分鐘），一邊行一邊睇海港美景，係好多人唔知嘅玩法！</div>
+    </div>
+  </div>
+
+  <!-- Day 13 -->
+  <div class="day sydney">
+    <div class="day-head"><span class="dnum">12 月 13 日（日）</span><span class="dtheme">🏄 Bondi 海灘輕鬆日</span></div>
+    <div class="day-body">
+      <div class="places" id="d13"></div>
+      <div class="day-notes"><b>💡 貼士：</b>由 <b>Cafe Margaret</b> 開車去 <b>Bondi Beach</b> 非常近，車程約 <b>11 分鐘</b>（約 5.1km）。食完招牌漢堡去海邊散步，完全唔使花時間喺交通上，係好順路嘅組合！晚餐後返回 Chatswood 車程約 20–30 分鐘。</div>
+    </div>
+  </div>
+
+  <!-- Day 14 -->
+  <div class="day sydney">
+    <div class="day-head"><span class="dnum">12 月 14 日（一）</span><span class="dtheme">🐟 咖啡 + 魚市場 + 大教堂</span></div>
+    <div class="day-body">
+      <div class="places" id="d14"></div>
+    </div>
+  </div>
+
+  <!-- Day 15 -->
+  <div class="day sydney">
+    <div class="day-head"><span class="dnum">12 月 15 日（二）</span><span class="dtheme">🏔️ 藍山 / 獵人谷酒莊一日遊</span></div>
+    <div class="day-body">
+      <div class="places" id="d15"></div>
+      <div class="day-notes"><b>💡 貼士：</b>獵人谷傾向參加 <b>Klook「獵人谷含午餐一日遊」</b>中文團（11:15am – 5:15pm，每人 $1,275）。晚餐 prefer <b>The Gidley</b>，因為媽媽有得揀素食 🥗。</div>
+    </div>
+  </div>
+
+  <!-- Day 16 -->
+  <div class="day sydney">
+    <div class="day-head"><span class="dnum">12 月 16 日（三）</span><span class="dtheme">🌿 Hea 遊日 · Alexandria 文青區</span></div>
+    <div class="day-body">
+      <div class="places" id="d16"></div>
+      <div class="day-notes"><b>🛍️ 小知識：</b><b>lululemon outlet</b> 就喺 The Grounds of Alexandria 附近，行完咖啡店可以順便掃貨！</div>
+    </div>
+  </div>
+
+  <!-- Day 17 -->
+  <div class="day fly">
+    <div class="day-head"><span class="dnum">12 月 17 日（四）</span><span class="dtheme">✈️ 雪梨 → 墨爾本 · Andy 到步會合</span></div>
+    <div class="day-body">
+      <div class="places" id="d17"></div>
+      <div class="day-notes"><b>💡 貼士：</b>因為同行有 <b>65+ 長者</b>，行到 <b>Queen Victoria Market</b> 或者 <b>Lune</b> 之後如果覺得攰，可以隨時截架<b>免費電車（Free Tram Zone）</b>代步，唔使全程行路！</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MELBOURNE ================= -->
+<section id="melbourne">
+  <h2><span class="dot"></span>墨爾本 Melbourne · 12 月 17 – 24 日</h2>
+  <p class="lead">世界咖啡之都：每一天都由一杯好咖啡開始，仲有大自然同企鵝！</p>
+
+  <!-- Day 18 -->
+  <div class="day melb">
+    <div class="day-head"><span class="dnum">12 月 18 日（五）</span><span class="dtheme">🏠 南市場 + Brighton 彩虹小屋</span></div>
+    <div class="day-body">
+      <div class="places" id="d18"></div>
+      <div class="day-notes"><b>💡 建議時間表：</b>上午至中午（10:00 – 13:30）去 <b>South Melbourne Market</b> 歎豐富 Brunch、行特色小店同買手信；<b>下午 3:00</b> 左右出發去 <b>Brighton Beach</b>（車程約 20–25 分鐘），啱啱好趕上 <b>3:00 至黃昏</b>陽光最靚、影彩虹小屋同日落嘅黃金時間！</div>
+    </div>
+  </div>
+
+  <!-- Day 19 -->
+  <div class="day melb">
+    <div class="day-head"><span class="dnum">12 月 19 日（六）</span><span class="dtheme">🚗 大自然長途日 · 十二門徒石 + 企鵝島</span></div>
+    <div class="day-body">
+      <div class="places" id="d19"></div>
+      <div class="day-notes"><b>💡 貼士：</b>呢日車程較長（全程約 10 小時），記得着舒服對鞋、帶定水同小食。<b>Phillip Island 企鵝歸巢</b>建議提早網上預約！</div>
+    </div>
+  </div>
+
+  <!-- Day 20 -->
+  <div class="day melb">
+    <div class="day-head"><span class="dnum">12 月 20 日（日）</span><span class="dtheme">🍷 Yarra Valley 雅拉河谷品酒一日遊</span></div>
+    <div class="day-body">
+      <p style="margin-bottom:12px">輕鬆一天，參加酒莊導賞團，浸淫喺葡萄園同美酒之間。由酒店出發接團，兩個 Klook 選擇：</p>
+      <div class="places" id="d20"></div>
+    </div>
+  </div>
+
+  <!-- Day 21 -->
+  <div class="day melb">
+    <div class="day-head"><span class="dnum">12 月 21 日（一）</span><span class="dtheme">☕ CBD 咖啡 + 歷史建築 + 購物大巡禮</span></div>
+    <div class="day-body">
+      <div class="places" id="d21"></div>
+    </div>
+  </div>
+
+  <!-- Day 22 -->
+  <div class="day melb">
+    <div class="day-head"><span class="dnum">12 月 22 日（二）</span><span class="dtheme">🔁 自由日 · 想去邊就去邊</span></div>
+    <div class="day-body">
+      <p>行程同 21 日一樣咁自由！可以返去未行完嘅咖啡店、補買手信，或者喺 Carlton 附近hea 住歎世界。</p>
+    </div>
+  </div>
+
+  <!-- Day 23 -->
+  <div class="day melb">
+    <div class="day-head"><span class="dnum">12 月 23 日（三）</span><span class="dtheme">🧳 收拾行李 · 準備回程</span></div>
+    <div class="day-body">
+      <p>輕鬆最後一日，Check out 前慢慢執行李 — 記得留意 <b>35kg 寄艙限額</b>，買多咗手信要分配好！退房後可以先寄存行李再喺市區行埋最後一轉。</p>
+    </div>
+  </div>
+
+  <!-- Day 24 -->
+  <div class="day fly">
+    <div class="day-head"><span class="dnum">12 月 24 日（四）</span><span class="dtheme">🎄 聖誕前夕回家</span></div>
+    <div class="day-body">
+      <p>凌晨 12:35 搭 <b>SQ218</b> 由墨爾本飛新加坡（05:15 抵達），轉 <b>SQ874</b>（07:30 – 11:20）返到香港，啱啱好趕得上聖誕大餐！🎅</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TIPS ================= -->
+<section id="tips">
+  <h2><span class="dot"></span>實用貼士</h2>
+  <p class="lead">出發前睇一睇，玩得更安心。</p>
+  <div class="day-notes" style="margin-bottom:20px"><b>💰 費用說明：</b>每個地點卡都標示咗<b>大約費用</b> — 餐廳／咖啡店以每位計、景點則標明門票或收費項目。全部只係<b>預算參考</b>（澳洲元 A$，匯率約 1 AUD ≈ 5 HKD），實際價格以店家為準。</div>
+  <div class="grid c3">
+    <div class="tip"><h4>📞 餐廳要提早訂位</h4><p><b>Cafe Margaret、6HEAD、Bar Totti's 同 The Gidley</b> 都係熱門人氣餐廳，務必<b>提早網上訂位</b>！The Grounds of Alexandria、Higher Ground、Grain Store 亦建議預約。</p></div>
+    <div class="tip"><h4>🚋 墨爾本 Free Tram Zone</h4><p>墨爾本市中心有<b>免費電車區</b>，65+ 長者行到攰可以隨時上車，唔使全程行路。上落記得拍卡（myki）。</p></div>
+    <div class="tip"><h4>🧳 行李限額</h4><p>新航寄艙 <b>35kg</b>（只計總重量）；雪梨→墨爾本內陸機手提 <b>8–10kg</b> ＋ 寄艙 <b>23/25kg</b>。買手信前諗定點分。</p></div>
+    <div class="tip"><h4>🎫 需要預約嘅活動</h4><p><b>Sydney Opera House</b> 導賞團、<b>Phillip Island 企鵝歸巢</b>、<b>Klook 獵人谷／雅拉河谷一日團</b> — 全部建議出發前上網訂定。</p></div>
+    <div class="tip"><h4>🌉 Ben 的私藏路線</h4><p>可以由 <b>Milsons Point</b> 沿海港大橋行去 <b>The Rocks</b>（2.4km／約 30 分鐘），風景一流，係人少少知嘅散步路線。</p></div>
+    <div class="tip"><h4>🌦️ 12 月天氣</h4><p>12 月係澳洲<b>夏天</b>，日間可達 25–30°C，陽光猛烈。記得帶防曬、太陽眼鏡同帽，晚上海邊會有風，帶件薄外套。</p></div>
+  </div>
+</section>
+
+<footer>
+  <p>✈️ 2026 Family Trip · Sydney &amp; Melbourne · 12/11 – 12/24</p>
+  <p style="margin-top:6px">祝大家旅途愉快，聖誕快樂！🎄</p>
+</footer>
+
+</div>
+
+<script>
+/* =========================================================
+   行程資料：type 決定圖標分類；wiki 為 Wikipedia 條目（自動抓圖）；
+   無 wiki 時顯示 fallback 圖標卡。
+   ========================================================= */
+const CATS = {
+  scenic:  {label:"景點",  icon:"🏞️"},
+  beach:   {label:"海灘",  icon:"🏖️"},
+  historic:{label:"古蹟",  icon:"🏛️"},
+  market:  {label:"市場",  icon:"🏪"},
+  cafe:    {label:"咖啡",  icon:"☕"},
+  food:    {label:"餐廳",  icon:"🍽️"},
+  dessert: {label:"甜點",  icon:"🍦"},
+  shopping:{label:"購物",  icon:"🛍️"},
+  wine:    {label:"酒莊",  icon:"🍷"},
+  tour:    {label:"一日遊",icon:"🚌"},
+  info:    {label:"資訊",  icon:"📌"}
+};
+
+const DAYS = {
+  d12: [
+    {n:"Pho Thin Chatswood", zh:"越南河粉店", type:"food", hours:"落機後午餐 · 距酒店步行 9 分鐘", d:"抵達後第一站！熱騰騰嘅越南河，補充體力先再出發觀光。"},
+    {n:"Sydney Opera House", zh:"雪梨歌劇院", type:"scenic", wiki:"Sydney Opera House", book:true, hours:"導賞團建議提前預約 · Google Maps", d:"世界級地標，雪梨天際線靈魂。可參加導賞團深入參觀歌劇廳同劇院，周圍海景一流。"},
+    {n:"Mrs Macquarie's Chair", zh:"麥奎里夫人石椅", type:"historic", wiki:"Mrs Macquarie's Chair", hours:"24 小時開放 · Google Maps", d:"1811 年由囚犯雕鑿嘅砂岩長椅，為當時總督夫人而建。係影歌劇院 + 大橋同框嘅最佳影相位！"},
+    {n:"Sydney Harbour Bridge", zh:"雪梨海港大橋", type:"historic", wiki:"Sydney Harbour Bridge", hours:"Google Maps", d:"1932 年落成嘅標誌建築，可挑戰 BridgeClimb 登頂，或者行 Pylon Lookout 瞭望台（有展覽）。"},
+    {n:"The Rocks", zh:"岩石區", type:"historic", wiki:"The Rocks, New South Wales", hours:"Google Maps", d:"雪梨最古老嘅歷史小巷區，有大橋作背景。週末有 Rocks Markets 戶外市集，街頭小食、手作同街頭表演，仲有全城最古老嘅酒吧。"},
+    {n:"6HEAD Sydney", zh:"牛排海鮮餐廳", type:"food", book:true, hours:"12:00 – 22:30 · 晚餐 · Google Maps", d:"工業風格餐廳，主打牛排同海鮮，酒單豐富，仲有雪梨海港景。記得提早訂位！"}
+  ],
+  d13: [
+    {n:"Cafe Margaret Double Bay", zh:"人氣 Cafe", type:"cafe", book:true, hours:"Brunch · Google Maps", d:"Double Bay 人氣咖啡店，招牌漢堡必試！食完直接去海灘，好順路。"},
+    {n:"Bondi Surf Seafoods", zh:"炸魚薯條", type:"food", hours:"Google Maps", d:"Bondi 本地人最愛嘅海鮮外賣店，炸魚薯條喺海邊食特別好味。"},
+    {n:"Bondi Beach", zh:"邦迪海灘", type:"beach", wiki:"Bondi Beach", hours:"全日開放 · Google Maps", d:"澳洲最出名嘅海灘，金色沙灘配碧藍海水。可以行沙灘步道、睇衝浪手，或者坐低歎一陣海風。"},
+    {n:"mimi's", zh:"海景晚餐", type:"food", hours:"晚餐 · 喺 Bondi 海邊 · Google Maps", d:"喺 Bondi 海邊歎晚餐，一邊睇住海景一邊食飯，之後先返回 Chatswood（車程約 20–30 分鐘）。"}
+  ],
+  d14: [
+    {n:"Paramount Coffee Project", zh:"工業風咖啡店", type:"cafe", hours:"7:00 – 16:00 · Google Maps", d:"高樓底工業風咖啡店，出品有創意嘅 diner 式菜式，炸雞係招牌之一。"},
+    {n:"Single O Surry Hills", zh:"精品咖啡", type:"cafe", hours:"7:00 – 15:30 · Google Maps", d:"熱鬧嘅街邊咖啡店，自家新鮮烘焙咖啡配時令小食，環境有型。"},
+    {n:"Beta Coffee", zh:"咖啡店", type:"cafe", hours:"Google Maps", d:"行程中另一個咖啡補給站，順路一試。"},
+    {n:"Sydney Fish Market", zh:"雪梨魚市場", type:"market", wiki:"Sydney Fish Market", hours:"7:00 – 22:00 · Google Maps", d:"南半球最大嘅魚市場：生蠔、龍蝦、壽司樣樣有，仲有熟食檔同麵包店。鍾意食海鮮嘅話係必到一站！"},
+    {n:"St Mary's Cathedral", zh:"聖瑪利大教堂", type:"historic", wiki:"St Mary's Cathedral, Sydney", hours:"6:30 – 18:30 · Google Maps", d:"哥德式天主教大教堂，1868 至 1928 年以本地砂岩建成，莊嚴華麗，係雪梨最重要嘅宗教地標。"},
+    {n:"Bar Totti's", zh:"意式小酒館", type:"food", book:true, hours:"12:00 – 00:00 · 晚餐 · Google Maps", d:"輕鬆嘅鄰里餐廳，意大利式小食配酒同雞尾酒，氣氛熱鬧。記得提早訂位！"}
+  ],
+  d15: [
+    {n:"Blue Mountains", zh:"藍山", type:"scenic", wiki:"Blue Mountains (Australia)", hours:"車程約 1.5 小時 · Google Maps", d:"世界遺產級山區，著名嘅三姊妹峰（Three Sisters）同無邊際嘅尤加利樹林，山嵐呈藍色因而得名。"},
+    {n:"Hunter Valley Wine Tours", zh:"獵人谷品酒團", type:"wine", wiki:"Hunter Valley wine", book:true, hours:"Klook 中文團 11:15 – 17:15 · $1,275／位 含午餐", d:"新州最古老嘅葡萄酒產區。參加 Klook 含午餐一日團，輕鬆歎盡酒莊風光。"},
+    {n:"The Gidley", zh:"經典牛排館", type:"food", book:true, hours:"12:00 – 00:00 · 晚餐 · Google Maps", d:"老派高級牛排館，配豐富酒單，有素食選擇 — 適合媽媽！記得訂位。"},
+    {n:"BISTECCA", zh:"意式牛排館", type:"food", book:true, hours:"12:00 – 00:00 · 備選 · Google Maps", d:"僅限成人嘅意大利風格牛排館，雞尾酒單豐富，鄉村風情。"}
+  ],
+  d16: [
+    {n:"Toby's Estate Coffee Roasters", zh:"咖啡烘焙名家", type:"cafe", hours:"7:30 – 15:00 · Google Maps", d:"單一產區濃縮咖啡、冷萃樣樣齊，空間明亮時尚。"},
+    {n:"The Grounds of Alexandria", zh:"文青庭院咖啡園", type:"cafe", book:true, hours:"7:30 – 21:00 · Google Maps", d:"由舊派餅廠改建嘅咖啡園：紅磚牆、有機花園同市集檔攤，係雪梨最紅嘅打卡熱點。附近仲有 lululemon outlet！"},
+    {n:"The Grounds Coffee Factory", zh:"咖啡工場", type:"cafe", hours:"Google Maps", d:"同場嘅咖啡工場，不過 Ben 評價係「麻麻」— 可以順路睇下，唔使特登。"},
+    {n:"The Grumpy Barista", zh:"咖啡店", type:"cafe", hours:"Google Maps", d:"名字有趣嘅咖啡店，行完 Alexandria 可以再補一杯。"},
+    {n:"Sydney Park", zh:"雪梨公園", type:"scenic", wiki:"Sydney Park", hours:"24 小時開放 · Google Maps", d:"40 公頃大草地公園，有濕地、園景花園，仲有歷史磚窯同煙囪遺跡，散步一流。"},
+    {n:"Pizza Bros", zh:"薄餅店", type:"food", hours:"晚餐 · Google Maps", d:"輕鬆嘅 Pizza 晚餐，為 Hea 遊日收尾。"}
+  ],
+  d17: [
+    {n:"SYD → MEL 內陸機", zh:"飛往墨爾本", type:"info", hours:"11:00 – 12:30 到達 · 票價 HK$700–1,500／位", d:"Andy 搭 CX105 中午 12:30 抵達雪梨會合；之後全家飛墨爾本，入住 Swanston Central。"},
+    {n:"Seven Seeds Coffee Roasters", zh:"咖啡 micro-roaster", type:"cafe", wiki:"Seven Seeds", hours:"7:00 – 17:00 · Google Maps", d:"通透嘅工業風咖啡店兼自家烘焙工場，brunch、三文治同精品茶都出色。"},
+    {n:"Baguette Studios", zh:"法包店", type:"cafe", hours:"Google Maps", d:"手工法包店，順路買個包做下午小食。"},
+    {n:"Queen Victoria Market", zh:"維多利亞女皇市場", type:"market", wiki:"Queen Victoria Market", book:true, hours:"6:00 – 15:00 · 週二/四/五/六/日開放", d:"百年歷史地標市場，橫跨兩個街區：生鮮、美食、衣服手信樣樣有。行到攰可以搭免費電車！"},
+    {n:"Lune Croissanterie", zh:"世界級可頌", type:"dessert", hours:"Google Maps", d:"被譽為全球最好嘅可頌之一，酥脆層次無得輸，好多人專登排隊。"},
+    {n:"Hareruya Pantry CBD", zh:"日式小食店", type:"food", hours:"Google Maps", d:"日式風味小食店，順路一試。"},
+    {n:"Chinatown Melbourne", zh:"墨爾本唐人街", type:"scenic", wiki:"Chinatown, Melbourne", hours:"24 小時 · Google Maps", d:"澳洲最古老嘅唐人街，中式餐廳、小店同文化活動雲集，想食返啱口味嚟呢度。"},
+    {n:"Bourke Street Mall", zh:"卜克街購物大道", type:"shopping", wiki:"Bourke Street, Melbourne", hours:"24 小時 · 商店約 10:00 – 19:00", d:"只限行人同電車嘅購物大街，百貨公司、精品店同食肆林立，仲成日有街頭表演。"}
+  ],
+  d18: [
+    {n:"Market Lane Coffee", zh:"精品咖啡", type:"cafe", hours:"South Melbourne · Google Maps", d:"墨爾本咖啡界名店，簡潔專注於咖啡本身。"},
+    {n:"South Melbourne Market", zh:"南墨爾本市場", type:"market", hours:"8:00 – 17:00 · 週三/五/六/日開放", d:"熱鬧嘅室內市場：新鮮蔬果、肉類海鮮同環球美食檔攤，Brunch 同買手信嘅好地方。"},
+    {n:"ST. ALi Coffee Roasters", zh:"倉庫風咖啡", type:"cafe", hours:"7:00 – 17:00 · Google Maps", d:"潮人倉庫空間，藝術感咖啡配創意 brunch。"},
+    {n:"Brighton Beach Bathing Boxes", zh:"彩虹小屋海灘", type:"beach", wiki:"Brighton Bathing Boxes", book:true, hours:"建議下午 3:00 – 黃昏 · 光線最美", d:"一排維多利亞時代彩色浴屋（82 間），係墨爾本最經典嘅明信片畫面。黃昏時分影相最靚！"}
+  ],
+  d19: [
+    {n:"Twelve Apostles", zh:"十二門徒石", type:"scenic", wiki:"Twelve Apostles (Victoria)", hours:"沿 Great Ocean Road 車程約 3 小時", d:"大洋路盡頭嘅石灰岩巨柱，海浪千年雕琢而成，壯觀程度唔使多講，係澳洲最著名自然奇景之一。"},
+    {n:"Proud Mary Coffee", zh:"咖啡店", type:"cafe", hours:"8:00 – 15:00 · 回程途中 · Google Maps", d:"紅磚牆潮店，單一產區咖啡配豐富早餐。"},
+    {n:"Lulu & me Cheesecakes", zh:"芝士蛋糕", type:"dessert", hours:"Google Maps", d:"人氣芝士蛋糕店，去 Phillip Island 前補充能量！"},
+    {n:"Phillip Island · Penguin Parade", zh:"菲利普島 · 企鵝歸巢", type:"scenic", wiki:"Phillip Island (Victoria)", book:true, hours:"黃昏時段 · 需預約", d:"每日日落後，一小時小企鵝成群由海中返屋企 — 世界聞名嘅 Penguin Parade，可愛程度爆燈，記得提前訂票！"},
+    {n:"Terror Twilight", zh:"晚餐", type:"food", hours:"晚餐 · Google Maps", d:"看畢企鵝返程食晚餐，之後返回酒店（車程約 2 小時）。"}
+  ],
+  d20: [
+    {n:"雅拉河谷史詩葡萄酒導賞團", zh:"Klook 選項 1", type:"tour", hours:"8:45 出發 · 墨爾本出發", d:"Klook 中文團，深入雅拉河谷多間酒莊，邊飲邊學，含導賞。"},
+    {n:"雅拉河谷酒莊導覽一日遊", zh:"Klook 選項 2", type:"tour", hours:"9:30 出發 · 墨爾本出發", d:"另一個 Klook 一日遊選擇，時間較鬆動，同樣暢遊酒莊。"}
+  ],
+  d21: [
+    {n:"State Library Victoria", zh:"維多利亞州立圖書館", type:"historic", wiki:"State Library Victoria", hours:"10:00 – 18:00 · Google Maps", d:"1856 年開放嘅州級地標，圓頂大閱覽室（La Trobe Reading Room）氣勢懾人，係全球最美圖書館之一。"},
+    {n:"Bakemono Bakers", zh:"日式麵包店", type:"cafe", hours:"Google Maps", d:"日式手工麵包店，出品精緻。"},
+    {n:"Patricia Coffee Brewers", zh:"站立式咖啡吧", type:"cafe", hours:"7:00 – 16:00 · Google Maps", d:"冇位坐嘅「極簡」咖啡吧，只賣咖啡 — 但係好多人心目中全墨爾本最好嘅一杯。"},
+    {n:"Dukes Coffee Roasters", zh:"精品咖啡", type:"cafe", hours:"7:00 – 16:30 · Google Maps", d:"木系明亮店內嘅精品咖啡店，出品穩定。"},
+    {n:"Industry Beans", zh:"咖啡店", type:"cafe", hours:"Little Collins St · Google Maps", d:"Little Collins 街上嘅人氣咖啡店，brunch 都唔錯。"},
+    {n:"Higher Ground", zh:"前發電站餐廳", type:"food", book:true, hours:"7:00 – 17:00 · Google Maps", d:"由百年發電站改建嘅華麗餐廳，紅磚工業風配精緻菜式，好多人嚟影相。建議訂位。"},
+    {n:"Pidapipó", zh:"意式雪糕", type:"dessert", hours:"12:00 – 22:30 · Google Maps", d:"墨爾本人氣手工 gelato，經典同季節限定口味一應俱全。"},
+    {n:"Vacation Coffee", zh:"咖啡店", type:"cafe", hours:"Google Maps", d:"CBD 咖啡巡禮嘅其中一站。"},
+    {n:"Grain Store", zh:"餐廳", type:"food", book:true, hours:"7:00 – 15:00 · Google Maps", d:"明亮工業風空間，精品咖啡加住家風味菜式。建議訂位。"},
+    {n:"The Hardware Société", zh:"人氣早餐店", type:"cafe", hours:"7:30 – 15:00 · Google Maps", d:"法蘭西多士同焗蛋係招牌，細小但溫馨嘅人氣早餐店。"},
+    {n:"Hector's Deli", zh:"熟食店", type:"cafe", hours:"Google Maps", d:"本地人至愛嘅 deli，三文治一流。"},
+    {n:"Melbourne Central", zh:"購物中心", type:"shopping", wiki:"Melbourne Central Shopping Centre", hours:"10:00 – 19:00 · Google Maps", d:"多層購物商場，有玻璃圓頂同百年子彈製造塔（Coop's Shot Tower）歷史建築。"},
+    {n:"Emporium Melbourne", zh:"商場", type:"shopping", wiki:"Emporium Melbourne", hours:"10:00 – 19:00 · Google Maps", d:"走高檔路線嘅商場，雲集時裝品牌同美食廣場。"},
+    {n:"The Block Arcade", zh:"19 世紀華麗拱廊", type:"historic", wiki:"Block Arcade, Melbourne", hours:"8:00 – 18:00 · Google Maps", d:"1890 年代嘅華麗購物拱廊：馬賽克地板、玻璃天幕同傳統茶室，行入去彷彿返到維多利亞時代。"},
+    {n:"Federation Square", zh:"聯邦廣場", type:"scenic", wiki:"Federation Square", hours:"24 小時 · Google Maps", d:"墨爾本嘅城市客廳，經常有大熒幕活動，周圍係美術館同 Flinders Street 站經典取景位。"},
+    {n:"Myer Melbourne", zh:"百年百貨", type:"shopping", wiki:"Myer", hours:"Google Maps", d:"澳洲經典百貨公司，聖誕季節氣氛一流，可以順便睇聖誕櫥窗！"}
+  ]
+};
+
+/* ---------- 費用參考（A$ 為澳洲元；免費則標示綠色） ---------- */
+const FREE = "免費";
+const COSTS = {
+  /* 雪梨 */
+  "Pho Thin Chatswood":"約 A$15–20／位",
+  "Sydney Opera House":"外圍免費 · 導賞團約 A$43–90／人",
+  "Mrs Macquarie's Chair":FREE,
+  "Sydney Harbour Bridge":"行橋免費 · BridgeClimb 約 A$220–388／人 · Pylon Lookout 約 A$30",
+  "The Rocks":"免費 · 市集消費自便",
+  "6HEAD Sydney":"約 A$100–150／位",
+  "Cafe Margaret Double Bay":"約 A$25–35／位",
+  "Bondi Surf Seafoods":"約 A$15–25／位",
+  "Bondi Beach":FREE,
+  "mimi's":"約 A$80–120／位",
+  "Paramount Coffee Project":"約 A$20–30／位",
+  "Single O Surry Hills":"約 A$15–25／位",
+  "Beta Coffee":"約 A$5–10／杯",
+  "Sydney Fish Market":"免費入場 · 海鮮按消費 約 A$20–50／位",
+  "St Mary's Cathedral":"免費（歡迎自由捐獻）",
+  "Bar Totti's":"約 A$50–70／位",
+  "Blue Mountains":"免費入園 · Scenic World 纜車約 A$50–70／人",
+  "Hunter Valley Wine Tours":"Klook 團費 約 $1,275／位（含午餐）",
+  "The Gidley":"約 A$100–140／位",
+  "BISTECCA":"約 A$100–150／位",
+  "Toby's Estate Coffee Roasters":"約 A$15–25／位",
+  "The Grounds of Alexandria":"約 A$25–40／位",
+  "The Grounds Coffee Factory":"約 A$10–20／位",
+  "The Grumpy Barista":"約 A$8–15／位",
+  "Sydney Park":FREE,
+  "Pizza Bros":"約 A$20–30／位",
+  "SYD → MEL 內陸機":"票價 HK$700–1,500／位",
+  /* 墨爾本 */
+  "Seven Seeds Coffee Roasters":"約 A$20–30／位",
+  "Baguette Studios":"約 A$10–15／位",
+  "Queen Victoria Market":"免費入場 · 購物消費自便",
+  "Lune Croissanterie Melbourne CBD on Russell":"約 A$8–15／位",
+  "Hareruya Pantry CBD":"約 A$10–20／位",
+  "Chinatown Melbourne":FREE,
+  "Bourke Street Mall":FREE,
+  "Market Lane Coffee - South Melbourne":"約 A$6–10／杯",
+  "South Melbourne Market":"免費入場 · 消費自便",
+  "ST. ALi Coffee Roasters - South Melbourne":"約 A$20–30／位",
+  "Brighton Beach Bathing Boxes":FREE,
+  "Twelve Apostles":FREE,
+  "Proud Mary Coffee":"約 A$20–30／位",
+  "Lulu & me Cheesecakes":"約 A$8–15／位",
+  "Phillip Island · Penguin Parade":"門票約 A$30–80／人（視乎座位等級）· 需預約",
+  "Terror Twilight":"約 A$40–60／位",
+  "雅拉河谷史詩葡萄酒導賞團":"團費另計 · 視乎 Klook 價格",
+  "雅拉河谷酒莊導覽一日遊":"團費另計 · 視乎 Klook 價格",
+  "State Library Victoria":FREE,
+  "Bakemono Bakers":"約 A$8–15／位",
+  "Patricia Coffee Brewers":"約 A$5–8／杯",
+  "Dukes Coffee Roasters":"約 A$5–8／杯",
+  "Industry Beans":"約 A$20–30／位",
+  "Higher Ground":"約 A$35–50／位",
+  "Pidapipó CBD":"約 A$6–10／杯",
+  "Vacation Coffee CBD":"約 A$5–8／杯",
+  "Grain Store":"約 A$30–45／位",
+  "The Hardware Société":"約 A$25–35／位",
+  "Hector's Deli":"約 A$15–20／位",
+  "Melbourne Central":FREE,
+  "Emporium Melbourne":FREE,
+  "The Block Arcade":FREE,
+  "Federation Square":FREE,
+  "Myer Melbourne":FREE
+};
+
+/* ---------- 冇 Wikipedia 條目嘅餐廳／咖啡店：使用 Wikimedia Commons 實景相 ---------- */
+const IMGS = {
+  "Pho Thin Chatswood":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/3_mushroom_curry_noodle_soup_with_ph%E1%BB%9F_-_Pho_2025-11-12.jpg/960px-3_mushroom_curry_noodle_soup_with_ph%E1%BB%9F_-_Pho_2025-11-12.jpg",
+  "Cafe Margaret Double Bay":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Caravan%2C_Clerkenwell%2C_London_%285624758902%29.jpg/960px-Caravan%2C_Clerkenwell%2C_London_%285624758902%29.jpg",
+  "mimi's":"https://upload.wikimedia.org/wikipedia/commons/e/ea/C%C3%B3ctel_Negroni_Campari.jpg",
+  "Bondi Surf Seafoods":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Fish-and-chips-in-a-paper-bag.jpg/960px-Fish-and-chips-in-a-paper-bag.jpg",
+  "6HEAD Sydney":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Grilled_steak_served_on_a_plate_with_avocado_and_sauce.jpg/960px-Grilled_steak_served_on_a_plate_with_avocado_and_sauce.jpg",
+  "Paramount Coffee Project":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/2019_02_Awesome_Coffee_Shop_in_Korat.jpg/960px-2019_02_Awesome_Coffee_Shop_in_Korat.jpg",
+  "Single O Surry Hills":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Flat_White_1.jpg/960px-Flat_White_1.jpg",
+  "Beta Coffee":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Flat_White_1.jpg/960px-Flat_White_1.jpg",
+  "Bar Totti's":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Antipasto_01_%28RaBoe%29.jpg/960px-Antipasto_01_%28RaBoe%29.jpg",
+  "The Gidley":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Grilled_steak_served_on_a_plate_with_avocado_and_sauce.jpg/960px-Grilled_steak_served_on_a_plate_with_avocado_and_sauce.jpg",
+  "BISTECCA":"https://upload.wikimedia.org/wikipedia/commons/e/ea/C%C3%B3ctel_Negroni_Campari.jpg",
+  "Toby's Estate Coffee Roasters":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Flat_White_1.jpg/960px-Flat_White_1.jpg",
+  "The Grounds of Alexandria":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/2019_02_Awesome_Coffee_Shop_in_Korat.jpg/960px-2019_02_Awesome_Coffee_Shop_in_Korat.jpg",
+  "The Grounds Coffee Factory":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Flat_White_1.jpg/960px-Flat_White_1.jpg",
+  "The Grumpy Barista":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/2019_02_Awesome_Coffee_Shop_in_Korat.jpg/960px-2019_02_Awesome_Coffee_Shop_in_Korat.jpg",
+  "Pizza Bros":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg/960px-Eq_it-na_pizza-margherita_sep2005_sml.jpg",
+  "Baguette Studios":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/20240817_Paris_Baguette_at_360_Shopping_Plaza_%28Greenland_Metropolis%29.jpg/960px-20240817_Paris_Baguette_at_360_Shopping_Plaza_%28Greenland_Metropolis%29.jpg",
+  "Lune Croissanterie Melbourne CBD on Russell":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Croissant%2C_whole.jpg/960px-Croissant%2C_whole.jpg",
+  "Hareruya Pantry CBD":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Melon_bread_%28with_chocolate_chips%29_2023-11-05.jpg/960px-Melon_bread_%28with_chocolate_chips%29_2023-11-05.jpg",
+  "Market Lane Coffee - South Melbourne":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Flat_White_1.jpg/960px-Flat_White_1.jpg",
+  "ST. ALi Coffee Roasters - South Melbourne":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/2019_02_Awesome_Coffee_Shop_in_Korat.jpg/960px-2019_02_Awesome_Coffee_Shop_in_Korat.jpg",
+  "Proud Mary Coffee":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Flat_White_1.jpg/960px-Flat_White_1.jpg",
+  "Lulu & me Cheesecakes":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Cheesecake_with_slice_cut_out.jpg/960px-Cheesecake_with_slice_cut_out.jpg",
+  "Phillip Island · Penguin Parade":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Eudyptula_minor_Bruny_1.jpg/960px-Eudyptula_minor_Bruny_1.jpg",
+  "Terror Twilight":"https://upload.wikimedia.org/wikipedia/commons/e/ea/C%C3%B3ctel_Negroni_Campari.jpg",
+  "雅拉河谷史詩葡萄酒導賞團":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Aerial_View_-_Landschaft_Markgr%C3%A4flerland1.jpg/960px-Aerial_View_-_Landschaft_Markgr%C3%A4flerland1.jpg",
+  "雅拉河谷酒莊導覽一日遊":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Aerial_View_-_Landschaft_Markgr%C3%A4flerland1.jpg/960px-Aerial_View_-_Landschaft_Markgr%C3%A4flerland1.jpg",
+  "Bakemono Bakers":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Melon_bread_%28with_chocolate_chips%29_2023-11-05.jpg/960px-Melon_bread_%28with_chocolate_chips%29_2023-11-05.jpg",
+  "Patricia Coffee Brewers":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Flat_White_1.jpg/960px-Flat_White_1.jpg",
+  "Dukes Coffee Roasters":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/2019_02_Awesome_Coffee_Shop_in_Korat.jpg/960px-2019_02_Awesome_Coffee_Shop_in_Korat.jpg",
+  "Industry Beans":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Flat_White_1.jpg/960px-Flat_White_1.jpg",
+  "Higher Ground":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Caravan%2C_Clerkenwell%2C_London_%285624758902%29.jpg/960px-Caravan%2C_Clerkenwell%2C_London_%285624758902%29.jpg",
+  "Pidapipó CBD":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Gelato_Cup_Ice-cream_Cake_Cow.jpg/960px-Gelato_Cup_Ice-cream_Cake_Cow.jpg",
+  "Vacation Coffee CBD":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Flat_White_1.jpg/960px-Flat_White_1.jpg",
+  "Grain Store":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Caravan%2C_Clerkenwell%2C_London_%285624758902%29.jpg/960px-Caravan%2C_Clerkenwell%2C_London_%285624758902%29.jpg",
+  "The Hardware Société":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Burger%2C_fries%2C_and_eggs_benedict_-_La_Tessa.jpg/960px-Burger%2C_fries%2C_and_eggs_benedict_-_La_Tessa.jpg",
+  "Hector's Deli":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/20240817_Paris_Baguette_at_360_Shopping_Plaza_%28Greenland_Metropolis%29.jpg/960px-20240817_Paris_Baguette_at_360_Shopping_Plaza_%28Greenland_Metropolis%29.jpg"
+};
+
+/* ---------- 渲染 ---------- */
+function renderDay(id){
+  const host = document.getElementById(id);
+  if(!host) return;
+  host.innerHTML = DAYS[id].map((p,i)=>{
+    const cat = CATS[p.type] || CATS.info;
+    p.img = IMGS[p.n] || p.img;
+    p.cost = COSTS[p.n] || p.cost;
+    const isFree = p.cost === FREE || (p.cost && p.cost.startsWith(FREE));
+    const mapUrl = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(p.n + (p.wiki && p.wiki.includes(",") ? "" : (p.zh ? " " + p.zh.split("/")[0] : "")) + " Australia");
+    return `
+    <article class="place">
+      <div class="pic" id="pic-${id}-${i}">
+        <span class="cat">${cat.label}</span>
+        ${p.book ? '<span class="book">📌 需訂位／預約</span>' : ''}
+        ${p.img ? `<img src="${p.img}" alt="${p.n}" loading="lazy">` : `<span class="ph">${cat.icon}</span>`}
+      </div>
+      <div class="info">
+        <h4>${p.n}${p.zh ? `<span>${p.zh}</span>` : ""}</h4>
+        <p>${p.d}</p>
+        <div class="hours">🕒 ${p.hours || "Google Maps"} ${p.wiki ? `· <a href="${mapUrl}" target="_blank" rel="noopener">📍 地圖</a>` : `· <a href="${mapUrl}" target="_blank" rel="noopener">📍 地圖</a>`}</div>
+        ${p.cost ? `<div class="cost${isFree ? " free" : ""}">💰 ${p.cost}</div>` : ""}
+      </div>
+    </article>`;
+  }).join("");
+}
+
+Object.keys(DAYS).forEach(renderDay);
+
+/* ---------- 由 Wikipedia 自動抓取景點圖片 ---------- */
+(async function fetchWikiImages(){
+  for (const [id, places] of Object.entries(DAYS)){
+    for (let i = 0; i < places.length; i++){
+      const p = places[i];
+      if (!p.wiki || p.img) continue;
+      const holder = document.getElementById(`pic-${id}-${i}`);
+      if (!holder) continue;
+      try{
+        const url = "https://en.wikipedia.org/api/rest_v1/page/summary/" + encodeURIComponent(p.wiki.replace(/ /g,"_")) + "?redirect=true";
+        const res = await fetch(url);
+        if (!res.ok) continue;
+        const data = await res.json();
+        const src = (data.thumbnail && data.thumbnail.source) || (data.originalimage && data.originalimage.source);
+        if (src && holder){
+          const img = document.createElement("img");
+          img.src = src;
+          img.alt = p.n;
+          img.loading = "lazy";
+          img.style.opacity = "0";
+          img.onload = () => { img.style.transition = "opacity .5s"; img.style.opacity = "1"; };
+          const ph = holder.querySelector(".ph");
+          if (ph) ph.remove();
+          holder.appendChild(img);
+        }
+      }catch(e){ /* 離線時保留圖標 fallback */ }
+    }
+  }
+})();
+</script>
+</body>
+</html>

@@ -399,6 +399,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
 .bcrow__fill.c{background:linear-gradient(90deg,#b8432c,var(--coral))}
 .bcrow__fill.b{background:linear-gradient(90deg,#1e6ba8,var(--blue))}
 .bcrow__fill.n{background:linear-gradient(90deg,#5f7d84,#9ab3b9)}
+.bcrow__fill.f{background:linear-gradient(90deg,#5f4380,#7a5aa0)}
 .bcrow__fill.s{background:linear-gradient(90deg,var(--sea-800),var(--sea-600))}
 .bcrow__v{
   font-size:13.5px;font-weight:700;text-align:right;
@@ -1864,7 +1865,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
     <div class="sec__head rv">
       <div class="sec__kicker">06　BUDGET</div>
       <h2 class="sec__title">費用估算（2 人）</h2>
-      <p class="sec__sub">不含機票。幣別為人民幣（¥）。所有金額為依公開資料整理的研究估算，非即時報價，實際以現場與訂房確認為準。</p>
+      <p class="sec__sub">已含機票（每人 ¥1,700，2 人共 ¥3,400）。幣別為人民幣（¥）。所有金額為依公開資料整理的研究估算，非即時報價，實際以現場與訂房確認為準。</p>
     </div>
 
     <div class="kpis rv">
@@ -1884,9 +1885,9 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
         <div class="kpi__d">以 3 天計</div>
       </div>
       <div class="kpi kpi--gold">
-        <div class="kpi__k">含住宿估算合計</div>
-        <div class="kpi__v"><sub>¥</sub>11,632</div>
-        <div class="kpi__d">含 2 晚套房估算 ¥6,400</div>
+        <div class="kpi__k">含機票＋住宿估算合計</div>
+        <div class="kpi__v"><sub>¥</sub>12,962</div>
+        <div class="kpi__d">含機票 ¥3,400（每人 ¥1,700）＋ 2 晚套房估算 ¥4,330</div>
       </div>
     </div>
 
@@ -1903,9 +1904,14 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
             </thead>
             <tbody>
               <tr>
+                <td>機票</td>
+                <td class="mut">來回機票估算（每人 ¥1,700 × 2 人）</td>
+                <td class="num">¥3,400</td>
+              </tr>
+              <tr>
                 <td>住宿</td>
                 <td class="mut">1 Bedroom Suite Ocean View – Lounge Access × 2 晚</td>
-                <td class="num">¥6,400</td>
+                <td class="num">¥4,330</td>
               </tr>
               <tr>
                 <td>餐飲</td>
@@ -1934,8 +1940,8 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
               </tr>
               <tr class="sum">
                 <td>合計</td>
-                <td class="mut">地面消費 ¥5,232　＋　住宿 ¥6,400</td>
-                <td class="num">¥11,632</td>
+                <td class="mut">地面消費 ¥5,232　＋　機票 ¥3,400　＋　住宿 ¥4,330</td>
+                <td class="num">¥12,962</td>
               </tr>
               <tr>
                 <td>免稅購物</td>
@@ -1951,30 +1957,35 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
         <div class="bc__head">
           <h3>支出結構</h3>
           <div class="seg" id="seg">
-            <button class="is-on" data-mode="full">含住宿</button>
+            <button class="is-on" data-mode="full">含機票＋住宿</button>
             <button data-mode="ground">僅地面消費</button>
           </div>
         </div>
 
         <div class="bcrow" data-cat="stay">
           <div class="bcrow__n"><i style="background:#0f4f5c"></i>住宿</div>
-          <div class="bcrow__track"><div class="bcrow__fill s" data-full="6400" data-ground="-1"></div></div>
-          <div class="bcrow__v" data-full="¥6,400" data-ground="不計">¥6,400</div>
+          <div class="bcrow__track"><div class="bcrow__fill s" data-full="4330" data-ground="-1"></div></div>
+          <div class="bcrow__v" data-full="¥4,330" data-ground="不計">¥4,330</div>
+        </div>
+        <div class="bcrow" data-cat="flight">
+          <div class="bcrow__n"><i style="background:#7a5aa0"></i>機票</div>
+          <div class="bcrow__track"><div class="bcrow__fill f" data-full="3400" data-ground="-1"></div></div>
+          <div class="bcrow__v" data-full="¥3,400" data-ground="不計">¥3,400</div>
         </div>
         <div class="bcrow" data-cat="dine">
           <div class="bcrow__n"><i style="background:#c9a227"></i>餐飲</div>
           <div class="bcrow__track"><div class="bcrow__fill g" data-full="2630" data-ground="2630"></div></div>
           <div class="bcrow__v" data-full="¥2,630" data-ground="¥2,630">¥2,630</div>
         </div>
-        <div class="bcrow" data-cat="ticket">
-          <div class="bcrow__n"><i style="background:#e8624a"></i>門票</div>
-          <div class="bcrow__track"><div class="bcrow__fill c" data-full="872" data-ground="872"></div></div>
-          <div class="bcrow__v" data-full="¥872" data-ground="¥872">¥872</div>
-        </div>
         <div class="bcrow" data-cat="trans">
           <div class="bcrow__n"><i style="background:#2f8fd8"></i>交通</div>
           <div class="bcrow__track"><div class="bcrow__fill b" data-full="1530" data-ground="1530"></div></div>
           <div class="bcrow__v" data-full="¥1,530" data-ground="¥1,530">¥1,530</div>
+        </div>
+        <div class="bcrow" data-cat="ticket">
+          <div class="bcrow__n"><i style="background:#e8624a"></i>門票</div>
+          <div class="bcrow__track"><div class="bcrow__fill c" data-full="872" data-ground="872"></div></div>
+          <div class="bcrow__v" data-full="¥872" data-ground="¥872">¥872</div>
         </div>
         <div class="bcrow" data-cat="misc">
           <div class="bcrow__n"><i style="background:#9ab3b9"></i>雜項</div>
@@ -1983,14 +1994,14 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
         </div>
 
         <div class="bctotal">
-          <span id="bcLabel">含住宿估算合計</span>
-          <b id="bcTotal">¥11,632</b>
+          <span id="bcLabel">含機票＋住宿估算合計</span>
+          <b id="bcTotal">¥12,962</b>
         </div>
       </div>
     </div>
 
     <div class="note">
-      住宿金額以海棠灣洲際同級海景套房 10 月房價推算，實際房價隨訂房管道、是否含早與會員權益而異；門票與館外餐飲為估算值，請以現場公告為準。
+      機票為每人來回估算 ¥1,700（2 人共 ¥3,400），實際以出票價格為準；住宿金額以海棠灣洲際同級海景套房 10 月房價推算，實際房價隨訂房管道、是否含早與會員權益而異；門票與館外餐飲為估算值，請以現場公告為準。
     </div>
   </div>
 </section>
@@ -2087,9 +2098,9 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
 
   /* ---------- budget chart toggle ---------- */
   var seg = document.getElementById('seg');
-  var TOTALS = { full: 11632, ground: 5232 };
-  var LABELS = { full: '含住宿估算合計', ground: '地面消費合計（不含住宿）' };
-  var MAX = { full: 6400, ground: 2630 };
+  var TOTALS = { full: 12962, ground: 5232 };
+  var LABELS = { full: '含機票＋住宿估算合計', ground: '地面消費合計（不含機票與住宿）' };
+  var MAX = { full: 4330, ground: 2630 };
 
   function paint(mode) {
     var max = MAX[mode];
