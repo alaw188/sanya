@@ -1632,6 +1632,36 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
           </span>
         </div>
 
+        <div class="poi" data-poi="yalong" role="button" tabindex="0">
+          <span class="poi__dot" style="background:#7b6cb0"></span>
+          <span class="poi__body">
+            <span class="poi__n">亞龍灣熱帶天堂森林公園</span>
+            <span class="poi__c">重點行程 · Day 2 · 4A</span>
+            <span class="poi__d">門票＋遊覽車 ¥158／人。Day 2 上午 09:05 出發，距酒店約 25 km、30–35 分。</span>
+            <a class="poi__go" href="https://uri.amap.com/search?keyword=%E4%BA%9E%E9%BE%8D%E7%81%A3%E7%86%B1%E5%B8%B6%E5%A4%A9%E5%A0%82%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9C%92&amp;city=460200&amp;src=sanya-trip&amp;coordinate=gaode" target="_blank" rel="noopener">在高德地圖開啟 ↗</a>
+          </span>
+        </div>
+
+        <div class="poi" data-poi="houhai" role="button" tabindex="0">
+          <span class="poi__dot" style="background:#0f8a6a"></span>
+          <span class="poi__body">
+            <span class="poi__n">後海村</span>
+            <span class="poi__c">夜間行程 · Day 2 · 衝浪漁村</span>
+            <span class="poi__d">免費入村，21:00 起沙灘酒吧。距酒店約 15 km、18–22 分，夜間回程建議預約。</span>
+            <a class="poi__go" href="https://uri.amap.com/search?keyword=%E5%90%8E%E6%B5%B7%E6%9D%91&amp;city=460200&amp;src=sanya-trip&amp;coordinate=gaode" target="_blank" rel="noopener">在高德地圖開啟 ↗</a>
+          </span>
+        </div>
+
+        <div class="poi" data-poi="tianya" role="button" tabindex="0">
+          <span class="poi__dot" style="background:#a8553f"></span>
+          <span class="poi__body">
+            <span class="poi__n">天涯海角</span>
+            <span class="poi__c">重點行程 · Day 3 · 4A</span>
+            <span class="poi__d">門票約 ¥80／人。Day 3 上午 08:15 出發，距酒店約 50 km、65–75 分。</span>
+            <a class="poi__go" href="https://uri.amap.com/search?keyword=%E5%A4%A9%E6%B6%AF%E6%B5%B7%E8%A7%92&amp;city=460200&amp;src=sanya-trip&amp;coordinate=gaode" target="_blank" rel="noopener">在高德地圖開啟 ↗</a>
+          </span>
+        </div>
+
         <div class="poi" data-poi="wuzhizhou" role="button" tabindex="0">
           <span class="poi__dot" style="background:#b06a3b"></span>
           <span class="poi__body">
@@ -1648,7 +1678,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
       底圖採用<b>高德地圖圖磚</b>，標記座標已由 WGS-84 換算為高德所用的 <b>GCJ-02 坐標系</b>，與高德 App 顯示一致。
       座標來源為 OpenStreetMap 公開圖資與維基百科；其中<b>海棠68環球美食街</b>未收錄於圖資，位置依其門牌（海棠北路 68 號）與官方資料所述的鄰居「君悅酒店」推定，誤差可能較大。
       其餘地點亦可能有數十至數百米誤差；實際導航請點各卡片的「在高德地圖開啟」，或直接使用高德打車／滴滴出行。
-      「全部動線」涵蓋 Day 1–3 主線交通；亞龍灣熱帶天堂、後海村與天涯海角等主線景點會以小標記顯示，「顯示備選景點」則疊加 03 段落介紹的全部景點位置，方便評估距離。
+      「全部動線」涵蓋 Day 1–3 主線交通；亞龍灣熱帶天堂、後海村與天涯海角為主線景點，已列入地點清單與常駐標記，「顯示備選景點」則疊加 03 段落介紹的其餘景點位置，方便評估距離。
     </div>
   </div>
 </section>
@@ -1900,7 +1930,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
               </tr>
               <tr>
                 <td>香港交通</td>
-                <td class="mut">的士一趟 2 個落客點（A's Home → J's Home → 深圳灣口岸），HK$460 ≈ ¥400</td>
+                <td class="mut">的士兩程（A's Home → J's Home → 深圳灣口岸），HK$460 ≈ ¥400</td>
                 <td class="num">¥400</td>
               </tr>
               <tr>
@@ -2207,6 +2237,21 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
       desc: '椰小雞·椰子雞所在地，毗鄰君悅酒店。'
     },
     {
+      id: 'yalong', wgs: [18.2530556, 109.6396240], color: '#7b6cb0', mark: '林',
+      name: '亞龍灣熱帶天堂森林公園', cat: '重點行程 · Day 2',
+      desc: '門票＋遊覽車 ¥158／人；距酒店約 25 km、30–35 分。'
+    },
+    {
+      id: 'houhai', wgs: [18.2746668, 109.7256060], color: '#0f8a6a', mark: '浪',
+      name: '後海村', cat: '夜間行程 · Day 2',
+      desc: '沙灘酒吧與衝浪漁村（免費）；距酒店約 15 km、18–22 分。'
+    },
+    {
+      id: 'tianya', wgs: [18.2926242, 109.3450447], color: '#a8553f', mark: '涯',
+      name: '天涯海角', cat: '重點行程 · Day 3',
+      desc: '門票約 ¥80／人；距酒店約 50 km、65–75 分。'
+    },
+    {
       id: 'wuzhizhou', wgs: [18.3113515, 109.7618490], color: '#b06a3b', mark: '備',
       name: '蜈支洲島', cat: '備選行程 · Day 2',
       desc: '主線外的替代方案，需至碼頭轉乘渡輪登島。'
@@ -2218,14 +2263,11 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
      tier 僅用於標記配色：near 近郊／mid 經典／far 順遊。 */
   var TIER_COLOR = { near: '#0f8a6a', mid: '#7b6cb0', far: '#a8553f' };
   var SCENIC = [
-    { id: 'houhai', wgs: [18.2746668, 109.7256060], mark: '浪', tier: 'near', name: '後海村', cat: 'Day 2 夜 · 衝浪漁村（免費）', desc: '直線 11.5 km　·　車程約 18–22 分' },
     { id: 'rice', wgs: [18.3220721, 109.6842921], mark: '稻', tier: 'near', name: '三亞水稻國家公園', cat: '近郊 · 4A', desc: '直線 9.1 km　·　車程約 15–18 分' },
     { id: 'nantian', wgs: [18.4200000, 109.7500000], mark: '泉', tier: 'near', name: '南田溫泉', cat: '近郊 · 位置約略', desc: '直線約 5 km　·　車程約 12–15 分' },
-    { id: 'yalong', wgs: [18.2530556, 109.6396240], mark: '林', tier: 'mid', name: '亞龍灣熱帶天堂森林公園', cat: '經典 · 4A', desc: '直線 17.9 km　·　車程約 30–35 分' },
     { id: 'yanoda', wgs: [18.4619138, 109.6424221], mark: '雨', tier: 'mid', name: '呀諾達雨林文化旅遊區', cat: '經典 · 5A', desc: '直線 14.9 km　·　車程約 30–35 分' },
     { id: 'binglang', wgs: [18.4011974, 109.6594906], mark: '寨', tier: 'mid', name: '檳榔谷黎苗文化旅遊區', cat: '經典 · 5A', desc: '直線 10.0 km　·　車程約 25–30 分' },
     { id: 'nanshan', wgs: [18.3000907, 109.2066329], mark: '佛', tier: 'far', name: '南山文化旅遊區', cat: '順遊 · 5A', desc: '直線 58.0 km　·　車程約 80–90 分' },
-    { id: 'tianya', wgs: [18.2926242, 109.3450447], mark: '涯', tier: 'far', name: '天涯海角', cat: '順遊 · 4A', desc: '直線 43.7 km　·　車程約 65–75 分' },
     { id: 'daxiaodong', wgs: [18.3075251, 109.1518611], mark: '洞', tier: 'far', name: '大小洞天', cat: '順遊 · 5A', desc: '直線 63.6 km　·　車程約 90–100 分' },
     { id: 'luhuitou', wgs: [18.2271541, 109.4962752], mark: '鹿', tier: 'far', name: '鹿回頭風景區', cat: '順遊 · 免門票', desc: '直線 31.5 km　·　車程約 45–55 分' }
   ];
@@ -2402,6 +2444,12 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
         x.classList.toggle('is-on', x === b);
       });
       drawRoutes(b.dataset.layer);
+      if (b.dataset.layer === 'all') {
+        /* 全部動線：視圖放大到涵蓋 Day 1–3 全部主線地點 */
+        map.fitBounds(L.latLngBounds(POIS.map(function (p) { return p.gcj; })), { padding: [46, 46], maxZoom: 12 });
+      } else if (b.dataset.layer === 'arrival') {
+        fitResort();
+      }
     });
   });
 
