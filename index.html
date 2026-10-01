@@ -57,7 +57,7 @@ table{border-collapse:collapse;width:100%}
   padding:4px 12px;margin-bottom:12px;
 }
 .sec__title{font-size:clamp(23px,3.1vw,31px);letter-spacing:.02em}
-.sec__sub{margin-top:10px;color:var(--ink-soft);font-size:15px;max-width:70ch}
+.sec__sub{margin-top:10px;color:var(--ink-soft);font-size:15px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
 .note{
   font-size:13px;color:var(--ink-mute);margin-top:14px;
@@ -449,6 +449,23 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
   font-variant-numeric:tabular-nums;letter-spacing:.01em;
 }
 .spot__lead{font-size:13.5px;color:var(--ink-soft);margin-top:8px;line-height:1.66}
+.spot__fig{
+  position:relative;height:158px;margin:0 0 12px;border-radius:var(--r-sm);
+  overflow:hidden;background:linear-gradient(135deg,var(--sea-700),var(--teal));
+}
+.spot--mid .spot__fig{background:linear-gradient(135deg,#4a3f7a,#7b6cb0)}
+.spot--far .spot__fig{background:linear-gradient(135deg,#7a3d2c,#a8553f)}
+.spot--bar .spot__fig{background:linear-gradient(135deg,#8a6c07,var(--gold))}
+.spot__fig::after{
+  content:attr(data-label);position:absolute;inset:0;display:grid;place-items:center;
+  color:rgba(255,255,255,.92);font-size:14px;font-weight:700;letter-spacing:.12em;
+}
+.spot__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.spot__cap{
+  position:absolute;left:0;right:0;bottom:0;z-index:2;padding:26px 10px 6px;
+  font-size:10.5px;color:rgba(255,255,255,.9);letter-spacing:.04em;
+  background:linear-gradient(transparent,rgba(6,43,51,.78));
+}
 .spot__dl{margin-top:10px;display:grid;gap:6px}
 .spot__dl > div{display:flex;gap:9px;align-items:flex-start;font-size:13px;line-height:1.62}
 .spot__dl .k{
@@ -721,7 +738,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
           <div class="ev__in">
             <div class="ev__top">
               <div class="ev__time">05:55</div>
-              <div class="ev__t">Andy Home → Jessie Home（香港的士）</div>
+              <div class="ev__t">A's Home → J's Home（香港的士）</div>
             </div>
             <p class="ev__p">兩人與行李上車，車程約 15–20 分。香港的士按錶收費，另計隧道費與行李附加費；<b>這兩程的士合計約 HK$460（約 ¥400）</b>。</p>
             <div class="chips">
@@ -736,7 +753,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
           <div class="ev__in">
             <div class="ev__top">
               <div class="ev__time">06:15</div>
-              <div class="ev__t">Jessie Home → 深圳灣口岸（香港的士）</div>
+              <div class="ev__t">J's Home → 深圳灣口岸（香港的士）</div>
             </div>
             <p class="ev__p">車程約 50–60 分，抵達香港側口岸。深圳灣口岸通關時間為 <b>06:30–24:00</b>，抵達時已開放；過關後在深圳側按 App 指示前往網約車上車點。</p>
             <div class="chips">
@@ -763,7 +780,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
             <div class="warn">
               <b>過關時間是這段最大的變數。</b>以 08:00 抵達為目標，等於只剩約 40 分鐘的櫃檯緩衝（櫃檯約 <b>08:40</b> 關閉）。
               模擬三種情境：過關 15 分 → 08:05 抵達；過關 30 分 → 08:30 抵達（僅剩 10 分）；過關 40 分 → 09:00 抵達（<b>趕不上</b>）。
-              <b>建議把 Jessie Home 出發時間提早到 06:00</b>，把緩衝買回來。
+              <b>建議把 J's Home 出發時間提早到 06:00</b>，把緩衝買回來。
             </div>
           </div>
         </article>
@@ -1282,6 +1299,10 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
     <h3 class="group">近郊 <span>30 分鐘內</span></h3>
     <div class="spots">
       <article class="card spot rv">
+        <figure class="spot__fig" data-label="蜈支洲島">
+          <img class="spot__img" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Wuzhizhou-Island.jpg/960px-Wuzhizhou-Island.jpg" alt="蜈支洲島" loading="lazy" title="蜈支洲島 — Wikimedia Commons" onerror="this.remove()">
+          <figcaption class="spot__cap">照片：Wikimedia Commons</figcaption>
+        </figure>
         <div class="spot__top">
           <h4>蜈支洲島 <span class="lvl">5A</span></h4>
           <span class="spot__dist">島距直線 7.2 km　·　至碼頭約 18 分</span>
@@ -1294,6 +1315,10 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
       </article>
 
       <article class="card spot rv">
+        <figure class="spot__fig" data-label="後海村">
+          <img class="spot__img" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/20120308%E4%B8%89%E4%BA%9A%E6%B5%B7%E6%A3%A0%E6%B9%BE%E4%BC%A0%E7%BB%9F%E7%9A%84%E4%BA%BA%E5%B7%A5%E6%8B%96%E7%BD%91%E6%8D%95%E9%B1%BC%E4%BD%9C%E4%B8%9A_-_panoramio.jpg/960px-20120308%E4%B8%89%E4%BA%9A%E6%B5%B7%E6%A3%A0%E6%B9%BE%E4%BC%A0%E7%BB%9F%E7%9A%84%E4%BA%BA%E5%B7%A5%E6%8B%96%E7%BD%91%E6%8D%95%E9%B1%BC%E4%BD%9C%E4%B8%9A_-_panoramio.jpg" alt="後海村" loading="lazy" title="後海村 — Wikimedia Commons" onerror="this.remove()">
+          <figcaption class="spot__cap">照片：Wikimedia Commons</figcaption>
+        </figure>
         <div class="spot__top">
           <h4>後海村（藤海社區・皇后灣） <span class="lvl lvl--free">免費</span></h4>
           <span class="spot__dist">直線 11.5 km　·　約 18–22 分</span>
@@ -1306,6 +1331,10 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
       </article>
 
       <article class="card spot rv">
+        <figure class="spot__fig" data-label="三亞水稻國家公園">
+          <img class="spot__img" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Perennial_rice_breeding_nursery.JPG/960px-Perennial_rice_breeding_nursery.JPG" alt="三亞水稻國家公園" loading="lazy" title="三亞水稻國家公園 — Wikimedia Commons" onerror="this.remove()">
+          <figcaption class="spot__cap">照片：Wikimedia Commons</figcaption>
+        </figure>
         <div class="spot__top">
           <h4>三亞水稻國家公園 <span class="lvl lvl--4a">4A</span></h4>
           <span class="spot__dist">直線 9.1 km　·　約 15–18 分</span>
@@ -1318,6 +1347,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
       </article>
 
       <article class="card spot rv">
+        <figure class="spot__fig" data-label="南田溫泉"></figure>
         <div class="spot__top">
           <h4>南田溫泉（珠江南田溫泉）</h4>
           <span class="spot__dist">直線約 5 km　·　約 12–15 分</span>
@@ -1334,6 +1364,10 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
     <h3 class="group">經典 <span>需半日至一日</span></h3>
     <div class="spots">
       <article class="card spot spot--mid rv">
+        <figure class="spot__fig" data-label="亞龍灣熱帶天堂森林公園">
+          <img class="spot__img" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Yalong_Bay_01.jpg/960px-Yalong_Bay_01.jpg" alt="亞龍灣熱帶天堂森林公園" loading="lazy" title="亞龍灣熱帶天堂森林公園 — Wikimedia Commons" onerror="this.remove()">
+          <figcaption class="spot__cap">照片：Wikimedia Commons</figcaption>
+        </figure>
         <div class="spot__top">
           <h4>亞龍灣熱帶天堂森林公園 <span class="lvl lvl--4a">4A</span></h4>
           <span class="spot__dist">直線 17.9 km　·　約 30–35 分</span>
@@ -1346,6 +1380,10 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
       </article>
 
       <article class="card spot spot--mid rv">
+        <figure class="spot__fig" data-label="呀諾達雨林文化旅遊區">
+          <img class="spot__img" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/%E5%91%80%E8%AF%BA%E8%BE%BE%E7%83%AD%E5%B8%A6%E9%9B%A8%E6%9E%97%E9%A3%8E%E5%85%89_-_panoramio.jpg/960px-%E5%91%80%E8%AF%BA%E8%BE%BE%E7%83%AD%E5%B8%A6%E9%9B%A8%E6%9E%97%E9%A3%8E%E5%85%89_-_panoramio.jpg" alt="呀諾達雨林文化旅遊區" loading="lazy" title="呀諾達雨林文化旅遊區 — Wikimedia Commons" onerror="this.remove()">
+          <figcaption class="spot__cap">照片：Wikimedia Commons</figcaption>
+        </figure>
         <div class="spot__top">
           <h4>呀諾達雨林文化旅遊區 <span class="lvl">5A</span></h4>
           <span class="spot__dist">直線 14.9 km　·　約 30–35 分</span>
@@ -1358,6 +1396,10 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
       </article>
 
       <article class="card spot spot--mid rv">
+        <figure class="spot__fig" data-label="檳榔谷黎苗文化旅遊區">
+          <img class="spot__img" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Li_Ethnic_Group.jpg/960px-Li_Ethnic_Group.jpg" alt="檳榔谷黎苗文化旅遊區" loading="lazy" title="檳榔谷黎苗文化旅遊區 — Wikimedia Commons" onerror="this.remove()">
+          <figcaption class="spot__cap">照片：Wikimedia Commons</figcaption>
+        </figure>
         <div class="spot__top">
           <h4>檳榔谷黎苗文化旅遊區 <span class="lvl">5A</span></h4>
           <span class="spot__dist">直線 10.0 km　·　約 25–30 分</span>
@@ -1370,6 +1412,10 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
       </article>
 
       <article class="card spot spot--mid rv">
+        <figure class="spot__fig" data-label="南山文化旅遊區">
+          <img class="spot__img" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Guan_Yin_of_the_South_Sea_of_Sanya.JPG" alt="南山文化旅遊區" loading="lazy" title="南山文化旅遊區 — Wikimedia Commons" onerror="this.remove()">
+          <figcaption class="spot__cap">照片：Wikimedia Commons</figcaption>
+        </figure>
         <div class="spot__top">
           <h4>南山文化旅遊區 <span class="lvl">5A</span></h4>
           <span class="spot__dist">直線 58.0 km　·　約 80–90 分</span>
@@ -1386,6 +1432,10 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
     <h3 class="group">順遊 <span>需整日往返</span></h3>
     <div class="spots">
       <article class="card spot spot--far rv">
+        <figure class="spot__fig" data-label="天涯海角">
+          <img class="spot__img" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Tianya_Haijiao_020.JPG/960px-Tianya_Haijiao_020.JPG" alt="天涯海角" loading="lazy" title="天涯海角 — Wikimedia Commons" onerror="this.remove()">
+          <figcaption class="spot__cap">照片：Wikimedia Commons</figcaption>
+        </figure>
         <div class="spot__top">
           <h4>天涯海角 <span class="lvl lvl--4a">4A</span></h4>
           <span class="spot__dist">直線 43.7 km　·　約 65–75 分</span>
@@ -1398,6 +1448,10 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
       </article>
 
       <article class="card spot spot--far rv">
+        <figure class="spot__fig" data-label="大小洞天">
+          <img class="spot__img" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Sanya_Nanshan_Dongtian_Park.jpg/960px-Sanya_Nanshan_Dongtian_Park.jpg" alt="大小洞天" loading="lazy" title="大小洞天 — Wikimedia Commons" onerror="this.remove()">
+          <figcaption class="spot__cap">照片：Wikimedia Commons</figcaption>
+        </figure>
         <div class="spot__top">
           <h4>大小洞天 <span class="lvl">5A</span></h4>
           <span class="spot__dist">直線 63.6 km　·　約 90–100 分</span>
@@ -1410,6 +1464,10 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
       </article>
 
       <article class="card spot spot--far rv">
+        <figure class="spot__fig" data-label="鹿回頭風景區">
+          <img class="spot__img" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/%E4%B8%89%E4%BA%9E%E9%B9%BF%E5%9B%9E%E9%A0%AD%E5%85%AC%E5%9C%92_Luhuitou_Park%2C_Sanya_-_panoramio.jpg/960px-%E4%B8%89%E4%BA%9E%E9%B9%BF%E5%9B%9E%E9%A0%AD%E5%85%AC%E5%9C%92_Luhuitou_Park%2C_Sanya_-_panoramio.jpg" alt="鹿回頭風景區" loading="lazy" title="鹿回頭風景區 — Wikimedia Commons" onerror="this.remove()">
+          <figcaption class="spot__cap">照片：Wikimedia Commons</figcaption>
+        </figure>
         <div class="spot__top">
           <h4>鹿回頭風景區 <span class="lvl lvl--free">免門票</span></h4>
           <span class="spot__dist">直線 31.5 km　·　約 45–55 分</span>
@@ -1425,6 +1483,10 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
     <h3 class="group group--gold">夜生活 <span>可延續至 24:00</span></h3>
     <div class="spots">
       <article class="card spot spot--bar rv">
+        <figure class="spot__fig" data-label="不二民謠音樂餐酒吧">
+          <img class="spot__img" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/%E4%B8%89%E4%BA%9A%E5%9B%BD%E9%99%85%E5%85%8D%E7%A8%8E%E5%9F%8E.jpg/960px-%E4%B8%89%E4%BA%9A%E5%9B%BD%E9%99%85%E5%85%8D%E7%A8%8E%E5%9F%8E.jpg" alt="不二民謠音樂餐酒吧" loading="lazy" title="不二民謠音樂餐酒吧 — Wikimedia Commons" onerror="this.remove()">
+          <figcaption class="spot__cap">照片：Wikimedia Commons</figcaption>
+        </figure>
         <div class="spot__top">
           <h4>不二民謠音樂餐酒吧</h4>
           <span class="spot__dist">步行 5–12 分　·　至約 24:00</span>
@@ -1438,6 +1500,10 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
       </article>
 
       <article class="card spot spot--bar rv">
+        <figure class="spot__fig" data-label="後海村沙灘酒吧">
+          <img class="spot__img" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Sanya_Beach_Night_-_panoramio.jpg/960px-Sanya_Beach_Night_-_panoramio.jpg" alt="後海村沙灘酒吧" loading="lazy" title="後海村沙灘酒吧 — Wikimedia Commons" onerror="this.remove()">
+          <figcaption class="spot__cap">照片：Wikimedia Commons</figcaption>
+        </figure>
         <div class="spot__top">
           <h4>後海村沙灘酒吧（DT 沙灘酒吧・後海·集合 GHO BAR）</h4>
           <span class="spot__dist">車程約 18–22 分　·　至約 24:00</span>
@@ -1451,6 +1517,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
       </article>
 
       <article class="card spot spot--bar rv">
+        <figure class="spot__fig" data-label="酒店池畔吧"></figure>
         <div class="spot__top">
           <h4>酒店池畔吧／大堂酒吧</h4>
           <span class="spot__dist">館內　·　視現場時間</span>
@@ -1462,6 +1529,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
       </article>
 
       <article class="card spot spot--bar rv">
+        <figure class="spot__fig" data-label="Soul Lounge Bar 隱醉"></figure>
         <div class="spot__top">
           <h4>Soul Lounge Bar 隱醉</h4>
           <span class="spot__dist">三亞市區　·　車程約 45–55 分</span>
@@ -1476,6 +1544,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
     <div class="note">
       景區票價與開放時間依公開資料整理，非即時報價，且景區常臨時調整（尤其颱風與海況因素），出發前請以官方公告為準。
       三亞多數景區在 10/1–4/30 屬旺季、5/1–9/30 屬淡季，本行程 10/23–25 落在旺季區間。
+      卡片照片取自 <b>Wikimedia Commons</b>（自由授權），為各景區的實地影像，僅供參考；需連網載入。
     </div>
   </div>
 </section>
@@ -1605,7 +1674,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
           </thead>
           <tbody>
             <tr>
-              <td>Andy Home → Jessie Home（香港）</td>
+              <td>A's Home → J's Home（香港）</td>
               <td><span class="chip chip--walk">🚕 的士</span></td>
               <td class="num">—</td>
               <td class="num">15–20 分</td>
@@ -1613,7 +1682,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
               <td class="mut">Day 1 出發；兩程的士合計約 HK$460（約 ¥400）</td>
             </tr>
             <tr>
-              <td>Jessie Home → 深圳灣口岸（香港）</td>
+              <td>J's Home → 深圳灣口岸（香港）</td>
               <td><span class="chip chip--walk">🚕 的士</span></td>
               <td class="num">—</td>
               <td class="num">50–60 分</td>
@@ -1812,7 +1881,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
               </tr>
               <tr>
                 <td>香港交通</td>
-                <td class="mut">的士兩程（Andy Home → Jessie Home → 深圳灣口岸），HK$460 ≈ ¥400</td>
+                <td class="mut">的士兩程（A's Home → J's Home → 深圳灣口岸），HK$460 ≈ ¥400</td>
                 <td class="num">¥400</td>
               </tr>
               <tr>
@@ -1951,7 +2020,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
       <b>三亞海棠灣・三日慢活行程</b><br>
       2026 年 10 月 23 日 — 10 月 25 日　·　2 位成人　·　幣別：人民幣（¥）
     </div>
-    <div style="max-width:46ch">
+    <div style="flex:1 1 320px">
       所有票價、房價、車資與營業時間均為依公開資料整理的研究估算，非即時報價，
       出發前請再次向酒店、景區與航空公司確認。
       <a href="#overview">回到頂部</a>

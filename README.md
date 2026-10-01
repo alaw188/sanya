@@ -78,14 +78,18 @@ A single-file, self-contained interactive itinerary site for a 3-day couple's le
 | 表格 | 2（交通 11 段、預算 8 項） |
 | KPI 卡片 | 4 |
 | 提示卡片 | 6 |
+| 卡片照片 | 13 張（Wikimedia Commons 外連）＋ 2 個漸層佔位 |
 | 官網／地圖外連 | 餐廳與景點卡片內附高德地圖與官網連結 |
-| 檔案大小 | 約 118 KB（單一檔案，含內嵌 CSS 與 JS） |
+| 檔案大小 | 約 125 KB（單一檔案，含內嵌 CSS 與 JS；照片為外連不佔檔案體積） |
 
 ---
 
 ## 技術說明
 
 - **單一檔案**：所有 CSS 與 JavaScript 內嵌於 `index.html`，沒有建置流程、沒有拆分檔案、沒有相依套件管理。
+- **照片**：景點卡片的實地影像外連自 **Wikimedia Commons**（自由授權），以 960px 縮圖載入、
+  `loading="lazy"` 延遲載入，並附來源標註。若連不上 Commons，卡片會退回顯示漸層底色與景點名稱，
+  其餘內容不受影響。**這是繼 Leaflet 與高德圖磚之後新增的外部資源依賴。**
 - **地圖**：Leaflet 1.9.4（CDN）搭配**高德地圖圖磚**：
   - 標準圖 `https://webrd0{n}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8`
   - 衛星圖 `https://webst0{n}.is.autonavi.com/appmaptile?style=6`，另疊 `style=8` 取得路名
