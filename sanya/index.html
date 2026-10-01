@@ -344,6 +344,11 @@ table{border-collapse:collapse;width:100%}
 .tbox{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--card);box-shadow:var(--shadow)}
 .tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
 table.t{min-width:720px;font-size:14px}
+@media (max-width:900px){
+  table.t{min-width:560px}
+  table.t td:first-child{white-space:normal;min-width:0}
+  table.t thead th{white-space:normal}
+}
 table.t thead th{
   background:var(--sea-800);color:#fff;text-align:left;font-weight:600;
   font-size:12.5px;letter-spacing:.09em;padding:13px 16px;white-space:nowrap;
