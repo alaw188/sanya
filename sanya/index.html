@@ -556,6 +556,22 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
   .mapbar{gap:7px 12px}
   .mapbar button{padding:6px 11px;font-size:12.5px}
   .spot__fig{height:140px}
+  /* 表格在手機改為卡片式：欄名轉為小標籤，免橫向捲動 */
+  table.t,table.t tbody{display:block;min-width:0!important}
+  table.t thead{display:none}
+  table.t tr{display:block;padding:13px 15px;border-top:1px solid var(--line)}
+  table.t tr:first-child{border-top:0}
+  table.t td{display:block;border-top:0;padding:3px 0;white-space:normal}
+  table.t td::before{
+    content:attr(data-label);
+    display:block;font-size:11px;font-weight:700;letter-spacing:.08em;
+    color:var(--ink-mute);margin-bottom:1px;
+  }
+  table.t td:first-child{font-size:14.5px;font-weight:700;color:var(--sea-800);padding-bottom:7px}
+  table.t td:first-child::before{display:none}
+  table.t td.mut{font-size:13px;line-height:1.6}
+  table.t .num{white-space:normal}
+  table.t tr.sum td{border-top:0}
 }
 </style>
 </head>
@@ -2151,6 +2167,17 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
       });
     });
   }
+
+  /* ---------- table card labels（手機卡片式表格用） ---------- */
+  document.querySelectorAll('table.t').forEach(function (tb) {
+    var heads = tb.querySelectorAll('thead th');
+    tb.querySelectorAll('tbody tr').forEach(function (tr) {
+      tr.querySelectorAll('td').forEach(function (td, i) {
+        var h = heads[i];
+        if (h) { td.setAttribute('data-label', h.textContent.trim()); }
+      });
+    });
+  });
 
   /* ---------- reveal on scroll ---------- */
   var revealables = document.querySelectorAll('.rv');
