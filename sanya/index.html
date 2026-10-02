@@ -1331,6 +1331,21 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
             </div>
           </div>
         </article>
+
+        <article class="ev rv">
+          <div class="ev__in">
+            <div class="ev__top">
+              <div class="ev__time">23:40</div>
+              <div class="ev__t">抵達香港 → 的士回家（香港機場 → J's Home → A's Home）</div>
+            </div>
+            <p class="ev__p">深夜車流少，車程約 <b>45–60 分鐘</b>；同一趟的士 2 個落客點，先送 J's Home 再返回 A's Home。</p>
+            <div class="chips">
+              <span class="chip chip--walk">🚕 的士（香港）</span>
+              <span class="chip">約 44 km</span>
+              <span class="chip chip--cost">約 HK$360</span>
+            </div>
+          </div>
+        </article>
       </div>
 
       <div class="alt">
@@ -2073,6 +2088,14 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
               <td class="mut">Day 3 返程，建議 19:40 出發</td>
             </tr>
             <tr>
+              <td>香港機場 → J's Home → A's Home（香港）</td>
+              <td><span class="chip chip--walk">🚕 的士</span></td>
+              <td class="num">約 44 km</td>
+              <td class="num">45–60 分鐘</td>
+              <td class="num">HK$360</td>
+              <td class="mut">Day 3 深夜抵港；1 趟車 2 個落客點（先 J's Home 再 A's Home），深夜車流少</td>
+            </tr>
+            <tr>
               <td>酒店 → 南田溫泉<span class="tagopt">備選</span></td>
               <td><span class="chip chip--mode">🚗 網約車</span></td>
               <td class="num">約 8 km</td>
@@ -2093,7 +2116,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
               <td colspan="2">12 段</td>
               <td class="num">約 6 小時 20 分鐘<br>– 7 小時 35 分鐘</td>
               <td class="num">約 ¥880<br>– ¥1,130</td>
-              <td class="mut">時間為各段估計區間加總；費用取各段上限。另計香港的士一趟約 HK$460（約 ¥400）</td>
+              <td class="mut">時間為各段估計區間加總；費用取各段上限。另計香港的士去回兩趟合計約 HK$820（去程 460 ＋ 回程 360）</td>
             </tr>
           </tbody>
         </table>
@@ -2125,22 +2148,22 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
     <div class="kpis rv">
       <div class="kpi kpi--main">
         <div class="kpi__k">地面消費合計</div>
-        <div class="kpi__v"><sub>¥</sub>5,232</div>
+        <div class="kpi__v"><sub>¥</sub>5,542</div>
         <div class="kpi__d">不含住宿與免稅購物</div>
       </div>
       <div class="kpi">
         <div class="kpi__k">人均（地面）</div>
-        <div class="kpi__v"><sub>¥</sub>2,616</div>
+        <div class="kpi__v"><sub>¥</sub>2,771</div>
         <div class="kpi__d">2 位成人平分</div>
       </div>
       <div class="kpi">
         <div class="kpi__k">每日平均</div>
-        <div class="kpi__v"><sub>¥</sub>1,744</div>
+        <div class="kpi__v"><sub>¥</sub>1,847</div>
         <div class="kpi__d">以 3 天計</div>
       </div>
       <div class="kpi kpi--gold">
         <div class="kpi__k">含機票＋住宿估算合計</div>
-        <div class="kpi__v"><sub>¥</sub>12,962</div>
+        <div class="kpi__v"><sub>¥</sub>13,272</div>
         <div class="kpi__d">含機票 ¥3,400（每人 ¥1,700）＋ 2 晚套房估算 ¥4,330</div>
       </div>
     </div>
@@ -2184,8 +2207,8 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
               </tr>
               <tr>
                 <td>香港交通</td>
-                <td class="mut">的士一趟 2 個落客點（A's Home → J's Home<br>→ 深圳灣口岸），HK$460 ≈ ¥400</td>
-                <td class="num">¥400</td>
+                <td class="mut">的士去回兩趟（去程 A's Home → J's Home<br>→ 深圳灣口岸 HK$460；回程香港機場 → J's Home → A's Home HK$360），合計 HK$820 ≈ ¥710</td>
+                <td class="num">¥710</td>
               </tr>
               <tr>
                 <td>雜項</td>
@@ -2194,8 +2217,8 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
               </tr>
               <tr class="sum">
                 <td>合計</td>
-                <td class="mut">地面消費 ¥5,232　＋　機票 ¥3,400　＋　住宿 ¥4,330</td>
-                <td class="num">¥12,962</td>
+                <td class="mut">地面消費 ¥5,542　＋　機票 ¥3,400　＋　住宿 ¥4,330</td>
+                <td class="num">¥13,272</td>
               </tr>
               <tr>
                 <td>免稅購物</td>
@@ -2233,8 +2256,8 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
         </div>
         <div class="bcrow" data-cat="trans">
           <div class="bcrow__n"><i style="background:#2f8fd8"></i>交通</div>
-          <div class="bcrow__track"><div class="bcrow__fill b" data-full="1530" data-ground="1530"></div></div>
-          <div class="bcrow__v" data-full="¥1,530" data-ground="¥1,530">¥1,530</div>
+          <div class="bcrow__track"><div class="bcrow__fill b" data-full="1840" data-ground="1840"></div></div>
+          <div class="bcrow__v" data-full="¥1,840" data-ground="¥1,840">¥1,840</div>
         </div>
         <div class="bcrow" data-cat="ticket">
           <div class="bcrow__n"><i style="background:#e8624a"></i>門票</div>
@@ -2249,7 +2272,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
 
         <div class="bctotal">
           <span id="bcLabel">含機票＋住宿估算合計</span>
-          <b id="bcTotal">¥12,962</b>
+          <b id="bcTotal">¥13,272</b>
         </div>
       </div>
     </div>
@@ -2352,7 +2375,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
 
   /* ---------- budget chart toggle ---------- */
   var seg = document.getElementById('seg');
-  var TOTALS = { full: 12962, ground: 5232 };
+  var TOTALS = { full: 13272, ground: 5542 };
   var LABELS = { full: '含機票＋住宿估算合計', ground: '地面消費合計（不含機票與住宿）' };
   var MAX = { full: 4330, ground: 2630 };
 
@@ -2543,9 +2566,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
 
   var ROUTES = {
     day1: [
-      { from: 'airport', to: 'hotel', label: 'SYX → 酒店　約 40 km / 50–60 分鐘' },
-      { from: 'hotel', to: 'food', label: '酒店 → 海棠68　約 4 km / 約 8 分鐘（午餐）' },
-      { from: 'food', to: 'hotel', label: '海棠68 → 酒店　約 4 km / 約 8 分鐘（午餐回程）' }
+      { from: 'airport', to: 'hotel', label: 'SYX → 酒店　約 40 km / 50–60 分鐘' }
     ],
     day2: [
       { from: 'hotel', to: 'yalong', label: '酒店 → 亞龍灣熱帶天堂　約 25 km / 30–35 分鐘' },
