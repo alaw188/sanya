@@ -1820,7 +1820,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
           </div>
           <div class="mapbar__grp">
             <span class="mapbar__lbl">圖層</span>
-            <button class="is-on" data-layer="arrival">Day 1 進城</button>
+            <button class="is-on" data-layer="day1">Day 1 動線</button>
             <button data-layer="day2">Day 2 動線</button>
             <button data-layer="day3">Day 3 動線</button>
             <button data-layer="all">全部動線</button>
@@ -2542,7 +2542,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
   });
 
   var ROUTES = {
-    arrival: [
+    day1: [
       { from: 'airport', to: 'hotel', label: 'SYX → 酒店　約 40 km / 50–60 分鐘' }
     ],
     day2: [
@@ -2673,7 +2673,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
     spotLayer.addLayer(m);
   });
 
-  var currentRoute = 'arrival';
+  var currentRoute = 'day1';
 
   function drawRoutes(key) {
     currentRoute = key;
@@ -2732,8 +2732,14 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
           if (b2) { pts.push(b2.gcj); }
         });
         if (pts.length) { map.fitBounds(L.latLngBounds(pts), { padding: [46, 46], maxZoom: 12 }); }
-      } else if (b.dataset.layer === 'arrival') {
-        fitResort();
+      } else if (b.dataset.layer === 'day1') {
+        var pts1 = [];
+        (ROUTES.day1 || []).forEach(function (r) {
+          var a = byId(r.from), b1 = byId(r.to);
+          if (a) { pts1.push(a.gcj); }
+          if (b1) { pts1.push(b1.gcj); }
+        });
+        if (pts1.length) { map.fitBounds(L.latLngBounds(pts1), { padding: [46, 46], maxZoom: 12 }); }
       }
     });
   });
@@ -2764,7 +2770,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
   });
 
   wirePoiCards();
-  drawRoutes('arrival');
+  drawRoutes('day1');
   fitResort();
 
   window.addEventListener('resize', function () {
