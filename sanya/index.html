@@ -1931,7 +1931,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
         <li><b>座標來源</b>：OpenStreetMap 公開圖資與維基百科；海棠68環球美食街未收錄於圖資，位置依門牌（海棠北路 68 號）與鄰居「君悅酒店」推定，誤差可能較大。</li>
         <li><b>精度說明</b>：其餘地點亦可能有數十至數百米誤差，供行程規劃參考。</li>
         <li><b>實際導航</b>：請點各卡片的「在高德地圖開啟」，或直接使用高德打車／滴滴出行。</li>
-        <li><b>動線圖層</b>：Day 1／2／3 分鐘層顯示當日交通，「全部動線」涵蓋三天主線；「顯示備選景點」可疊加 03 段落介紹的其餘景點位置。</li>
+        <li><b>動線圖層</b>：Day 1／2／3 分層顯示當日交通，「全部動線」涵蓋三天主線；「顯示備選景點」可疊加 03 段落介紹的其餘景點位置。蜈支洲島為備選行程，以小標記顯示、不畫入主線動線。</li>
       </ul>
     </div>
   </div>
@@ -2517,7 +2517,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
       desc: '門票約 ¥80／人；距酒店約 50 km、65–75 分鐘。'
     },
     {
-      id: 'wuzhizhou', wgs: [18.3113515, 109.7618490], color: '#b06a3b', mark: '備',
+      id: 'wuzhizhou', wgs: [18.3113515, 109.7618490], color: '#b06a3b', mark: '備', sm: true,
       name: '蜈支洲島', cat: '備選行程 · Day 2',
       desc: '主線外的替代方案，需至碼頭轉乘渡輪登島。'
     }
@@ -2563,8 +2563,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
       { from: 'yalong', to: 'atlantis', label: '亞龍灣熱帶天堂 → 亞特蘭蒂斯　約 20 km / 25–35 分鐘（Day 2）' },
       { from: 'hotel', to: 'houhai', label: '酒店 ↔ 後海村　約 15 km / 18–22 分鐘（Day 2 夜）' },
       { from: 'hotel', to: 'tianya', label: '酒店 ↔ 天涯海角　約 50 km / 65–75 分鐘（Day 3）' },
-      { from: 'hotel', to: 'cdf', label: '酒店 → 免稅城　步行 5–10 分鐘（Day 3）' },
-      { from: 'hotel', to: 'wuzhizhou', label: '酒店 → 蜈支洲島（備選）' }
+      { from: 'hotel', to: 'cdf', label: '酒店 → 免稅城　步行 5–10 分鐘（Day 3）' }
     ]
   };
 
@@ -2655,7 +2654,7 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
 
   POIS.forEach(function (p) {
     var m = L.marker(p.gcj, {
-      icon: icon('<div class="mk" style="background:' + p.color + '">' + p.mark + '</div>', 26),
+      icon: icon('<div class="mk' + (p.sm ? ' mk--sm' : '') + '" style="background:' + p.color + '">' + p.mark + '</div>', p.sm ? 21 : 26),
       title: p.name
     }).addTo(map);
     m.bindPopup('<b>' + p.name + '</b><small>' + p.cat + '</small><br>' + p.desc);
@@ -2744,10 +2743,10 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
     });
   });
 
-  /* 預設視圖聚焦度假區（含備選的蜈支洲島）；機場與其他景點點卡片即可前往。
+  /* 預設視圖聚焦度假區主線地點；機場與其他景點點卡片即可前往。
      開啟備選景點圖層時，視圖自動放大到涵蓋全部標記。 */
   var SPOTS_ON = false;
-  var FIT_IDS = ['hotel', 'cdf', 'atlantis', 'food', 'wuzhizhou'];
+  var FIT_IDS = ['hotel', 'cdf', 'atlantis', 'food'];
 
   function fitResort() {
     var pts = SPOTS_ON
