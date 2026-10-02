@@ -2543,7 +2543,9 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
 
   var ROUTES = {
     day1: [
-      { from: 'airport', to: 'hotel', label: 'SYX → 酒店　約 40 km / 50–60 分鐘' }
+      { from: 'airport', to: 'hotel', label: 'SYX → 酒店　約 40 km / 50–60 分鐘' },
+      { from: 'hotel', to: 'food', label: '酒店 → 海棠68　約 4 km / 約 8 分鐘（午餐）' },
+      { from: 'food', to: 'hotel', label: '海棠68 → 酒店　約 4 km / 約 8 分鐘（午餐回程）' }
     ],
     day2: [
       { from: 'hotel', to: 'yalong', label: '酒店 → 亞龍灣熱帶天堂　約 25 km / 30–35 分鐘' },
