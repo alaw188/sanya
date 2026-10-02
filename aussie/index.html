@@ -40,16 +40,17 @@
   .grid.c4{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
   .grid.c2{grid-template-columns:repeat(2,minmax(0,1fr))}
   @media(max-width:480px){
-    .grid.c2 .stat{padding:14px 14px}
-    .grid.c2 .stat .ic{font-size:1.3rem}
-    .grid.c2 .stat h3{font-size:.95rem}
-    .grid.c2 .stat p{font-size:.82rem}
+    .grid.c2 .stat{padding:12px 12px;gap:10px}
+    .grid.c2 .stat .ic{font-size:1.4rem}
+    .grid.c2 .stat h3{font-size:.9rem}
+    .grid.c2 .stat p{font-size:.78rem}
   }
   .grid.c3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-  .stat{background:var(--card);border-radius:16px;padding:20px 22px;box-shadow:0 3px 14px rgba(43,43,43,.07);border-top:4px solid var(--ocean)}
-  .stat .ic{font-size:1.7rem}
-  .stat h3{font-size:1rem;color:var(--ocean-dark);margin:6px 0 2px}
-  .stat p{font-size:.95rem;color:var(--muted)}
+  .stat{background:var(--card);border-radius:16px;padding:16px 18px;box-shadow:0 3px 14px rgba(43,43,43,.07);border-top:4px solid var(--ocean);display:flex;align-items:center;gap:14px}
+  .stat .ic{font-size:1.9rem;flex:none;line-height:1}
+  .stat-body{flex:1;min-width:0}
+  .stat h3{font-size:1.02rem;color:var(--ocean-dark);margin:0 0 3px}
+  .stat p{font-size:.9rem;color:var(--muted)}
 
   /* ---------- Flights ---------- */
   .flight{background:var(--card);border-radius:16px;padding:18px 22px;box-shadow:0 3px 14px rgba(43,43,43,.07);display:flex;gap:16px;align-items:center;flex-wrap:wrap}
@@ -149,8 +150,8 @@
   <h2><span class="dot"></span>行程總覽</h2>
   <p class="lead">一次過睇晒成個 trip 嘅重點：去邊、住邊、坐邊班機。</p>
   <div class="grid c2">
-    <div class="stat"><div class="ic">🏖️</div><h3>雪梨 Sydney</h3><p>12 月 11 – 17 日（6 晚）<br>歌劇院、海港大橋、Bondi 海灘、藍山、獵人谷</p></div>
-    <div class="stat"><div class="ic">☕</div><h3>墨爾本 Melbourne</h3><p>12 月 17 – 24 日（6 晚）<br>咖啡之都、彩虹小屋、十二門徒石、企鵝島</p></div>
+    <div class="stat"><div class="ic">🏖️</div><div class="stat-body"><h3>雪梨 Sydney</h3><p>12 月 11 – 17 日（6 晚）· 歌劇院、海港大橋、Bondi 海灘、藍山、獵人谷</p></div></div>
+    <div class="stat"><div class="ic">☕</div><div class="stat-body"><h3>墨爾本 Melbourne</h3><p>12 月 17 – 24 日（6 晚）· 咖啡之都、彩虹小屋、十二門徒石、企鵝島</p></div></div>
   </div>
 </section>
 
