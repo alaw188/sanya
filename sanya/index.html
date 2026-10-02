@@ -600,6 +600,29 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
   table.t tr.sum td{border-top:0}
   table.t tr.sum td:first-child{padding-bottom:2px}
 }
+
+/* ===== 00 SUMMARY（卡通手繪地圖）===== */
+.summ{margin:8px auto 0;max-width:1100px}
+.summ__frame{
+  position:relative;border-radius:16px;overflow:hidden;
+  background:linear-gradient(135deg,#f6efe2,#efe2cc);
+  box-shadow:0 18px 44px rgba(2,22,30,.18),0 2px 6px rgba(2,22,30,.08);
+}
+.summ__frame::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.55);
+  border-radius:16px;
+}
+.summ__frame img{display:block;width:100%;height:auto}
+.summ__caption{
+  text-align:center;font-size:13.5px;color:var(--ink-mute);
+  padding:12px 6px 0;line-height:1.6;
+  font-family:var(--font-serif,serif);letter-spacing:.02em;
+}
+@media (max-width:780px){
+  .summ__frame{border-radius:0}
+  .summ__caption{font-size:12.5px;padding:10px 4px 0}
+}
 </style>
 </head>
 <body>
@@ -649,6 +672,27 @@ table.t tr.sum td:first-child{color:var(--sea-700)}
     </div>
   </div>
 </header>
+
+<!-- ============ 00 SUMMARY ============ -->
+<section class="sec sec--sum" id="summary">
+  <div class="wrap">
+    <div class="sec__head rv">
+      <div class="sec__kicker">00　JOURNEY MAP</div>
+      <h2 class="sec__title">三亞三日度假遊</h2>
+      <p class="sec__sub">一張手繪地圖，把三日海棠灣度假的核心節奏與地理動線一眼看完；細節請參考下方各章節。</p>
+    </div>
+
+    <figure class="summ rv">
+      <div class="summ__frame">
+        <img src="assets/cartoon-preview/A_web.jpg"
+             alt="三亞三日度假遊手繪地圖"
+             loading="lazy" decoding="async"
+             width="1536" height="1024">
+      </div>
+      <figcaption class="summ__caption">海棠灣地理動線：機場 → 飯店 → 亞龍灣 → 亞特蘭蒂斯 → 後海 → 天涯海角 → 免稅城 → 機場</figcaption>
+    </figure>
+  </div>
+</section>
 
 <!-- ============ 01 OVERVIEW ============ -->
 <section class="sec" id="overview">
